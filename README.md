@@ -15,6 +15,12 @@
     - Usar ficheiros txt para guardar a informação 
     - Dividir informações com " | " 
     - Leitura e escrita de ficheiros nos ficheiros txt
+    - J para funcionalidades atribuidas a João
+    - G para funcionalidades atribuidas a Gustavo
+    - X para funcionalidades finalizadas
+    - Carregar as marcações criadas para arrays (maximo de 100 marcações)
+    - Guardar o array de marcações no ficheiro Schedules.txt
+    - Criar alguns objetos defalut para Utentes, Enfermeiros, Local de Vacinação e Vacinas 
     - Ficheiros com extensão txt:
         - Schedules.txt
         - Patients.txt
@@ -69,12 +75,12 @@
     - Lote
 
 ## Functions
-    - Menu para selecionar as diversas opções
+    - Menu para selecionar as diversas opções 
     - Ler informação de uma marcação e acrescentá-la a um array em memória (considere que não precisa de armazenar mais de 100 marcações)
     - Retirar do array a marcação de um utente indicado pelo utilizador
-    - Pesquisar marcação por Utente
-    - Alterar uma marcação (Local, data, hora ou Enfermeiro)
-    - Pesquisar marcações de utentes com idade num intervalo indicado pelo utilizador;
+    - Pesquisar marcação por Utente - 
+    - Alterar uma marcação (Local, data, hora ou Enfermeiro) - 
+    - Pesquisar marcações de utentes com idade num intervalo indicado pelo utilizador; - 
     - Pesquisar marcações com uma marca e/ou lote de vacina indicado pelo utilizador;
     - Listar indivíduos – nome, contacto, categoria (enfermeiro / utente) que vão estar num determinado dia num determinado local de vacinação
     - Pesquisar marcações para um dia indicado pelo utilizador;
@@ -87,38 +93,47 @@
 
 ### Enfermeiro - Nurse
     - Atributos
-        - Nome - String
-        - Número de cédula profissional - Integer com o limite de 5 digitos
-        - Número de telefone - Integer com o limite de 9 digitos
+        - Nome - name - String  
+        - Número de cédula profissional - cardNumber -Integer com o limite de 5 digitos
+        - Número de telefone - phoneNumber - Integer com o limite de 9 digitos
 
     - Métodos
+        - create() - Criar um enfermeiro
+        - update() - Atualizar os dados do enfermeiro 
+        - delete() - Eliminar um enfermeiro - OPCIONAL
 
 
 ### Utente - Patient
     - Atributos
-        - Nome - String 
-        - Sexo - String 
-        - Data de nascimento - String no formato DD-MM-AAAA
-        - Numero de utente - Integer 
-        - Numero de telemovel - Integer com o limite de 9 digitos
+        - Nome - name - String 
+        - Sexo - gender - String 
+        - Data de nascimento - dateOfBirth -String no formato DD-MM-AAAA
+        - Numero de utente - patientNumber - Integer 
+        - Numero de telemovel - phoneNumber - Integer com o limite de 9 digitos
 
     - Métodos
+        - create() - Registar um utente
+        - update() - Atualizar dados do Utente
+
+        - convertDateOfBirthToAge() - Converter data de nascimento do utente para idade 
+            - Parâmetros que a função recebe:
+                - 
 
 ### Vacina - Vaccine
     - Atributos
-        - Marca - String com as opções disponiveis: 
+        - Marca - brand - String com as opções disponiveis: 
             - Pfizer / BioNTech 
             - Moderna 
             - Oxford / AstraZeneca
-        - Lote - String
+        - Lote - lot - String
 
     - Métodos
 
 ### Local de vacinação - VaccinationLocation
     - Atributos
-        - Nome - String
-        - Morada - String
-        - Telefone - Integer com o limite de 9 digitos
+        - Nome - name - String
+        - Morada - address - String
+        - Telefone - phoneNumber -  Integer com o limite de 9 digitos
 
     - Métdos
 
@@ -126,14 +141,14 @@
 
 ### Hospital - Herda todos os atributos e metodos da classe "Local de Vacinação" incluindo - Hospital
     - Atributos
-        - Nome do edificio - String
-        - Extensão telefónica - Integer com o limite de 4 digitos
+        - Nome do edificio - buildingName - String
+        - Extensão telefónica - extension - Integer com o limite de 4 digitos
 
     - Métodos
 
 ### Pavilhão Municipal - Herda todos os atributos e metodos da classe "Local de Vacinação" incluindo - Pavilion
      - Atributos
-        - Numero da secção - Integer
+        - Numero da secção - sectionName - Integer
 
     - Métodos
     
@@ -141,13 +156,57 @@
 ### Marcação - Schedule 
     - Atributos
         - Local de vacinação - "VaccinationLocation"
-        - Data de marcação - String no formato DD-MM-AAAA 
-        - Hora de marcação - String no formato HH-MM
+        - Data de marcação - date - String no formato DD-MM-AAAA 
+        - Hora de marcação - time - String no formato HH-MM
         - Enfermeiro - "Nurse"
         - Utente - "Patient"
         - Vacina - "Vaccine"
 
     - Métodos
+        - create() - Criar uma marcação 
+        - update() - Atualizar os dados da marcação (Local, Data, Hora ou Enfermeiro)
+        - searchByPatient() - Pesquisar marcação por Utente - Pelo numero especifico do Utente
+            - Parâmetros: 
+                - Numero de utente - patientNumber - Integer 
+                    - Validações: 
+                        - Só é possivel passar valores inteiros e o valor especifico do utente
+
+        - searchByAge(String beginning, String ending) - Pesquisar marcações de Utentes por idade - Idade delimitada pelo utilizador
+            - Parâmetros:
+                - Inicio do intervalo - beginning - Integer
+                    - Validações: 
+                        - 
+                - Fim do intervalo - ending - Integer
+        
+        - searchByBrand(String brand) - Pesquisar marcações por marca da vacina
+            - Parâmetros:
+                - Marca da vacina - brand - String com as opções disponiveis: 
+                                                - Pfizer / BioNTech 
+                                                - Moderna 
+                                                - Oxford / AstraZeneca
+                    - Validações: 
+                        - Só é possivel inserir marcas que existem (Pfizer / BioNTech, Moderna, Oxford / AstraZeneca)
+        
+        - searchByLot(String lot) - Pesquisar marcações por lote da vacina
+            - Parâmetros:
+                - lot da vacina - lot - String 
+                    - Validações: 
+                        - Só é possivel inserir valores em tipo string
+        
+        - searchByBrandAndLot(String brand, string lot) - Pesquisar marcações por marca e lote da vacina
+               
+             - Parâmetros:
+                - Marca da vacina - brand - String com as opções disponiveis: 
+                                                - Pfizer / BioNTech 
+                                                - Moderna 
+                                                - Oxford / AstraZeneca
+                    - Validações: 
+                        - Só é possivel inserir marcas que existem (Pfizer / BioNTech, Moderna, Oxford / AstraZeneca)
+
+                    - Lote da vacina - lot - String 
+                        - Validações: 
+                            - Só é possivel inserir valores em tipo string
+        
 
 
 
