@@ -248,7 +248,7 @@
                         - Validações: 
                             - Só é possivel inserir valores em tipo string
 
-        > toSting()      
+        > AllScheduleToSting() - Transforma todos os objetos guardados em memória no array "schedules" para string      
        
 
 ### Utilities - Classe com os metedos abrangentes da aplicação 
