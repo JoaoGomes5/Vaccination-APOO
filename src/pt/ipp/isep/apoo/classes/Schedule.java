@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vacinationproject;
+package pt.ipp.isep.apoo.classes;
 
 /**
  *
  * @author João Gomes
  */
-public class Hospital {
-    
-    /**
-     * 
-     */
-    private String buildingName;
+public class Schedule {
     
 }

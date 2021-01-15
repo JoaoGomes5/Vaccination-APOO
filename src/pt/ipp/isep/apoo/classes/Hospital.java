@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vacinationproject;
+package pt.ipp.isep.apoo.classes;
 
 /**
  *
  * @author João Gomes
  */
-public class VacinationProject {
-
+public class Hospital extends VaccinationLocation {
+    
     /**
-     * @param args the command line arguments
+     * Nome do edificio
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    private String buildingName;
+    
+    /**
+     * Extensão telefónica
+     */
+    private String extension; 
     
 }

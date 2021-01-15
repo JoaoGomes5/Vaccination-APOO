@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vacinationproject;
+package pt.ipp.isep.apoo.classes;
 
 /**
  *
@@ -11,14 +11,37 @@ package vacinationproject;
  */
 public class Patient {
     
+    
+     /**
+     * Nome 
+     */
     private String name;
+
+     /**
+     * Sexo
+     */
     private String gender;
+
+     /**
+     * Data de nascimento
+     */
     private String dateOfBirth;
+
+     /**
+     *  Numero de utente
+     */
     private int patientNumber ;
+
+     /**
+     * Numero de telemovel
+     */
     private int phoneNumber ;
 
 
+
     /**
+     * 
+     * Metedo que permite criar um novo paciente
      * 
      * @param name
      * @param gender
