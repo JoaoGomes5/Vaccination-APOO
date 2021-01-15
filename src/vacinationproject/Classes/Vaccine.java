@@ -14,8 +14,8 @@ public class Vaccine {
     private String lot;
     
     public void create(
-    String brand, 
-    String lot,
+        String brand, 
+        String lot
     ){
     this.brand = brand;
     this.lot = lot;        
