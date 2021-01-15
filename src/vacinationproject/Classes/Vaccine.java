@@ -7,8 +7,18 @@ package vacinationproject;
 
 /**
  *
- * @author João Gomes
+ * @author Gustavo Reis
  */
 public class Vaccine {
+    private String brand;
+    private String lot;
+    
+    public void create(
+    String brand, 
+    String lot,
+    ){
+    this.brand = brand;
+    this.lot = lot;        
+    }
     
 }
