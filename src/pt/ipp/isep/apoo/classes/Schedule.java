@@ -8,7 +8,7 @@ package pt.ipp.isep.apoo.classes;
 import pt.ipp.isep.apoo.classes.*;
 /**
  *
- * @author João Gomes
+ * @author João e Gustavo
  */
 public class Schedule {
     

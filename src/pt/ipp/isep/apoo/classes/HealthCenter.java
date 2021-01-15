@@ -6,7 +6,7 @@
 package pt.ipp.isep.apoo.classes;
 /**
  *
- * @author João Gomes
+ * @author João e Gustavo
  */
 public class HealthCenter extends VaccinationLocation {
     
