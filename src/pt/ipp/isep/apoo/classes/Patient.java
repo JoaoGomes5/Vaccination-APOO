@@ -37,7 +37,9 @@ public class Patient {
      */
     private int phoneNumber ;
 
+    public Patient() {
 
+    }
 
     /**
      * 
@@ -49,7 +51,7 @@ public class Patient {
      * @param patientNumber
      * @param phoneNumber 
      */
-    public void create(
+    public Patient(
             String name, 
             String gender,
             String dateOfBirth,
@@ -62,5 +64,48 @@ public class Patient {
         this.patientNumber = patientNumber;
         this.phoneNumber = phoneNumber;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public int getPatientNumber() {
+        return patientNumber;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setPatientNumber(int patientNumber) {
+        this.patientNumber = patientNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
+    
+
 
 }

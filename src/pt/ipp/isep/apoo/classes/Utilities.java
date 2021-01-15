@@ -11,4 +11,8 @@ package pt.ipp.isep.apoo.classes;
  */
 public class Utilities  {
     
+    public void menuHandler(int option){
+        
+       
+    }
 }
