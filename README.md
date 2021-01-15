@@ -11,7 +11,7 @@
     - Divisão de tarefas equitativa 
     - Não implementar o codigo sem ter uma base estuturada 
 
-## Requisitos 
+## Requisitos e regras de negocio 
     - Usar ficheiros txt para guardar a informação 
     - Dividir informações com " | " 
     - Leitura e escrita de ficheiros nos ficheiros txt
@@ -20,7 +20,11 @@
     - X para funcionalidades finalizadas
     - Carregar as marcações criadas para arrays (maximo de 100 marcações)
     - Guardar o array de marcações no ficheiro Schedules.txt
-    - Criar alguns objetos defalut para Utentes, Enfermeiros, Local de Vacinação e Vacinas 
+    - Criar alguns objetos defalaut para Utentes, Enfermeiros, Local de Vacinação e Vacinas
+    - Quando necessário, mostrar a lista de Utentes, Enfermeiros, Local de Vacinação e Vacinas para o utilizador selecionar
+    - Cada classe 
+
+
     - Ficheiros com extensão txt:
         - Schedules.txt
         - Patients.txt
@@ -81,59 +85,61 @@
     - Pesquisar marcação por Utente - 
     - Alterar uma marcação (Local, data, hora ou Enfermeiro) - 
     - Pesquisar marcações de utentes com idade num intervalo indicado pelo utilizador; - 
-    - Pesquisar marcações com uma marca e/ou lote de vacina indicado pelo utilizador;
-    - Listar indivíduos – nome, contacto, categoria (enfermeiro / utente) que vão estar num determinado dia num determinado local de vacinação
-    - Pesquisar marcações para um dia indicado pelo utilizador;
-    - Pesquisar marcações para um local de vacinação indicado pelo utilizador;
-    - Registar em ficheiro a informação das marcações (array → ficheiro);
+    - Pesquisar marcações com uma marca e/ou lote de vacina indicado pelo utilizador; -
+    - Listar indivíduos – nome, contacto, categoria (enfermeiro / utente) que vão estar numa determinada data num determinado local de vacinação -
+    - Pesquisar marcações para uma data indicado pelo utilizador; - 
+    - Pesquisar marcações para um local de vacinação indicado pelo utilizador; - 
+    - Registar em ficheiro a informação das marcações (array → ficheiro); 
     - Ler de um ficheiro a informação das marcações (ficheiro → array);
     - Possibilidade de gerir múltiplas zonas do país(ex: Porto, Aveiro, Matosinhos), utilizando um ficheiro para cada zona.
+    - Cada classe tem um metedo que permita passar o objeto do mesmo para uma String
+
  
 ## Classes Structure 
 
 ### Enfermeiro - Nurse
     - Atributos
-        - Nome - name - String  
-        - Número de cédula profissional - cardNumber -Integer com o limite de 5 digitos
-        - Número de telefone - phoneNumber - Integer com o limite de 9 digitos
+        > Nome - name - String  
+        > Número de cédula profissional - cardNumber -Integer com o limite de 5 digitos
+        > Número de telefone - phoneNumber - Integer com o limite de 9 digitos
 
     - Métodos
-        - create() - Criar um enfermeiro
-        - update() - Atualizar os dados do enfermeiro 
-        - delete() - Eliminar um enfermeiro - OPCIONAL
+        > create() - Criar um enfermeiro
+        > update() - Atualizar os dados do enfermeiro 
+        > delete() - Eliminar um enfermeiro - OPCIONAL
 
 
 ### Utente - Patient
     - Atributos
-        - Nome - name - String 
-        - Sexo - gender - String 
-        - Data de nascimento - dateOfBirth -String no formato DD-MM-AAAA
-        - Numero de utente - patientNumber - Integer 
-        - Numero de telemovel - phoneNumber - Integer com o limite de 9 digitos
+        > Nome - name - String 
+        > Sexo - gender - String 
+        > Data de nascimento - dateOfBirth -String no formato DD-MM-AAAA
+        > Numero de utente - patientNumber - Integer 
+        > Numero de telemovel - phoneNumber - Integer com o limite de 9 digitos
 
     - Métodos
-        - create() - Registar um utente
-        - update() - Atualizar dados do Utente
+        > create() - Registar um utente
+        > update() - Atualizar dados do Utente
 
-        - convertDateOfBirthToAge() - Converter data de nascimento do utente para idade 
+        > convertDateOfBirthToAge() - Converter data de nascimento do utente para idade 
             - Parâmetros que a função recebe:
                 - 
 
 ### Vacina - Vaccine
     - Atributos
-        - Marca - brand - String com as opções disponiveis: 
+        > Marca - brand - String com as opções disponiveis: 
             - Pfizer / BioNTech 
             - Moderna 
             - Oxford / AstraZeneca
-        - Lote - lot - String
+        > Lote - lot - String
 
     - Métodos
 
 ### Local de vacinação - VaccinationLocation
     - Atributos
-        - Nome - name - String
-        - Morada - address - String
-        - Telefone - phoneNumber -  Integer com o limite de 9 digitos
+        > Nome - name - String
+        > Morada - address - String
+        > Telefone - phoneNumber -  Integer com o limite de 9 digitos
 
     - Métdos
 
@@ -141,44 +147,79 @@
 
 ### Hospital - Herda todos os atributos e metodos da classe "Local de Vacinação" incluindo - Hospital
     - Atributos
-        - Nome do edificio - buildingName - String
-        - Extensão telefónica - extension - Integer com o limite de 4 digitos
+        > Nome do edificio - buildingName - String
+        > Extensão telefónica - extension - Integer com o limite de 4 digitos
 
     - Métodos
 
 ### Pavilhão Municipal - Herda todos os atributos e metodos da classe "Local de Vacinação" incluindo - Pavilion
      - Atributos
-        - Numero da secção - sectionName - Integer
+        > Numero da secção - sectionName - Integer
 
     - Métodos
     
 
 ### Marcação - Schedule 
     - Atributos
-        - Local de vacinação - "VaccinationLocation"
-        - Data de marcação - date - String no formato DD-MM-AAAA 
-        - Hora de marcação - time - String no formato HH-MM
-        - Enfermeiro - "Nurse"
-        - Utente - "Patient"
-        - Vacina - "Vaccine"
+        > Local de vacinação - "VaccinationLocation"
+        > Data de marcação - date - String no formato DD-MM-AAAA 
+        > Hora de marcação - time - String no formato HH-MM
+        > Enfermeiro - "Nurse"
+        > Utente - "Patient"
+        > Vacina - "Vaccine"
+        > Array de armazenamento das marcações criadas - schedules - Array do Tipo Schedule
 
     - Métodos
-        - create() - Criar uma marcação 
-        - update() - Atualizar os dados da marcação (Local, Data, Hora ou Enfermeiro)
-        - searchByPatient() - Pesquisar marcação por Utente - Pelo numero especifico do Utente
+
+        > create() - Criar uma marcação - Sempre que uma marcação é criada deve ser adicionada ao Array "schedules" 
+
+            - Parâmetros:
+
+                - Local de vacinação - vaccinationLocation  - "VaccinationLocation"
+                    - Validações: 
+                        - Só é possivel criar com os hospitais que aparecem na listagem
+                    
+
+        > update() - Atualizar os dados da marcação (Local, Data, Hora ou Enfermeiro)
+
+        > searchByPatient() - Pesquisar marcação por Utente - Pelo numero especifico do Utente
+
             - Parâmetros: 
                 - Numero de utente - patientNumber - Integer 
                     - Validações: 
-                        - Só é possivel passar valores inteiros e o valor especifico do utente
+                        - Só é possivel passar valores inteiros e um valor especifico do utente
 
-        - searchByAge(String beginning, String ending) - Pesquisar marcações de Utentes por idade - Idade delimitada pelo utilizador
+        > searchByAge(String beginning, String ending) - Pesquisar marcações de Utentes por idade - Idade delimitada pelo utilizador
+
             - Parâmetros:
+
                 - Inicio do intervalo - beginning - Integer
                     - Validações: 
-                        - 
+                        - Apenas inserir valores inteiros 
+
                 - Fim do intervalo - ending - Integer
+                    - Validações: 
+                        - Apenas inserir valores inteiros 
+
+        > searchByDate(String date) - Pesquisar marcações para uma data indicado pelo utilizador
+
+            - Parâmetros:
+                - Data da pesquisa - date - String 
+
+                    - Validações: 
+                        - Só é possivel inserir uma data no formato DD-MM-YYYY
+
+        > searchByLocal(String local) - Pesquisar marcações para um local de vacinação indicado pelo utilizador
+
+            - Parâmetros:
+                - Local de vacinação - local - String
+
+                    - Validações:   
+                        - Só é possivel selecionar um local de vacinação que é listado pelo sistema
+
         
-        - searchByBrand(String brand) - Pesquisar marcações por marca da vacina
+        > searchByBrand(String brand) - Pesquisar marcações por marca da vacina
+
             - Parâmetros:
                 - Marca da vacina - brand - String com as opções disponiveis: 
                                                 - Pfizer / BioNTech 
@@ -187,13 +228,13 @@
                     - Validações: 
                         - Só é possivel inserir marcas que existem (Pfizer / BioNTech, Moderna, Oxford / AstraZeneca)
         
-        - searchByLot(String lot) - Pesquisar marcações por lote da vacina
+        > searchByLot(String lot) - Pesquisar marcações por lote da vacina
             - Parâmetros:
                 - lot da vacina - lot - String 
                     - Validações: 
                         - Só é possivel inserir valores em tipo string
         
-        - searchByBrandAndLot(String brand, string lot) - Pesquisar marcações por marca e lote da vacina
+        > searchByBrandAndLot(String brand, string lot) - Pesquisar marcações por marca e lote da vacina
                
              - Parâmetros:
                 - Marca da vacina - brand - String com as opções disponiveis: 
@@ -206,7 +247,33 @@
                     - Lote da vacina - lot - String 
                         - Validações: 
                             - Só é possivel inserir valores em tipo string
-        
+
+        > toSting()      
+       
+
+### Utilities - Classe com os metedos abrangentes da aplicação 
+
+    - Atributos
+
+
+
+    - Métodos 
+
+        > listPeopleByDateAndLocation(String date, String location) - Listar indivíduos – nome, contacto, categoria (enfermeiro / utente) que vão estar numa determinada data num determinado local de vacinação
+
+            - Parâmetros:
+                - Data da pesquisa - date - String 
+
+                    - Validações: 
+                        - Só é possivel inserir uma data no formato DD-MM-YYYY
+
+                - Local - local - String 
+
+                    - Validações: 
+                        - Só é possivel escolher um local listado pelo sistema
+
+
+
 
 
 
