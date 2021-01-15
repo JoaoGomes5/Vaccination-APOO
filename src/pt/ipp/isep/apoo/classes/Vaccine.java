@@ -7,12 +7,17 @@ package pt.ipp.isep.apoo.classes;
 
 /**
  *
- * @author Gustavo Reis
+ * @author João e Gustavo
  */
 public class Vaccine {
     private String brand;
     private String lot;
     
+    /**
+     * 
+     * @param brand
+     * @param lot 
+     */
     public void create(
         String brand, 
         String lot
