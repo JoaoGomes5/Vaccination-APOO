@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vacinationproject.Classes;
-
+package pt.ipp.isep.apoo.classes;
 /**
  *
  * @author João Gomes
  */
-public class VaccinationLocation {
+public class HealthCenter extends VaccinationLocation {
     
 }
