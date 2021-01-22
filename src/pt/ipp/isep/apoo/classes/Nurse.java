@@ -36,7 +36,7 @@ public class Nurse {
     
     /**
      * 
-     * Metedo que permite criar um novo enfermeiro
+     * Método que permite criar um novo enfermeiro
      * 
      * @param name
      * @param cardNumber
@@ -45,6 +45,30 @@ public class Nurse {
     public Nurse(String name, int cardNumber, int phoneNumber) {
         this.name = name;
         this.cardNumber = cardNumber;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(int cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
     
