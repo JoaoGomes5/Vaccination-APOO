@@ -25,7 +25,7 @@ public class Patient {
      /**
      * Data de nascimento
      */
-    private String dateOfBirth;
+    private String yearOfBirth;
 
      /**
      *  Numero de utente
@@ -47,20 +47,20 @@ public class Patient {
      * 
      * @param name
      * @param gender
-     * @param dateOfBirth
+     * @param yearOfBirth
      * @param patientNumber
      * @param phoneNumber 
      */
     public Patient(
             String name, 
             String gender,
-            String dateOfBirth,
+            String yearOfBirth,
             int patientNumber,
             int phoneNumber
         ) {
         this.name = name;
         this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
+        this.yearOfBirth = yearOfBirth;
         this.patientNumber = patientNumber;
         this.phoneNumber = phoneNumber;
     }
@@ -73,8 +73,8 @@ public class Patient {
         return gender;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getYearOfBirth() {
+        return yearOfBirth;
     }
 
     public int getPatientNumber() {
@@ -93,8 +93,8 @@ public class Patient {
         this.gender = gender;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setYearOfBirth(String yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
     }
 
     public void setPatientNumber(int patientNumber) {

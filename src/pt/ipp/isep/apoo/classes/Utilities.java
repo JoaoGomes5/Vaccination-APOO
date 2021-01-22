@@ -114,5 +114,31 @@ public class Utilities  {
       
         return vaccinesList;
     }
+
+    public static ArrayList<Nurse> generateDefaultNurses(){ 
+        ArrayList<Nurse> nursesList = new ArrayList<Nurse>(); 
+       
+      nursesList.add(new Nurse("Gustavo Reis",  
+                                81218,  
+                                919990099 
+                              ) 
+                               
+                          ); 
+      nursesList.add(new Nurse("Diana Ribeiro",  
+                                90000,  
+                                935678899 
+                              ) 
+                            
+                          ); 
+      nursesList.add(new Nurse("Jorge Monteiro",  
+                                60000,  
+                                927891234) 
+                              
+                               
+                          ); 
+     
+      return nursesList; 
+} 
+
 }
     
