@@ -19,6 +19,8 @@ public class Hospital extends VaccinationLocation {
     /**
      * Extensão telefónica
      */
-    private String extension; 
+    private String phoneExtension; 
+    
+  
     
 }

@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package pt.ipp.isep.apoo.classes;
-
-import pt.ipp.isep.apoo.classes.*;
 /**
  *
  * @author João e Gustavo
@@ -58,7 +56,12 @@ public class Schedule {
         this.vacccine = vaccine;
         
     }
-    
+
+    public VaccinationLocation getVaccinationLocation() {
+        return vaccinationLocation;
+    }
+
+ 
     
 }
     

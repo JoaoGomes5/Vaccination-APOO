@@ -99,27 +99,32 @@
 
 ### Enfermeiro - Nurse
     - Atributos
-        > Nome - name - String  
-        > Número de cédula profissional - cardNumber -Integer com o limite de 5 digitos
-        > Número de telefone - phoneNumber - Integer com o limite de 9 digitos
+        > Nome - name - String ✅
+        > Número de cédula profissional - cardNumber -Integer com o limite de 5 digitos ✅
+        > Número de telefone - phoneNumber - Integer com o limite de 9 digitos ✅
 
     - Métodos
-        > create() - Criar um enfermeiro
+        > Nurse() - Metedo contrutor vazio de Nurse ✅
+        > Nurse(String name, int cardNumber , int phoneNumber) - Metedo contrutor com os parametros de Nurse ✅
         > update() - Atualizar os dados do enfermeiro 
         > delete() - Eliminar um enfermeiro - OPCIONAL
 
 
 ### Utente - Patient
     - Atributos
-        > Nome - name - String 
-        > Sexo - gender - String 
-        > Data de nascimento - dateOfBirth -String no formato DD-MM-AAAA
-        > Numero de utente - patientNumber - Integer 
-        > Numero de telemovel - phoneNumber - Integer com o limite de 9 digitos
+        > Nome - name - String ✅
+        > Sexo - gender - String ✅
+        > Data de nascimento - dateOfBirth -String no formato DD-MM-AAAA ✅
+        > Numero de utente - patientNumber - Integer ✅
+        > Numero de telemovel - phoneNumber - Integer com o limite de 9 digitos ✅
 
     - Métodos
-        > create() - Registar um utente
-        > update() - Atualizar dados do Utente
+        > Patient() - Metedo contrutor vazio de Patient ✅
+        > Patient(  String name,
+                    String gender,
+                    String dateOfBirth,
+                    int patientNumber,
+                    int phoneNumber) -  Metedo contrutor com os parametros de Patient ✅
 
         > convertDateOfBirthToAge() - Converter data de nascimento do utente para idade 
             - Parâmetros que a função recebe:
