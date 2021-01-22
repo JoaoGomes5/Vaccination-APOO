@@ -14,16 +14,38 @@ public class Vaccine {
     private String lot;
     
     /**
-     * 
-     * @param brand
-     * @param lot 
+     * Metodo construtor
      */
-    public void create(
-        String brand, 
-        String lot
-    ){
-    this.brand = brand;
-    this.lot = lot;        
+    public Vaccine() {
+        
     }
+    /**
+     * 
+     * Método que permite criar uma vacina
+     * @param brand
+     * @param lot
+     */
+   
+    public Vaccine(String brand, String lot) {
+        this.brand = brand;
+        this.lot = lot;
+    }
+    
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getLot() {
+        return lot;
+    }
+
+    public void setLot(String lot) {
+        this.lot = lot;
+    }
+    
     
 }

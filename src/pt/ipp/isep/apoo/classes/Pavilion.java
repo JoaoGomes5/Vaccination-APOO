@@ -11,29 +11,35 @@ import pt.ipp.isep.apoo.classes.VaccinationLocation.*;
  * @author João e Gustavo
  */
 public class Pavilion extends VaccinationLocation {
-    
 
     /**
      * Numero da secção
      */
     private int sectionName;
-    
-    
-   public Pavilion() {
-       super();
-
+ 
+    /**
+     * Metodo construtor
+     */
+    public Pavilion() {
+        
     }
     
     /**
      * 
-     * Metodo responsavel por criar um novo local de vacinação
-     * 
-     * 
+     * Método que permite criar um novo pavilhão 
+     * @param sectionName
      */
-    public Pavilion (String name, String address,String phoneNumber, int sectionName) {
+    public Pavilion (String name, String address, String phoneNumber, int sectionName) {
         super(name, address, phoneNumber);
         this.sectionName = sectionName;
         
-        
     }
+    public int getSectionName() {
+        return sectionName;
+    }
+
+    public void setSectionName(int sectionName) {
+        this.sectionName = sectionName;
+    }
+
 }

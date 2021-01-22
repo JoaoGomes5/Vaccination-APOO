@@ -9,6 +9,12 @@ package pt.ipp.isep.apoo.classes;
  * @author João e Gustavo
  */
 public class HealthCenter extends VaccinationLocation {
-        
-       
+   /**
+     * 
+     * Método construtor
+     * 
+     */
+    public HealthCenter () {
+     
+    }   
 }
