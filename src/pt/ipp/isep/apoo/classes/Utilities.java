@@ -18,7 +18,7 @@ public class Utilities  {
        
     }
     
-    public static ArrayList<Patient> generateArrayWithDefaultPatients(){
+    public static ArrayList<Patient> generateDefaultPatients(){
           ArrayList<Patient> patientsList = new ArrayList<Patient>();
         
         patientsList.add(new Patient(
@@ -66,4 +66,53 @@ public class Utilities  {
         return patientsList;
     }
     
+    public static ArrayList<VaccinationLocation> generateDefaultVaccinationLocations(){
+        ArrayList<VaccinationLocation> locationsList = new ArrayList<VaccinationLocation>();
+        
+        locationsList.add(new HealthCenter(
+                              "Centro de Saude de Silvalde",
+                              "Av. Albergarias 23, 4500-643 Silvalde",
+                              "22 734 3642"
+                                )
+                            );
+        locationsList.add(new Hospital(
+                                "Hospital de S.João", 
+                                "Alameda Prof. Hernâni Monteiro, 4200-319 Porto", 
+                                "22 551 2100", 
+                                "Edificio A3", 
+                                "226"
+                                 )
+                            );
+        locationsList.add(new HealthCenter(
+                              "Centro de Saúde de Mafamude/Soares dos Reis",
+                              "R. Bartolomeu Dias 316, 4430-999 Vila Nova de Gaia",
+                              "22 002 2540"
+                                )
+                            );
+        locationsList.add(new Pavilion("Pavilhão Rosa Mota", "", "22 399 1230", 2));
+        
+        locationsList.add(new Hospital(
+                                "Centro Hospitalar de Entre Douro e Vouga", 
+                                "R. Dr. Cândido Pinho 5, 4520-211 Santa Maria da Feira", 
+                                "256 379 700", 
+                                "Edificio B3", 
+                                "256"
+                                 )
+                            );
+                            
+        
+        
+        return locationsList;
+    }
+
+    public static ArrayList<Vaccine> generateDefaultVaccines(){
+        ArrayList<Vaccine> vaccinesList = new ArrayList<Vaccine>();
+        
+        vaccinesList.add(new Vaccine( "Pfizer / BioNTech", "AB010203"));
+        vaccinesList.add(new Vaccine( "Moderna", "CD010203"));
+        vaccinesList.add(new Vaccine( "Oxford / AstraZeneca", "EF010203"));
+      
+        return vaccinesList;
+    }
 }
+    

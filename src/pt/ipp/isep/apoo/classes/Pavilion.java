@@ -15,7 +15,7 @@ public class Pavilion extends VaccinationLocation {
     /**
      * Numero da secção
      */
-    private int sectionName;
+    private int sectionNumber;
  
     /**
      * Metodo construtor
@@ -29,17 +29,17 @@ public class Pavilion extends VaccinationLocation {
      * Método que permite criar um novo pavilhão 
      * @param sectionName
      */
-    public Pavilion (String name, String address, String phoneNumber, int sectionName) {
+    public Pavilion (String name, String address, String phoneNumber, int sectionNumber) {
         super(name, address, phoneNumber);
-        this.sectionName = sectionName;
+        this.sectionNumber = sectionNumber;
         
     }
     public int getSectionName() {
-        return sectionName;
+        return sectionNumber;
     }
 
-    public void setSectionName(int sectionName) {
-        this.sectionName = sectionName;
+    public void setSectionName(int sectionNumber) {
+        this.sectionNumber = sectionNumber;
     }
 
 }
