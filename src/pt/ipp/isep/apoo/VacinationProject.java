@@ -22,7 +22,9 @@ public class VacinationProject {
         int option = 0;
         Scanner reader = new Scanner(System.in);
         
-        ArrayList<Patient> patientsList = Utilities.generateArrayWithDefaultPatients();
+        ArrayList<Patient> patientsList = Utilities.generateDefaultPatients();
+        ArrayList<VaccinationLocation> vaccinationLocationsList = Utilities.generateDefaultVaccinationLocations();
+        ArrayList<Vaccine> vaccinesList = Utilities.generateDefaultVaccines();
         
         System.out.println("Seja bem-vindo!!");
         System.out.println("O que deseja fazer?");
