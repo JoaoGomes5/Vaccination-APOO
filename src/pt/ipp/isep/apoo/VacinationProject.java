@@ -23,6 +23,7 @@ public class VacinationProject {
         Scanner reader = new Scanner(System.in);
         
         ArrayList<Patient> patientsList = Utilities.generateDefaultPatients();
+        ArrayList<Nurse> nursesList = Utilities.generateDefaultNurses();
         ArrayList<VaccinationLocation> vaccinationLocationsList = Utilities.generateDefaultVaccinationLocations();
         ArrayList<Vaccine> vaccinesList = Utilities.generateDefaultVaccines();
         
