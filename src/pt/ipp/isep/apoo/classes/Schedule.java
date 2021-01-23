@@ -109,6 +109,9 @@ public class Schedule {
     public void setVacccine(Vaccine vacccine) {
         this.vacccine = vacccine;
     }
+    
+    
+    
 
     
 }

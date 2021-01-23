@@ -81,7 +81,7 @@
 ## Functions
     - Menu para selecionar as diversas opções 
     - Ler informação de uma marcação e acrescentá-la a um array em memória (considere que não precisa de armazenar mais de 100 marcações)
-    - Retirar do array a marcação de um utente indicado pelo utilizador
+    - Retirar do array a marcação de um utente indicado pelo utilizador 
     - Pesquisar marcação por Utente - 
     - Alterar uma marcação (Local, data, hora ou Enfermeiro) - 
     - Pesquisar marcações de utentes com idade num intervalo indicado pelo utilizador; - 
