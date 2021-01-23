@@ -140,5 +140,10 @@ public class Utilities  {
       return nursesList; 
 } 
 
+/**
+ * Método que permite listar indivíduos
+ */    
+public static listPeopleByDateAndLocation (String date, String location)
+    
 }
     
