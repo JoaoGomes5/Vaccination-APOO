@@ -114,6 +114,73 @@ public class Schedule {
     
 
     
+/**Método que permite procurar utente por nº de utente    
+**/    
+public void searchByPatient(int patientNumber) {
+    System.out.println("Utente: " + name + gender + yearOfBirth + patientNumber + phoneNumber);
 }
 
+
+/**Método que permite actualizar os dados da marcação
+ *
+ */
+ public void update () {
+}
+
+ 
+/**Método que permite pesquisar marcação do utente por ano de nascimento
+ * 
+ */
+public void searchByAge () {
+    System.out.println("");
+}
+
+
+/**Método que permite pesquisar marcações para uma data indicada pelo utilizador
+ * 
+ */
+public void searchByDate () {
+    System.out.println("");
+}
+
+
+/**Método que permite pesquisar marcações para um local indicado pelo utilizador
+ * 
+ */
+public void searchByLocal () {
+    System.out.println("");
+}
+
+
+/**
+ * Método que permite pesquisar marcações por marca da vacina
+ */
+public void searchByBrand() {
+    System.out.println("");
+    }
+
+
+/**
+ * Método que permite pesquisar marcações por lote da vacina
+ */
+public void searchByLot () {
+    System.out.println("");
+}
+
+
+/**
+ * Método que permite pesquisar marcações por marca e lote da vacina
+ */
+public void searchByBrandAndLot () {
+    System.out.println("");
+}
+}
+
+
+/**
+ * Método que transforma todos os objectos guardados em memória no array "Schedules" para String
+ */
+public void allScheduleToString () {
+}
+}
 
