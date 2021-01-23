@@ -7,7 +7,7 @@ package pt.ipp.isep.apoo.classes;
 import java.util.*;
 /**
  *
- * @author João Gomes
+ * @author João e Gustavo
  */
 public class Menu {
     

@@ -118,6 +118,7 @@ public class Schedule {
 **/    
 public void searchByPatient(int patientNumber) {
     System.out.println("Utente: " + name + gender + yearOfBirth + patientNumber + phoneNumber);
+    
 }
 
 
