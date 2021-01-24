@@ -48,6 +48,11 @@ public class Nurse {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString(){
+        return "enfermeiro "+getName()+" com cédula profissional número "+getCardNumber();
+    }   
+    
     public String getName() {
         return name;
     }

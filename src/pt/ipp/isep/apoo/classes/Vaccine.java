@@ -31,6 +31,11 @@ public class Vaccine {
         this.lot = lot;
     }
     
+    @Override
+    public String toString(){
+        return "com a vacina da marca "+getBrand()+" e com o lote "+getLot();
+        
+    }
     public String getBrand() {
         return brand;
     }

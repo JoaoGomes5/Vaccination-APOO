@@ -41,7 +41,12 @@ public class Hospital extends VaccinationLocation {
         this.extension = extension;
       
     }
-
+    @Override
+    public String toString(){
+        return super.toString()+ "no ediuficio com o nome "+getBuildingName()+" contactável através da extensão "+getExtension();
+    }
+    
+    
     public String getBuildingName() {
         return buildingName;
     }

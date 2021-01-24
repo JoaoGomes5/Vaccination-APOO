@@ -5,6 +5,7 @@
  */
 package pt.ipp.isep.apoo;
 
+import java.io.IOException;
 import java.util.*;
 import pt.ipp.isep.apoo.classes.*;
 
@@ -18,7 +19,7 @@ public class VacinationProject {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
             
         Menu menu = new Menu();
         

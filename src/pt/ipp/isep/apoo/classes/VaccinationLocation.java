@@ -47,6 +47,10 @@ public class VaccinationLocation {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString(){
+        return " será administrada em "+getName()+" sito em "+getAddress()+ " e contactado através de "+getPhoneNumber();
+    }
     public String getName() {
         return name;
     }

@@ -20,5 +20,9 @@ public class HealthCenter extends VaccinationLocation {
     
       public HealthCenter (String name, String address, String phoneNumber) {
         super(name, address, phoneNumber);
-       }
+      }
+      
+      public String toString(){
+          return super.toString();
+      }
 }

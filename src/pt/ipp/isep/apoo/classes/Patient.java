@@ -64,6 +64,12 @@ package pt.ipp.isep.apoo.classes;
         this.patientNumber = patientNumber;
         this.phoneNumber = phoneNumber;
     }
+    
+    @Override
+    public String toString(){
+        return "com o número de utente "+getPatientNumber()+ "o paciente "+getName()+" nascido a "+getYearOfBirth()+" contactável através de "+getPhoneNumber();
+    }
+    
 
     public String getName() {
         return name;

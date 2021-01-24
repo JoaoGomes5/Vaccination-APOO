@@ -5,6 +5,7 @@
  */
 package pt.ipp.isep.apoo.classes;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import pt.ipp.isep.apoo.repositories.AllSchedules;
@@ -17,7 +18,7 @@ public class Utilities  {
     
     
     
-    public static void menuHandler(int option){
+    public static void menuHandler(int option) throws IOException{
         AllSchedules allSchedules = new AllSchedules();
         Menu menu = new Menu();
         ArrayList<Vaccine> vaccinesList = Utilities.generateDefaultVaccines();
@@ -393,10 +394,53 @@ public class Utilities  {
                         }
    
                 break;
+            case 2:
+                System.out.println("Introduza o número de utente para pesquisar Marcação");
+                Scanner scan = new Scanner(System.in);
+                String number = scan.nextLine();
+                Schedule a = AllSchedules.SearchScheduleByPatientNumber(Integer.parseInt(number));
+                a.toString();
+                break;
+            case 5:
+                System.out.println("Introduza a Marca da Vacina para pesquisar por Marcações");
+                Scanner s = new Scanner(System.in);
+                String marca = s.nextLine();
+                AllSchedules.SearchByBrand(marca);
+                break;
+            case 6:
+                System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
+                Scanner sc = new Scanner(System.in);
+                String lote = sc.nextLine();
+                AllSchedules.SearchByLot(lote);
+                break;
+            case 7:
+                Scanner b = new Scanner(System.in);
+                System.out.println("Introduza a marca da Vacina para pesquisar por Marcações");
+                String marca1 = b.nextLine();
+                System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
+                String lote1 = b.nextLine();
+                AllSchedules.SearchByBrandAndLot(marca1, lote1);
+                break;
+                
+            case 8:
+                System.out.println("Introduza a data para pesquisar Marcações");
+                Scanner scanner = new Scanner(System.in);
+                String date = scanner.nextLine();
+                AllSchedules.SearchByDate(date);
+                break;
+            case 9:
+                Scanner scanner1 = new Scanner(System.in);
+                System.out.println("Introduza o nome do estabelecimento");
+                String local2 = scanner1.nextLine();
+                AllSchedules.FindByVaccinationLocation(local2);
+                break;
                 
             case 10:
-                allSchedules.listAllSchedules();
-                
+                AllSchedules.listAllSchedules();
+                break;
+            case 11:
+                AllSchedules.SaveSchedulesToFile();
+                break;
             default:
                 break;
         }
@@ -404,9 +448,50 @@ public class Utilities  {
        
     }
     
-    
-    
-    
+    public static ArrayList<Schedule> generateDefaultSchedules(){
+        
+          ArrayList<Schedule> schedulesList = new ArrayList<Schedule>();
+          
+          ArrayList<Patient> patientsList = new ArrayList<Patient>();
+          patientsList= generateDefaultPatients();
+          
+          ArrayList<Nurse> nursesList = new ArrayList<Nurse>();
+          nursesList= generateDefaultNurses();
+          
+          ArrayList<VaccinationLocation> vcsList = new ArrayList<VaccinationLocation>();
+          vcsList= generateDefaultVaccinationLocations();
+          
+          ArrayList<Vaccine> vaccineList = new ArrayList<Vaccine>();
+          vaccineList= generateDefaultVaccines();
+          
+          
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          AllSchedules.addScheduleToAllSchedules(a);
+          Schedule b = new Schedule(vcsList.get(2), "25-03-2022", "11:00", nursesList.get(1), patientsList.get(2),vaccineList.get(2));
+          schedulesList.add(b);
+          AllSchedules.addScheduleToAllSchedules(b);
+          
+          /*
+          
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(a);
+          
+          */
+          
+         return schedulesList; 
+          
+    } 
     public static ArrayList<Patient> generateDefaultPatients(){
           ArrayList<Patient> patientsList = new ArrayList<Patient>();
         
@@ -532,7 +617,7 @@ public class Utilities  {
 /**
  * Método que permite listar indivíduos
  */    
-public static listPeopleByDateAndLocation (String date, String location)
+//public static listPeopleByDateAndLocation (String date, String location)
     
 }
     
