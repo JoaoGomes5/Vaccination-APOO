@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package pt.ipp.isep.apoo.classes;
+import java.io.IOException;
 import java.util.*;
 /**
  *
@@ -12,8 +13,15 @@ import java.util.*;
 public class Menu {
     
     
-    public void run(){
+    public void run() throws IOException{
         int option = 0;
+        Utilities.generateDefaultNurses();
+        Utilities.generateDefaultPatients();
+        Utilities.generateDefaultVaccinationLocations();
+        Utilities.generateDefaultVaccines();
+        Utilities.generateDefaultSchedules();
+        System.out.println("oiii");
+        
         Scanner reader = new Scanner(System.in);
         System.out.println("Seja bem-vindo!!");
         System.out.println("O que deseja fazer?");
@@ -25,6 +33,10 @@ public class Menu {
         System.out.println(" 5 - Pesquisar marcações por marca");
         System.out.println(" 6 - Pesquisar marcações por lote");
         System.out.println(" 7 - Pesquisar marcações por marca e por lote");
+        System.out.println(" 8 - Pesquisar marcações por data");
+        System.out.println(" 9 - Pesquisar marcações por local de vacionação");
+        System.out.println(" 10 - Listar todas as marcações");
+        System.out.println(" 11 - Imprimir para ficheiro todas as marcações");
         System.out.println("");
         System.out.println("Insira a opção");
         option = reader.nextInt();

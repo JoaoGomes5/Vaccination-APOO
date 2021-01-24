@@ -61,6 +61,11 @@ public class Schedule {
         this.vacccine = vaccine;
 
     }
+    
+    @Override
+    public String toString(){
+        return "A marcação para o dia "+getDate()+" às "+getTime()+" horas, será administrada no local "+getVaccinationLocation().toString()+" pelo enfermeiro "+getNurse().toString()+" com a vacina "+ getVacccine().toString()+ "ao utente "+getPatient().toString();
+    }
 
     public VaccinationLocation getVaccinationLocation() {
         return vaccinationLocation;
@@ -114,13 +119,6 @@ public class Schedule {
     
 
     
-/**Método que permite procurar utente por nº de utente    
-**/    
-public void searchByPatient(int patientNumber) {
-    System.out.println("Utente: " + name + gender + yearOfBirth + patientNumber + phoneNumber);
-    
-}
-
 
 /**Método que permite actualizar os dados da marcação
  *
@@ -181,7 +179,7 @@ public void searchByBrandAndLot () {
 /**
  * Método que transforma todos os objectos guardados em memória no array "Schedules" para String
  */
-public void allScheduleToString () {
-}
-}
+//public void allScheduleToString () {
+//}
+//}
 

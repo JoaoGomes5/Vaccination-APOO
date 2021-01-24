@@ -34,6 +34,11 @@ public class Pavilion extends VaccinationLocation {
         this.sectionNumber = sectionNumber;
         
     }
+    
+    public String toString(){
+        return super.toString()+ "npavilhão municipal com a secção "+getSectionName();
+    }
+    
     public int getSectionName() {
         return sectionNumber;
     }
