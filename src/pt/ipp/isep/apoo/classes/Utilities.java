@@ -465,33 +465,91 @@ public class Utilities  {
           vaccineList= generateDefaultVaccines();
           
           
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          Schedule a = new Schedule(vcsList.get(1), "28-01-2021", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
           schedulesList.add(a);
           AllSchedules.addScheduleToAllSchedules(a);
-          Schedule b = new Schedule(vcsList.get(2), "25-03-2022", "11:00", nursesList.get(1), patientsList.get(2),vaccineList.get(2));
+          
+          Schedule b = new Schedule(vcsList.get(2), "28-01-2021", "10:30", nursesList.get(2), patientsList.get(2),vaccineList.get(2));
           schedulesList.add(b);
           AllSchedules.addScheduleToAllSchedules(b);
           
-          /*
+          Schedule c = new Schedule(vcsList.get(3), "28-01-2021", "11:00", nursesList.get(3), patientsList.get(3),vaccineList.get(3));
+          schedulesList.add(c);
+          AllSchedules.addScheduleToAllSchedules(c);
           
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
-          schedulesList.add(a);
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
-          schedulesList.add(a);
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
-          schedulesList.add(a);
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
-          schedulesList.add(a);
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
-          schedulesList.add(a);
-          Schedule a = new Schedule(vcsList.get(1), "25-01-2022", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
-          schedulesList.add(a);
+          Schedule d = new Schedule(vcsList.get(4), "28-01-2021", "11:30", nursesList.get(1), patientsList.get(4),vaccineList.get(1));
+          schedulesList.add(d);
+          AllSchedules.addScheduleToAllSchedules(d);
+         
+          Schedule e = new Schedule(vcsList.get(5), "28-01-2021", "12:00", nursesList.get(2), patientsList.get(5),vaccineList.get(2));
+          schedulesList.add(e);
+          AllSchedules.addScheduleToAllSchedules(e);
           
-          */
+          Schedule f = new Schedule(vcsList.get(6), "18-02-2021", "10:00", nursesList.get(3), patientsList.get(1),vaccineList.get(3));
+          schedulesList.add(f);
+          AllSchedules.addScheduleToAllSchedules(f);
           
-         return schedulesList; 
+          Schedule g = new Schedule(vcsList.get(7), "18-02-2021", "10:30", nursesList.get(1), patientsList.get(2),vaccineList.get(1));
+          schedulesList.add(g);
+          AllSchedules.addScheduleToAllSchedules(g);
+          
+          Schedule h = new Schedule(vcsList.get(8), "18-02-2021", "11:00", nursesList.get(2), patientsList.get(3),vaccineList.get(2));
+          schedulesList.add(h);
+          AllSchedules.addScheduleToAllSchedules(h); 
+          
+          Schedule i = new Schedule(vcsList.get(9), "18-02-2021", "11:30", nursesList.get(3), patientsList.get(4),vaccineList.get(3));
+          schedulesList.add(i);
+          AllSchedules.addScheduleToAllSchedules(i); 
+          
+          Schedule j = new Schedule(vcsList.get(10), "18-02-2021", "12:00", nursesList.get(1), patientsList.get(5),vaccineList.get(1));
+          schedulesList.add(j);
+          AllSchedules.addScheduleToAllSchedules(j);
+          
+          Schedule k = new Schedule(vcsList.get(11), "06-03-2021", "10:00", nursesList.get(2), patientsList.get(1),vaccineList.get(2));
+          schedulesList.add(k);
+          AllSchedules.addScheduleToAllSchedules(k); 
+          
+          Schedule l = new Schedule(vcsList.get(12), "06-03-2021", "10:30", nursesList.get(3), patientsList.get(2),vaccineList.get(3));
+          schedulesList.add(l);
+          AllSchedules.addScheduleToAllSchedules(l); 
+          
+          Schedule m = new Schedule(vcsList.get(13), "06-03-2021", "11:00", nursesList.get(1), patientsList.get(3),vaccineList.get(1));
+          schedulesList.add(m);
+          AllSchedules.addScheduleToAllSchedules(m); 
+          
+          Schedule n = new Schedule(vcsList.get(14), "06-03-2021", "11:30", nursesList.get(2), patientsList.get(4),vaccineList.get(2));
+          schedulesList.add(n);
+          AllSchedules.addScheduleToAllSchedules(n); 
+          
+          Schedule o = new Schedule(vcsList.get(15), "06-03-2021", "12:00", nursesList.get(3), patientsList.get(5),vaccineList.get(3));
+          schedulesList.add(o);
+          AllSchedules.addScheduleToAllSchedules(o); 
+          
+          Schedule p = new Schedule(vcsList.get(16), "26-03-2021", "10:00", nursesList.get(1), patientsList.get(1),vaccineList.get(1));
+          schedulesList.add(p);
+          AllSchedules.addScheduleToAllSchedules(p); 
+          
+          Schedule q = new Schedule(vcsList.get(17), "26-03-2021", "10:30", nursesList.get(2), patientsList.get(2),vaccineList.get(2));
+          schedulesList.add(q);
+          AllSchedules.addScheduleToAllSchedules(q); 
+          
+          Schedule r = new Schedule(vcsList.get(18), "26-03-2021", "11:00", nursesList.get(3), patientsList.get(3),vaccineList.get(3));
+          schedulesList.add(r);
+          AllSchedules.addScheduleToAllSchedules(r); 
+          
+          Schedule s = new Schedule(vcsList.get(19), "26-03-2021", "11:30", nursesList.get(1), patientsList.get(4),vaccineList.get(4));
+          schedulesList.add(s);
+          AllSchedules.addScheduleToAllSchedules(s); 
+          
+          Schedule t = new Schedule(vcsList.get(20), "26-03-2021", "12:00", nursesList.get(3), patientsList.get(5),vaccineList.get(5));
+          schedulesList.add(t);
+          AllSchedules.addScheduleToAllSchedules(t); 
+          
+          
+          return schedulesList; 
           
     } 
+    
     public static ArrayList<Patient> generateDefaultPatients(){
           ArrayList<Patient> patientsList = new ArrayList<Patient>();
         
