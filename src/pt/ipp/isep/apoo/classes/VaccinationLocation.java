@@ -49,7 +49,7 @@ public class VaccinationLocation {
 
     @Override
     public String toString(){
-        return " será administrada em "+getName()+" sito em "+getAddress()+ " e contactado através de "+getPhoneNumber();
+        return getName()+ " sito em "+getAddress()+ " e contactado através de "+getPhoneNumber();
     }
     public String getName() {
         return name;
