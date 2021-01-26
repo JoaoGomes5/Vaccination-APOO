@@ -15,10 +15,10 @@ public class Menu {
     
     public void run() throws IOException{
         int option = 0;
-//        Utilities.generateDefaultNurses();
-//        Utilities.generateDefaultPatients();
-//        Utilities.generateDefaultVaccinationLocations();
-//        Utilities.generateDefaultVaccines();
+        Utilities.generateDefaultNurses();
+        Utilities.generateDefaultPatients();
+        Utilities.generateDefaultVaccinationLocations();
+        Utilities.generateDefaultVaccines();
 //        Utilities.generateDefaultSchedules();
         
         Scanner reader = new Scanner(System.in);
