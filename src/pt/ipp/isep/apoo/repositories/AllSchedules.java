@@ -77,7 +77,8 @@ public class AllSchedules {
        
         FileWriter fw = new FileWriter("Marcacoes.txt");
         for (int i = 0; i < count; i++) {
-		fw.write(schedules[i].toString()+"\n");
+		fw.write(schedules[i].getTypeOfLocation() + " - " + schedules[i].toString()+"\n");
+//                fw.write("\n");
 	}
 	fw.close();
     }

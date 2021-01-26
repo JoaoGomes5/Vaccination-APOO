@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -9,14 +9,10 @@
  */
 package pt.ipp.isep.apoo.classes;
 
-import pt.ipp.isep.apoo.classes.*;
-
 /**
  *
  * @author João e Gustavo
  */
-
-
 public class Schedule {
 
     private VaccinationLocation vaccinationLocation;
@@ -25,6 +21,7 @@ public class Schedule {
     private Nurse nurse;
     private Patient patient;
     private Vaccine vacccine;
+    private String typeOfLocation;
 
     /**
      * Metodo contrutor vazio
@@ -50,7 +47,8 @@ public class Schedule {
             String time,
             Nurse nurse,
             Patient patient,
-            Vaccine vaccine
+            Vaccine vaccine,
+            String typeOfLocation
     ) {
 
         this.vaccinationLocation = vaccinationLocation;
@@ -59,12 +57,13 @@ public class Schedule {
         this.nurse = nurse;
         this.patient = patient;
         this.vacccine = vaccine;
+        this.typeOfLocation = typeOfLocation;
 
     }
-    
+
     @Override
-    public String toString(){
-        return "A marcação para o dia " + getDate()+" às "+getTime()+" horas, será administrada no local "+getVaccinationLocation().toString()+" pelo enfermeiro "+getNurse().toString()+" com a vacina "+ getVacccine().toString()+ "ao utente "+getPatient().toString();
+    public String toString() {
+        return "A marcação para o dia " + getDate() + " às " + getTime() + " horas, será administrada no local " + getVaccinationLocation().toString() + " pelo enfermeiro " + getNurse().toString() + " com a vacina " + getVacccine().toString() + "ao utente " + getPatient().toString();
     }
 
     public VaccinationLocation getVaccinationLocation() {
@@ -116,68 +115,71 @@ public class Schedule {
     }
     
     
-    
-
-    
-
-/**Método que permite actualizar os dados da marcação
- *
- */
- public void update () {
-}
-
- 
-/**Método que permite pesquisar marcação do utente por ano de nascimento
- * 
- */
-public void searchByAge () {
-    System.out.println("");
-}
-
-
-/**Método que permite pesquisar marcações para uma data indicada pelo utilizador
- * 
- */
-public void searchByDate () {
-    System.out.println("");
-}
-
-
-/**Método que permite pesquisar marcações para um local indicado pelo utilizador
- * 
- */
-public void searchByLocal () {
-    System.out.println("");
-}
-
-
-/**
- * Método que permite pesquisar marcações por marca da vacina
- */
-public void searchByBrand() {
-    System.out.println("");
+    public String getTypeOfLocation() {
+        return typeOfLocation;
+    }
+    public void setTypeOfLocation(String typeOfLocation) {
+        this.typeOfLocation = typeOfLocation;
     }
 
+    /**
+     * Método que permite actualizar os dados da marcação
+     *
+     */
+    public void update() {
+    }
 
-/**
- * Método que permite pesquisar marcações por lote da vacina
- */
-public void searchByLot () {
-    System.out.println("");
+    /**
+     * Método que permite pesquisar marcação do utente por ano de nascimento
+     *
+     */
+    public void searchByAge() {
+        System.out.println("");
+    }
+
+    /**
+     * Método que permite pesquisar marcações para uma data indicada pelo
+     * utilizador
+     *
+     */
+    public void searchByDate() {
+        System.out.println("");
+    }
+
+    /**
+     * Método que permite pesquisar marcações para um local indicado pelo
+     * utilizador
+     *
+     */
+    public void searchByLocal() {
+        System.out.println("");
+    }
+
+    /**
+     * Método que permite pesquisar marcações por marca da vacina
+     */
+    public void searchByBrand() {
+        System.out.println("");
+    }
+
+    /**
+     * Método que permite pesquisar marcações por lote da vacina
+     */
+    public void searchByLot() {
+        System.out.println("");
+    }
+
+    /**
+     * Método que permite pesquisar marcações por marca e lote da vacina
+     */
+    public void searchByBrandAndLot() {
+        System.out.println("");
+    }
 }
 
-
 /**
- * Método que permite pesquisar marcações por marca e lote da vacina
- */
-public void searchByBrandAndLot () {
-    System.out.println("");
-}
-}
-
-
-/**
- * Método que transforma todos os objectos guardados em memória no array "Schedules" para String
+ * Método que transforma todos os objectos guardados em memória no array
+ * "Schedules" para String
  */
 //public void allScheduleToString () {
 //}
