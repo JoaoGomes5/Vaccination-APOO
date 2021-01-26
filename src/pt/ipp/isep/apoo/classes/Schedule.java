@@ -64,7 +64,7 @@ public class Schedule {
     
     @Override
     public String toString(){
-        return "A marcação para o dia "+getDate()+" às "+getTime()+" horas, será administrada no local "+getVaccinationLocation().toString()+" pelo enfermeiro "+getNurse().toString()+" com a vacina "+ getVacccine().toString()+ "ao utente "+getPatient().toString();
+        return "A marcação para o dia " + getDate()+" às "+getTime()+" horas, será administrada no local "+getVaccinationLocation().toString()+" pelo enfermeiro "+getNurse().toString()+" com a vacina "+ getVacccine().toString()+ "ao utente "+getPatient().toString();
     }
 
     public VaccinationLocation getVaccinationLocation() {

@@ -23,17 +23,17 @@ public class AllSchedules {
     
 
     public static void addScheduleToAllSchedules(Schedule s) {
-        System.out.println(count);
-        System.out.println("ppppppppppppppppp");
-        s.toString();
+        System.out.println(s.toString());
         schedules[count] = s;
         count++;
+        
     }
 
     // itera o array de Schedules e quando encontrar uma instância do objecto Schedule com Paciente igual ao parâmetro, devolve a instância do Schedule.
-    public static Schedule GetSchByPatiente(Patient p) {
-        for (int i = 0; i < schedules.length; i++) {
+    public static Schedule getScheduleByPatiente(Patient p) {
+        for (int i = 0; i < count; i++) {
             if (schedules[i].getPatient().equals(p)) {
+                System.out.println(schedules[i].toString());
                 return schedules[i];
             }
         }
@@ -50,9 +50,9 @@ public class AllSchedules {
      */
     public static void listAllSchedules() {
         int counter = 1;
-        System.out.println("O número total de marcações é :" + schedules.length);
+        System.out.println("O número total de marcações é : " + count);
 
-        for (int i = 0; i < schedules.length; i++) {
+        for (int i = 0; i < count; i++) {
             System.out.println(
                     "Marcação numero" + (counter++) + "\n"
                     + " # Local de vacinação #" + "\n"
@@ -73,10 +73,10 @@ public class AllSchedules {
     }
     
     
-    public static void SaveSchedulesToFile() throws IOException {
+    public static void saveSchedulesToFile() throws IOException {
        
         FileWriter fw = new FileWriter("Marcacoes.txt");
-        for (int i = 0; i < schedules.length; i++) {
+        for (int i = 0; i < count; i++) {
 		fw.write(schedules[i].toString()+"\n");
 	}
 	fw.close();
@@ -84,9 +84,10 @@ public class AllSchedules {
     
 
     // Itera o array de Schedules e procura por um Schedule para o paciente com o número introduzido
-    public static Schedule SearchScheduleByPatientNumber(int number) {
-        for (int i = 0; i < schedules.length; i++) {
+    public static Schedule searchScheduleByPatientNumber(int number) {
+        for (int i = 0; i < count; i++) {
             if (schedules[i].getPatient().getPatientNumber() == number) {
+                System.out.println(schedules[i]);
                 return schedules[i];
             }
         }
@@ -95,62 +96,62 @@ public class AllSchedules {
     
     
     // imprime o toString de todas as marcações com a data pretendida.
-    public static void SearchByDate(String date) {
+    public static void searchByDate(String date) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < schedules.length; i++) {
+        for (int i = 0; i < count; i++) {
             if (schedules[i].getDate().equals(date)) {
                 list.add(schedules[i]);
             }
         }
         for(Schedule s : list){
-            s.toString();
+            System.out.println(s.toString());
         }
 
     }
     
-    public static void SearchByBrand(String brand) {
+    public static void searchByBrand(String brand) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < schedules.length; i++) {
+        for (int i = 0; i < count; i++) {
             if (schedules[i].getVacccine().getBrand().equals(brand)){
                 list.add(schedules[i]);
             }
         }
         for(Schedule s : list){
-            s.toString();
+            System.out.println(s.toString());
         }
 
     }
     
-    public static void SearchByLot(String lot) {
+    public static void searchByLot(String lot) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < schedules.length; i++) {
+        for (int i = 0; i < count; i++) {
             if (schedules[i].getVacccine().getLot().equals(lot)){
                 list.add(schedules[i]);
             }
         }
         for(Schedule s : list){
-            s.toString();
+           System.out.println(s.toString());
         }
 
     }
     
-    public static void SearchByBrandAndLot (String brand, String lot) {
+    public static void searchByBrandAndLot (String brand, String lot) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < schedules.length; i++) {
+        for (int i = 0; i < count; i++) {
             if (schedules[i].getVacccine().getLot().equals(lot) && schedules[i].getVacccine().getBrand().equals(brand) ){
                 list.add(schedules[i]);
             }
         }
         for(Schedule s : list){
-            s.toString();
+          System.out.println(s.toString());
         }
 
     }
     
-    public static void FindByVaccinationLocation(String name){
-        for (int i = 0; i < schedules.length; i++) {
+    public static void findByVaccinationLocation(String name){
+        for (int i = 0; i < count; i++) {
             if(schedules[i].getVaccinationLocation().getName().equals(name)){
-             schedules[i].toString();
+                System.out.println(schedules[i].toString());
             }
         }
         

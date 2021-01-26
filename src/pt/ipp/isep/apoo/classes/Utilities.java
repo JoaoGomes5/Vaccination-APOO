@@ -96,8 +96,7 @@ public class Utilities  {
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
                                  System.out.println("");
-                                    String name = reader.nextLine();
-                                    Hpatient.setName(name);
+                                    Hpatient.setName(reader.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o sexo do utente");
                                     Hpatient.setGender(reader.nextLine());
@@ -182,8 +181,8 @@ public class Utilities  {
                                 System.out.println("Insira o contacto telefonico do local");
                                     pavilion.setPhoneNumber(reader.nextLine());
                                 System.out.println("");
-                                System.out.println("Insira o nome do secção");
-                                    pavilion.setSectionName(reader.nextInt());
+                                System.out.println("Insira o numero do secção");
+                                    pavilion.setSectionNumber(reader.nextInt());
                                 
                                         
                                  System.out.println("");
@@ -269,7 +268,7 @@ public class Utilities  {
                                  + " # Vacina #" + "\n"
                                  + Pschedule.getVacccine().getBrand() + " | " + Pschedule.getVacccine().getLot() +"\n"
                          );
-//                                    allSchedules.addScheduleToAllSchedules(Pschedule);
+                                    allSchedules.addScheduleToAllSchedules(Pschedule);
                                         
                                         menu.run();
                                 break;
@@ -294,7 +293,7 @@ public class Utilities  {
                                     center.setPhoneNumber(reader.nextLine());
                                 
                                         
-                                 System.out.println("");
+                                  System.out.println("");
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
                                  System.out.println("");
@@ -315,11 +314,11 @@ public class Utilities  {
                                     Cnurse.setCardNumber(reader.nextInt());
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
                                     Cnurse.setPhoneNumber(reader.nextInt());
-//                                    
+                                    
                                  System.out.println("");
                                  System.out.println("# Utente #");
-                                 System.out.println("");
                                  System.out.println("Insira o nome do utente");
+                                 System.out.println("");
                                     Cpatient.setName(reader.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o sexo do utente");
@@ -398,20 +397,20 @@ public class Utilities  {
                 System.out.println("Introduza o número de utente para pesquisar Marcação");
                 Scanner scan = new Scanner(System.in);
                 String number = scan.nextLine();
-                Schedule a = AllSchedules.SearchScheduleByPatientNumber(Integer.parseInt(number));
+                Schedule a = AllSchedules.searchScheduleByPatientNumber(Integer.parseInt(number));
                 a.toString();
                 break;
             case 5:
                 System.out.println("Introduza a Marca da Vacina para pesquisar por Marcações");
                 Scanner s = new Scanner(System.in);
                 String marca = s.nextLine();
-                AllSchedules.SearchByBrand(marca);
+                AllSchedules.searchByBrand(marca);
                 break;
             case 6:
                 System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
                 Scanner sc = new Scanner(System.in);
                 String lote = sc.nextLine();
-                AllSchedules.SearchByLot(lote);
+                AllSchedules.searchByLot(lote);
                 break;
             case 7:
                 Scanner b = new Scanner(System.in);
@@ -419,27 +418,27 @@ public class Utilities  {
                 String marca1 = b.nextLine();
                 System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
                 String lote1 = b.nextLine();
-                AllSchedules.SearchByBrandAndLot(marca1, lote1);
+                AllSchedules.searchByBrandAndLot(marca1, lote1);
                 break;
                 
             case 8:
                 System.out.println("Introduza a data para pesquisar Marcações");
                 Scanner scanner = new Scanner(System.in);
                 String date = scanner.nextLine();
-                AllSchedules.SearchByDate(date);
+                AllSchedules.searchByDate(date);
                 break;
             case 9:
                 Scanner scanner1 = new Scanner(System.in);
                 System.out.println("Introduza o nome do estabelecimento");
                 String local2 = scanner1.nextLine();
-                AllSchedules.FindByVaccinationLocation(local2);
+                AllSchedules.findByVaccinationLocation(local2);
                 break;
                 
             case 10:
                 AllSchedules.listAllSchedules();
                 break;
             case 11:
-                AllSchedules.SaveSchedulesToFile();
+                AllSchedules.saveSchedulesToFile();
                 break;
             default:
                 break;

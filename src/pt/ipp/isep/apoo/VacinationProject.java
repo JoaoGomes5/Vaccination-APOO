@@ -13,7 +13,7 @@ import pt.ipp.isep.apoo.classes.*;
  *
  * @author João e Gustavo
  */
-public class VacinationProject {
+public class VacinationProject {    
     
    
     /**
