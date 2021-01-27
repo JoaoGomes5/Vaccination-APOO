@@ -147,12 +147,7 @@ public class AllSchedules {
                     System.out.println("");
                     System.out.println("Insira o contacto telefonico do local");
                     schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira o nome do edificio");
-                    // schedule.setBuildingName(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira a extensão telefonica do local");
-                    // schedule.setExtension(scanner.nextLine());
+    
                 }
                 if (localType == "P") {
 
@@ -166,8 +161,7 @@ public class AllSchedules {
                     System.out.println("");
                     System.out.println("Insira o novo contacto telefonico do local");
                     schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira o novo numero de secção");
+               
                 }
                 if (localType == "C") {
                     System.out.println("");
