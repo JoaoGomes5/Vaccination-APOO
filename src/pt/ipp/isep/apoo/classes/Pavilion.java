@@ -13,7 +13,7 @@ import pt.ipp.isep.apoo.classes.VaccinationLocation.*;
 public class Pavilion extends VaccinationLocation {
 
     /**
-     * Numero da secção
+     * Numero da Secção do Pavilhão
      */
     private int sectionNumber;
  
@@ -26,7 +26,7 @@ public class Pavilion extends VaccinationLocation {
     
     /**
      * 
-     * Método que permite criar um novo pavilhão 
+     * Método que permite criar um novo Pavilhão 
      * @param sectionName
      */
     public Pavilion (String name, String address, String phoneNumber, int sectionNumber) {
@@ -35,16 +35,29 @@ public class Pavilion extends VaccinationLocation {
         
     }
     
-    public String toString(){
-        return super.toString()+ "| pavilhão municipal com a secção |"+getSectionNumber();
-    }
-    
+    /**
+     * Método que permite obter o Número da Secção do Pavilhão
+     * @return 
+     */
     public int getSectionNumber() {
         return sectionNumber;
     }
 
+    /**
+     * Método que permite definir a secção do Pavilhão
+     * @param sectionNumber Número da Secção do Pavilhão
+     */
     public void setSectionNumber(int sectionNumber) {
         this.sectionNumber = sectionNumber;
+    }
+    
+      /**
+     * Método que retorna os atributos de uma classe em forma de texto
+     * @return 
+     */
+    @Override
+    public String toString(){
+        return super.toString()+ "| pavilhão municipal com a secção |"+getSectionNumber();
     }
 
 }

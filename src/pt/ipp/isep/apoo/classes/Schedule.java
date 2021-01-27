@@ -32,14 +32,13 @@ public class Schedule {
 
     /**
      *
-     * Metodo construtor com parametros
-     *
-     * @param vaccinationLocation
-     * @param date
-     * @param time
-     * @param nurse
-     * @param patient
-     * @param vaccine
+     * Metodo construtor da Classe Schedule
+     * @param vaccinationLocation Local de Vacinação
+     * @param date Data da Marcação
+     * @param time Hora da Marcação
+     * @param nurse Enfermeiro 
+     * @param patient Utente
+     * @param vaccine Vacina
      */
     public Schedule(
             VaccinationLocation vaccinationLocation,
@@ -61,63 +60,114 @@ public class Schedule {
 
     }
 
-    @Override
-    public String toString() {
-        return "A marcação para o dia |" + getDate() + "| às |" + getTime() + "| horas, será administrada no local |" + getVaccinationLocation().toString() + "| pelo enfermeiro |" + getNurse().toString() + "| com a vacina |" + getVacccine().toString() + "|ao utente |" + getPatient().toString();
-    }
-
+    /**
+     * Método que permite obter o Local de Vacinação
+     * @return 
+     */
     public VaccinationLocation getVaccinationLocation() {
         return vaccinationLocation;
     }
 
+     /**
+     * Método que permite definir o Local de Vacinação
+     * @param vaccinationLocation  Local de Vacinação
+     */
     public void setVaccinationLocation(VaccinationLocation vaccinationLocation) {
         this.vaccinationLocation = vaccinationLocation;
     }
 
+     /**
+     * Método que permite obter a Data da Marcação
+     * @return 
+     */
     public String getDate() {
         return date;
     }
 
+     /**
+     * Método que permite definir a Data da Marcação
+     * @param date Data da Marcação
+     */
     public void setDate(String date) {
         this.date = date;
     }
 
+     /**
+     * Método que permite obter a Hora da Marcação
+     * @return 
+     */
     public String getTime() {
         return time;
     }
 
+    /**
+     * Método que permite definir a Hora da Marcação
+     * @param time Hora da Marcação
+     */
     public void setTime(String time) {
         this.time = time;
     }
 
+    /**
+     * Método que permite obter o Enfermeiro
+     * @return 
+     */
     public Nurse getNurse() {
         return nurse;
     }
 
+    /**
+     * Método que permite definir o Enfermeiro
+     * @param nurse Enfermeiro
+     */
     public void setNurse(Nurse nurse) {
         this.nurse = nurse;
     }
 
+    /**
+     * Método que permite obter o Utente
+     * @return 
+     */
     public Patient getPatient() {
         return patient;
     }
 
+     /**
+     * Método que permite definir o Utente
+     * @param patient Utente
+     */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
 
+    /**
+     * Método que permite obter a Vacina
+     * @return 
+     */
     public Vaccine getVacccine() {
         return vacccine;
     }
 
+      /**
+     * Método que permite definir a Vacina
+     * @param vacccine Vacina
+     */
     public void setVacccine(Vaccine vacccine) {
         this.vacccine = vacccine;
     }
     
-    
+    /**
+     * Método que permite obter o Tipo de Local de Vacinação
+     * @return 
+     */
     public String getTypeOfLocation() {
         return typeOfLocation;
     }
+    
+     /**
+     * Método que permite definir o Tipo de Local de Vacinação
+     * @param typeOfLocation Tipo de Local de Vacinação
+     */
     public void setTypeOfLocation(String typeOfLocation) {
         this.typeOfLocation = typeOfLocation;
     }
@@ -175,6 +225,16 @@ public class Schedule {
     public void searchByBrandAndLot() {
         System.out.println("");
     }
+    
+    /**
+    * Método que retorna os atributos de uma classe em forma de texto
+    * @return 
+    */
+    @Override
+    public String toString() {
+        return "A marcação para o dia |" + getDate() + "| às |" + getTime() + "| horas, será administrada no local |" + getVaccinationLocation().toString() + "| pelo enfermeiro |" + getNurse().toString() + "| com a vacina |" + getVacccine().toString() + "|ao utente |" + getPatient().toString();
+    }
+    
 }
 
 
