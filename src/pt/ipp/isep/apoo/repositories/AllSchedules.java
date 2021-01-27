@@ -78,7 +78,7 @@ public class AllSchedules {
                     + schedule.getVacccine().getBrand() + " | " + schedule.getVacccine().getLot() + "\n"
             );
         }
-
+        
     }
 
     public static void readfromFile() throws FileNotFoundException {
@@ -86,15 +86,16 @@ public class AllSchedules {
         Scanner scan = new Scanner(file);
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
-            String[] linesplit = line.split("\\|");
+            String[] splitedLine = line.split("\\|");
             
-            String c = "C";
-
-//            if (linesplit[0] == ) {
-//               for (int i = 0; i < linesplit.length; i++) {
-//                      System.out.println(i + " " + linesplit[i]);
-//                 }
-//            }
+            if(splitedLine[0].trim().equals("C")){
+                   for (int i = 0; i < splitedLine.length; i++) {
+                        
+                      System.out.println(i + " " + splitedLine[i].trim());
+                 }
+            }
+            
+            
 
 //            
             //Nurse n = new Nurse(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));

@@ -177,11 +177,5 @@ public class Schedule {
     }
 }
 
-/**
- * Método que transforma todos os objectos guardados em memória no array
- * "Schedules" para String
- */
-//public void allScheduleToString () {
-//}
-//}
+
 
