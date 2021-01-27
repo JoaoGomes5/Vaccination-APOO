@@ -7,7 +7,7 @@ package pt.ipp.isep.apoo.classes;
 
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class Vaccine {
     private String brand;

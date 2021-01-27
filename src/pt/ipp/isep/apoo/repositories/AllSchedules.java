@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 
 /**
  *
- * @author João Gomes e Gustavo Reis
+ * @author Gustavo Reis e João Gomes
  */
 public class AllSchedules {
 

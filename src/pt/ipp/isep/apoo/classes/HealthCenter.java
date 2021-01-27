@@ -6,22 +6,33 @@
 package pt.ipp.isep.apoo.classes;
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class HealthCenter extends VaccinationLocation {
    /**
      * 
-     * Método construtor
+     * Método construtor vazio
      * 
      */
     public HealthCenter () {
-        super();
     }   
     
+    /**
+     * Método que permite criar um Centro de Saúde
+     * @param name Nome do Centro de Saúde
+     * @param address Morada do Centro de Saúde
+     * @param phoneNumber Número telefónico do Centro de Saúde
+     */
       public HealthCenter (String name, String address, String phoneNumber) {
         super(name, address, phoneNumber);
       }
       
+      
+      /**
+       * Método que retorna os atributos de uma classe em forma de texto
+       * @return 
+       */     
+    @Override
       public String toString(){
           return super.toString();
       }
