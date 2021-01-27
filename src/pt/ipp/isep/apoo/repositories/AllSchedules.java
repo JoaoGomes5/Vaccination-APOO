@@ -146,7 +146,22 @@ public class AllSchedules {
         }
 
     }
-    
+    /**
+ * Método que permite listar indivíduos
+ */    
+    public static void listPeopleByDateAndLocation(String date, String location){
+        List<Schedule> list = new ArrayList<>();
+        
+            for (int i = 0; i < schedules.length; i++) {
+                if(schedules[i].getDate().equals(date) 
+                        && schedules[i].getVaccinationLocation().getName().equals(location)){
+                    System.out.println("Enfermeiro - " + schedules[i].getNurse().getName() + " - " + schedules[i].getNurse().getPhoneNumber());
+                    System.out.println("Utente - " + schedules[i].getPatient().getName() + " - " + schedules[i].getPatient().getPhoneNumber() );
+                }
+            }
+        
+  
+    }
     public static void searchByBrand(String brand) {
         List<Schedule> list = new ArrayList<>();
         for (int i = 0; i < count; i++) {
@@ -173,7 +188,7 @@ public class AllSchedules {
 
     }
     
-    public static void searchByBrandAndLot (String brand, String lot) {
+    public static void searchByBrandAndLot(String brand, String lot) {
         List<Schedule> list = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             if (schedules[i].getVacccine().getLot().equals(lot) && schedules[i].getVacccine().getBrand().equals(brand) ){

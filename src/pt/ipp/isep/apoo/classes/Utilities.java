@@ -371,7 +371,11 @@ public class Utilities  {
             case 2:
                 System.out.println("Introduza o número de utente");
                 int number = scanner.nextInt();
-                AllSchedules.searchScheduleByPatientNumber(number);
+                try {
+                     AllSchedules.searchScheduleByPatientNumber(number);
+                } catch (Exception e) {
+                }
+               menu.run();
                 break;
             case 3:
                 break;
@@ -395,24 +399,56 @@ public class Utilities  {
                  menu.run();
                  break;
             case 6:
-                System.out.println("Introduza a Marca da Vacina para pesquisar por Marcações");
-                String marca = scanner.nextLine();
-                AllSchedules.searchByBrand(marca);
+                System.out.println("Introduza a data");
+                String sDate = scanner.nextLine();
+                System.out.println("Introduza o nome do local");
+                String local = scanner.nextLine();
+                try {
+                     AllSchedules.listPeopleByDateAndLocation(sDate, local);
+                } catch (Exception e) {
+                   
+                }
+               
+                menu.run();
                 break;
             case 7:
-                System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
-                String lote = scanner.nextLine();
-                AllSchedules.searchByLot(lote);
+                System.out.println("Introduza a Marca da Vacina para pesquisar por Marcações");
+                String marca = scanner.nextLine();
+                
+                try {
+                      AllSchedules.searchByBrand(marca);
+                } catch (Exception e) {
+                }
+              
+                menu.run();
+                
                 break;
             case 8:
+                System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
+                String lote = scanner.nextLine();
+                
+                try {
+                    AllSchedules.searchByLot(lote);
+                } catch (Exception e) {
+                }
+                
+                menu.run();
+                break;
+            case 9:
                 System.out.println("Introduza a marca da Vacina para pesquisar por Marcações");
                 String marca1 = scanner.nextLine();
                 System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
                 String lote1 = scanner.nextLine();
-                AllSchedules.searchByBrandAndLot(marca1, lote1);
+                
+                try {
+                   AllSchedules.searchByBrandAndLot(marca1, lote1); 
+                } catch (Exception e) {
+                }
+                
+                menu.run();
                 break;
                 
-            case 9:
+            case 10:
                 System.out.println("Introduza a data");
                 String date = scanner.nextLine();
                 
@@ -425,24 +461,49 @@ public class Utilities  {
                 
                  menu.run();
                 break;
-            case 10:
+            case 11:
                 System.out.println("Introduza o nome do estabelecimento");
-                String local = scanner.nextLine();
-                AllSchedules.findByVaccinationLocation(local);
+                String location = scanner.nextLine();
+                try {
+                    AllSchedules.findByVaccinationLocation(location);
+                } catch (Exception e) {
+                }
+                
+                menu.run();
                 break;
                 
-            case 11:
-                AllSchedules.listAllSchedules();
-                break;
             case 12:
-                AllSchedules.saveSchedulesToFile();
+                try {
+                     AllSchedules.listAllSchedules();
+                } catch (Exception e) {
+                }
+               
+                menu.run();
                 break;
             case 13:
-               generateData();
+                try {
+                    AllSchedules.saveSchedulesToFile();
+                    System.out.println(" # Guardado com sucesso #");
+                } catch (Exception e) {
+                }
+                
+                menu.run();
+                break;
+            case 14:
+                try {
+                      generateData();
+                } catch (Exception e) {
+                }
+             
                menu.run();
                break;
+               
             default:
-                break;
+               
+                System.out.println("Insira uma opção valida");
+                menu.run();
+               break;
+             
         }
         
        
@@ -468,85 +529,83 @@ public class Utilities  {
           Schedule a = new Schedule( locationsList.get(0), "28-01-2021", "10:00", nursesList.get(0), patientsList.get(0),vaccineList.get(0), "C");
           schedulesList.add(a);
           AllSchedules.addScheduleToAllSchedules(a );
-       
-         
-//          
-//          Schedule b = new Schedule(locationsList.get(1), "28-01-2021", "10:30", nursesList.get(1), patientsList.get(1),vaccineList.get(1), "H");
-//          schedulesList.add(b);
-//          AllSchedules.addScheduleToAllSchedules(b );
-//          
-//          Schedule c = new Schedule(locationsList.get(2), "28-01-2021", "11:00", nursesList.get(2), patientsList.get(2),vaccineList.get(2), "C");
-//          schedulesList.add(c);
-//          AllSchedules.addScheduleToAllSchedules(c );
-//          
-//          Schedule d = new Schedule(locationsList.get(3), "28-01-2021", "11:30", nursesList.get(0), patientsList.get(3),vaccineList.get(0), "P");
-//          schedulesList.add(d);
-//          AllSchedules.addScheduleToAllSchedules(d );
-//         
-//          Schedule e = new Schedule(locationsList.get(4), "28-01-2021", "12:00", nursesList.get(1), patientsList.get(4),vaccineList.get(1), "H");
-//          schedulesList.add(e);
-//          AllSchedules.addScheduleToAllSchedules(e);
-//          
-//          Schedule f = new Schedule(locationsList.get(4), "18-02-2021", "10:00", nursesList.get(2), patientsList.get(0),vaccineList.get(2), "H");
-//          schedulesList.add(f);
-//          AllSchedules.addScheduleToAllSchedules(f );
-//          
-//          Schedule g = new Schedule(locationsList.get(3), "18-02-2021", "10:30", nursesList.get(0), patientsList.get(1),vaccineList.get(0), "P");
-//          schedulesList.add(g);
-//          AllSchedules.addScheduleToAllSchedules(g );
-//          
-//          Schedule h = new Schedule(locationsList.get(2), "18-02-2021", "11:00", nursesList.get(1), patientsList.get(2),vaccineList.get(1),"C");
-//          schedulesList.add(h);
-//          AllSchedules.addScheduleToAllSchedules(h); 
-//          
-//          Schedule i = new Schedule(locationsList.get(1), "18-02-2021", "11:30", nursesList.get(2), patientsList.get(3),vaccineList.get(2) , "H");
-//          schedulesList.add(i);
-//          AllSchedules.addScheduleToAllSchedules(i); 
-//          
-//          Schedule j = new Schedule(locationsList.get(2), "18-02-2021", "12:00", nursesList.get(0), patientsList.get(4),vaccineList.get(0), "C");
-//          schedulesList.add(j);
-//          AllSchedules.addScheduleToAllSchedules(j);
-//          
-//          Schedule k = new Schedule(locationsList.get(3), "06-03-2021", "10:00", nursesList.get(1), patientsList.get(0),vaccineList.get(1), "P");
-//          schedulesList.add(k);
-//          AllSchedules.addScheduleToAllSchedules(k); 
-//          
-//          Schedule l = new Schedule(locationsList.get(4), "06-03-2021", "10:30", nursesList.get(2), patientsList.get(1),vaccineList.get(2),"H");
-//          schedulesList.add(l);
-//          AllSchedules.addScheduleToAllSchedules(l); 
-//          
-//          Schedule m = new Schedule(locationsList.get(0), "06-03-2021", "11:00", nursesList.get(0), patientsList.get(2),vaccineList.get(0),"C");
-//          schedulesList.add(m);
-//          AllSchedules.addScheduleToAllSchedules(m); 
-//          
-//          Schedule n = new Schedule(locationsList.get(1), "06-03-2021", "11:30", nursesList.get(1), patientsList.get(3),vaccineList.get(1),"H");
-//          schedulesList.add(n);
-//          AllSchedules.addScheduleToAllSchedules(n); 
-//          
-//          Schedule o = new Schedule(locationsList.get(2), "06-03-2021", "12:00", nursesList.get(2), patientsList.get(4),vaccineList.get(2),"C");
-//          schedulesList.add(o);
-//          AllSchedules.addScheduleToAllSchedules(o); 
-//          
-//          Schedule p = new Schedule(locationsList.get(3), "26-03-2021", "10:00", nursesList.get(0), patientsList.get(0),vaccineList.get(0),"P");
-//          schedulesList.add(p);
-//          AllSchedules.addScheduleToAllSchedules(p); 
-//          
-//          Schedule q = new Schedule(locationsList.get(2), "26-03-2021", "10:30", nursesList.get(1), patientsList.get(1),vaccineList.get(1),"C");
-//          schedulesList.add(q);
-//          AllSchedules.addScheduleToAllSchedules(q); 
-//          
-//          Schedule r = new Schedule(locationsList.get(1), "26-03-2021", "11:00", nursesList.get(2), patientsList.get(2),vaccineList.get(2), "H");
-//          schedulesList.add(r);
-//          AllSchedules.addScheduleToAllSchedules(r); 
-//          
-//          Schedule s = new Schedule(locationsList.get(0), "26-03-2021", "11:30", nursesList.get(0), patientsList.get(3),vaccineList.get(0),"C");
-//          schedulesList.add(s);
-//          AllSchedules.addScheduleToAllSchedules(s); 
-//          
-//          Schedule t = new Schedule(locationsList.get(4), "26-03-2021", "12:00", nursesList.get(1), patientsList.get(4),vaccineList.get(1),"H");
-//          schedulesList.add(t);
-//          AllSchedules.addScheduleToAllSchedules(t); 
+
+          Schedule b = new Schedule(locationsList.get(1), "28-01-2021", "10:30", nursesList.get(1), patientsList.get(1),vaccineList.get(1), "H");
+          schedulesList.add(b);
+          AllSchedules.addScheduleToAllSchedules(b );
           
+          Schedule c = new Schedule(locationsList.get(2), "28-01-2021", "11:00", nursesList.get(2), patientsList.get(2),vaccineList.get(2), "C");
+          schedulesList.add(c);
+          AllSchedules.addScheduleToAllSchedules(c );
+          
+          Schedule d = new Schedule(locationsList.get(3), "28-01-2021", "11:30", nursesList.get(0), patientsList.get(3),vaccineList.get(0), "P");
+          schedulesList.add(d);
+          AllSchedules.addScheduleToAllSchedules(d );
+         
+          Schedule e = new Schedule(locationsList.get(4), "28-01-2021", "12:00", nursesList.get(1), patientsList.get(4),vaccineList.get(1), "H");
+          schedulesList.add(e);
+          AllSchedules.addScheduleToAllSchedules(e);
+          
+          Schedule f = new Schedule(locationsList.get(4), "18-02-2021", "10:00", nursesList.get(2), patientsList.get(0),vaccineList.get(2), "H");
+          schedulesList.add(f);
+          AllSchedules.addScheduleToAllSchedules(f );
+          
+          Schedule g = new Schedule(locationsList.get(3), "18-02-2021", "10:30", nursesList.get(0), patientsList.get(1),vaccineList.get(0), "P");
+          schedulesList.add(g);
+          AllSchedules.addScheduleToAllSchedules(g );
+          
+          Schedule h = new Schedule(locationsList.get(2), "18-02-2021", "11:00", nursesList.get(1), patientsList.get(2),vaccineList.get(1),"C");
+          schedulesList.add(h);
+          AllSchedules.addScheduleToAllSchedules(h); 
+          
+          Schedule i = new Schedule(locationsList.get(1), "18-02-2021", "11:30", nursesList.get(2), patientsList.get(3),vaccineList.get(2) , "H");
+          schedulesList.add(i);
+          AllSchedules.addScheduleToAllSchedules(i); 
+          
+          Schedule j = new Schedule(locationsList.get(2), "18-02-2021", "12:00", nursesList.get(0), patientsList.get(4),vaccineList.get(0), "C");
+          schedulesList.add(j);
+          AllSchedules.addScheduleToAllSchedules(j);
+          
+          Schedule k = new Schedule(locationsList.get(3), "06-03-2021", "10:00", nursesList.get(1), patientsList.get(0),vaccineList.get(1), "P");
+          schedulesList.add(k);
+          AllSchedules.addScheduleToAllSchedules(k); 
+          
+          Schedule l = new Schedule(locationsList.get(4), "06-03-2021", "10:30", nursesList.get(2), patientsList.get(1),vaccineList.get(2),"H");
+          schedulesList.add(l);
+          AllSchedules.addScheduleToAllSchedules(l); 
+          
+          Schedule m = new Schedule(locationsList.get(0), "06-03-2021", "11:00", nursesList.get(0), patientsList.get(2),vaccineList.get(0),"C");
+          schedulesList.add(m);
+          AllSchedules.addScheduleToAllSchedules(m); 
+          
+          Schedule n = new Schedule(locationsList.get(1), "06-03-2021", "11:30", nursesList.get(1), patientsList.get(3),vaccineList.get(1),"H");
+          schedulesList.add(n);
+          AllSchedules.addScheduleToAllSchedules(n); 
+          
+          Schedule o = new Schedule(locationsList.get(2), "06-03-2021", "12:00", nursesList.get(2), patientsList.get(4),vaccineList.get(2),"C");
+          schedulesList.add(o);
+          AllSchedules.addScheduleToAllSchedules(o); 
+          
+          Schedule p = new Schedule(locationsList.get(3), "26-03-2021", "10:00", nursesList.get(0), patientsList.get(0),vaccineList.get(0),"P");
+          schedulesList.add(p);
+          AllSchedules.addScheduleToAllSchedules(p); 
+          
+          Schedule q = new Schedule(locationsList.get(2), "26-03-2021", "10:30", nursesList.get(1), patientsList.get(1),vaccineList.get(1),"C");
+          schedulesList.add(q);
+          AllSchedules.addScheduleToAllSchedules(q); 
+          
+          Schedule r = new Schedule(locationsList.get(1), "26-03-2021", "11:00", nursesList.get(2), patientsList.get(2),vaccineList.get(2), "H");
+          schedulesList.add(r);
+          AllSchedules.addScheduleToAllSchedules(r); 
+          
+          Schedule s = new Schedule(locationsList.get(0), "26-03-2021", "11:30", nursesList.get(0), patientsList.get(3),vaccineList.get(0),"C");
+          schedulesList.add(s);
+          AllSchedules.addScheduleToAllSchedules(s); 
+          
+          Schedule t = new Schedule(locationsList.get(4), "26-03-2021", "12:00", nursesList.get(1), patientsList.get(4),vaccineList.get(1),"H");
+          schedulesList.add(t);
+          AllSchedules.addScheduleToAllSchedules(t); 
+     
           
           
           }catch(Exception e) { 
@@ -688,10 +747,7 @@ public class Utilities  {
         Utilities.generateDefaultSchedules();
         
     }
-/**
- * Método que permite listar indivíduos
- */    
-//public static listPeopleByDateAndLocation (String date, String location)
+
     
 }
     
