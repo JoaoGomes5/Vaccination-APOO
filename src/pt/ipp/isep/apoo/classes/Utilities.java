@@ -70,7 +70,7 @@ public class Utilities  {
                                 System.out.println("Insira a extensão telefonica do local");
                                     hospital.setExtension(reader.nextLine());
                                         
-                                 System.out.println("");
+                                           System.out.println("");
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
                                  System.out.println("");
@@ -91,8 +91,8 @@ public class Utilities  {
                                     Hnurse.setCardNumber(reader.nextInt());
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
                                     Hnurse.setPhoneNumber(reader.nextInt());
+                                    reader.nextLine();
                                     
-                                 System.out.println("");
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
                                  System.out.println("");
@@ -109,6 +109,7 @@ public class Utilities  {
                                  System.out.println("");
                                  System.out.println("Insira o contacto telefonico do utente");
                                     Hpatient.setPhoneNumber(reader.nextInt());
+                                    
                                     
                                  System.out.println("");
                                  System.out.println("# Vacina #");
@@ -137,26 +138,18 @@ public class Utilities  {
                                             break;
                                     }
                                     
+                                    try{
+                                        Schedule Hschedule = new Schedule(hospital, Hdate, Htime, Hnurse, Hpatient, Hvaccine, "H");
+                            
+                                        allSchedules.addScheduleToAllSchedules(Hschedule);
+                                        
+                                        System.out.println(" # Marcação realizada com sucesso # ");
+                                    }catch(Exception e){
+                                        System.out.println(e.getMessage());
+                                    }
                                     
-                                    Schedule Hschedule = new Schedule(hospital, Hdate, Htime, Hnurse, Hpatient, Hvaccine, "H");
                                     
-                               System.out.println(
-                                  " # Local de vacinação #" + "\n"
-                                 + Hschedule.getVaccinationLocation().getName() + " | " + Hschedule.getVaccinationLocation().getAddress()  + " | " + Hschedule.getVaccinationLocation().getPhoneNumber() + "\n"
-                                 + " # Data #" + "\n"
-                                 + Hschedule.getDate() + "\n"
-                                 + " # Hora #" + "\n"
-                                 + Hschedule.getTime() + "\n"
-                                 + " # Enfermeiro #" + "\n"
-                                 + Hschedule.getNurse().getName() + " | " + Hschedule.getNurse().getCardNumber() + " | " + Hschedule.getNurse().getPhoneNumber() + "\n"
-                                 + " # Utente #" + "\n"
-                                 +  Hschedule.getPatient().getName() + " | " + Hschedule.getPatient().getGender() + " | " + Hschedule.getPatient().getYearOfBirth() + " | " + Hschedule.getPatient().getPatientNumber() + " | " + Hschedule.getPatient().getPhoneNumber() + "\n"
-                                 + " # Vacina #" + "\n"
-                                 + Hschedule.getVacccine().getBrand() + " | " + Hschedule.getVacccine().getLot() +"\n"
-                         );
-                                   allSchedules.addScheduleToAllSchedules(Hschedule);
                                    
-                                   allSchedules.listAllSchedules();
                                    
                                    menu.run();
                                  
@@ -185,7 +178,7 @@ public class Utilities  {
                                     pavilion.setSectionNumber(reader.nextInt());
                                 
                                         
-                                 System.out.println("");
+                                         System.out.println("");
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
                                  System.out.println("");
@@ -206,8 +199,8 @@ public class Utilities  {
                                     Pnurse.setCardNumber(reader.nextInt());
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
                                     Pnurse.setPhoneNumber(reader.nextInt());
+                                    reader.nextLine();
                                     
-                                 System.out.println("");
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
                                  System.out.println("");
@@ -253,22 +246,15 @@ public class Utilities  {
                                     }
                                     
                                     
-                                    Schedule Pschedule = new Schedule(pavilion, Pdate, Ptime, Pnurse, Ppatient, Pvaccine, "P");
-                                        System.out.println(
-                                  " # Local de vacinação #" + "\n"
-                                 + Pschedule.getVaccinationLocation().getName() + " | " + Pschedule.getVaccinationLocation().getAddress()  + " | " + Pschedule.getVaccinationLocation().getPhoneNumber() + "\n"
-                                 + " # Data #" + "\n"
-                                 + Pschedule.getDate() + "\n"
-                                 + " # Hora #" + "\n"
-                                 + Pschedule.getTime() + "\n"
-                                 + " # Enfermeiro #" + "\n"
-                                 + Pschedule.getNurse().getName() + " | " + Pschedule.getNurse().getCardNumber() + " | " + Pschedule.getNurse().getPhoneNumber() + "\n"
-                                 + " # Utente #" + "\n"
-                                 +  Pschedule.getPatient().getName() + " | " + Pschedule.getPatient().getGender() + " | " + Pschedule.getPatient().getYearOfBirth() + " | " + Pschedule.getPatient().getPatientNumber() + " | " + Pschedule.getPatient().getPhoneNumber() + "\n"
-                                 + " # Vacina #" + "\n"
-                                 + Pschedule.getVacccine().getBrand() + " | " + Pschedule.getVacccine().getLot() +"\n"
-                         );
-                                    allSchedules.addScheduleToAllSchedules(Pschedule);
+                                    try{
+                                        Schedule Pschedule = new Schedule(pavilion, Pdate, Ptime, Pnurse, Ppatient, Pvaccine, "P");
+                            
+                                        allSchedules.addScheduleToAllSchedules(Pschedule);
+                                        
+                                        System.out.println(" # Marcação realizada com sucesso # ");
+                                    }catch(Exception e){
+                                        System.out.println(e.getMessage());
+                                    }
                                         
                                         menu.run();
                                 break;
@@ -293,7 +279,7 @@ public class Utilities  {
                                     center.setPhoneNumber(reader.nextLine());
                                 
                                         
-                                  System.out.println("");
+                                         System.out.println("");
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
                                  System.out.println("");
@@ -314,8 +300,8 @@ public class Utilities  {
                                     Cnurse.setCardNumber(reader.nextInt());
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
                                     Cnurse.setPhoneNumber(reader.nextInt());
+                                    reader.nextLine();
                                     
-                                 System.out.println("");
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
                                  System.out.println("");
@@ -361,26 +347,19 @@ public class Utilities  {
                                     }
                                     
                                     
-                                    Schedule Cschedule = new Schedule(center, Cdate, Ctime, Cnurse, Cpatient, Cvaccine, "C");
                                     
-                                               System.out.println(
-                                  " # Local de vacinação #" + "\n"
-                                 + Cschedule.getVaccinationLocation().getName() + " | " + Cschedule.getVaccinationLocation().getAddress()  + " | " + Cschedule.getVaccinationLocation().getPhoneNumber() + "\n"
-                                 + " # Data #" + "\n"
-                                 + Cschedule.getDate() + "\n"
-                                 + " # Hora #" + "\n"
-                                 + Cschedule.getTime() + "\n"
-                                 + " # Enfermeiro #" + "\n"
-                                 + Cschedule.getNurse().getName() + " | " + Cschedule.getNurse().getCardNumber() + " | " + Cschedule.getNurse().getPhoneNumber() + "\n"
-                                 + " # Utente #" + "\n"
-                                 +  Cschedule.getPatient().getName() + " | " + Cschedule.getPatient().getGender() + " | " + Cschedule.getPatient().getYearOfBirth() + " | " + Cschedule.getPatient().getPatientNumber() + " | " + Cschedule.getPatient().getPhoneNumber() + "\n"
-                                 + " # Vacina #" + "\n"
-                                 + Cschedule.getVacccine().getBrand() + " | " + Cschedule.getVacccine().getLot() +"\n"
-                         );
+                                    try{
+                                        Schedule Cschedule = new Schedule(center, Cdate, Ctime, Cnurse, Cpatient, Cvaccine, "C");
+                            
+                                        allSchedules.addScheduleToAllSchedules(Cschedule);
+                                        
+                                        System.out.println(" # Marcação realizada com sucesso # ");
+                                        
+                                    }catch(Exception e){
+                                        System.out.println(e.getMessage());
+                                    }
                                     
-                                    allSchedules.addScheduleToAllSchedules(Cschedule);
                                     
-                                     allSchedules.listAllSchedules();
                                      
                                      menu.run();
                                  break;
