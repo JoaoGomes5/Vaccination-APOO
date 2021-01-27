@@ -13,44 +13,48 @@ package pt.ipp.isep.apoo.classes;
     
     
      /**
-     * Nome 
+     * Nome do utente
      */
     private String name;
 
      /**
-     * Sexo
+     * Sexo do Utente
      */
     private String gender;
 
      /**
-     * Data de nascimento
+     * Data de nascimento do Utente
      */
     private int yearOfBirth;
 
      /**
-     *  Numero de utente
+     *  Numero de Utente
      */
     private int patientNumber ;
 
      /**
-     * Numero de telemovel
+     * Numero de telefone do Utente
      */
     private int phoneNumber ;
 
+     /**
+     * Método construtor vazio
+     */
+    
     public Patient() {
 
     }
 
     /**
-     * 
-     * Metedo que permite criar um novo paciente
-     * 
-     * @param name
-     * @param gender
-     * @param yearOfBirth
-     * @param patientNumber
-     * @param phoneNumber 
+     * Método que permite criar um novo paciente
+     * @param name Nome do Utente
+     * @param gender Sexo do Utente
+     * @param yearOfBirth Ano de Nascimento do Utente
+     * @param patientNumber Número de Utente
+     * @param phoneNumber Número de Telefone do Utente
      */
+   
+    
     public Patient(
             String name, 
             String gender,
@@ -65,32 +69,49 @@ package pt.ipp.isep.apoo.classes;
         this.phoneNumber = phoneNumber;
     }
     
-    @Override
-    public String toString(){
-        return "| com o número de utente |"+getPatientNumber()+ "| o paciente |"+getName()+"| nascido a |"+getYearOfBirth()+"| contactável através de |"+getPhoneNumber();
-    }
-    
-
+    /**
+     * Método que permite obter o nome do Utente
+     * @return 
+     */
     public String getName() {
         return name;
     }
-
+     /**
+     * Método que permite obter o sexo do Utente
+     * @return 
+     */
     public String getGender() {
         return gender;
     }
 
+     /**
+     * Método que permite obter o ano de nascimento do Utente
+     * @return 
+     */
     public int getYearOfBirth() {
         return yearOfBirth;
     }
 
+     /**
+     * Método que permite obter o Número de Utente
+     * @return 
+     */
     public int getPatientNumber() {
         return patientNumber;
     }
 
+     /**
+     * Método que permite obter o número de telefone do Utente
+     * @return 
+     */
     public int getPhoneNumber() {
         return phoneNumber;
     }
 
+    /**
+     * Método que permite definir o nome do Utente
+     * @param name  Nome do Utente
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -111,6 +132,14 @@ package pt.ipp.isep.apoo.classes;
         this.phoneNumber = phoneNumber;
     }
     
+     /**
+    * Método que retorna os atributos de uma classe em forma de texto
+    * @return 
+    */
+    @Override
+    public String toString(){
+        return "| com o número de utente |"+getPatientNumber()+ "| o paciente |"+getName()+"| nascido a |"+getYearOfBirth()+"| contactável através de |"+getPhoneNumber();
+    }
     
 
 
