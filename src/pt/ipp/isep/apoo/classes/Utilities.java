@@ -364,7 +364,19 @@ public class Utilities {
                 break;
             case 3:
                 System.out.println("Introduza o número de utente");
-
+                int selectedNumber = scanner.nextInt();
+                
+                System.out.println("Quais indormações pertende alterar?");
+                System.out.println(" 1 - Local");
+                System.out.println(" 2 - Data");
+                System.out.println(" 3 - Hora");
+                System.out.println(" 4 - Enfermeiro ");
+                
+                int selectedOption = scanner.nextInt();
+                
+                AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
+                
+                
                 break;
             case 4:
                 System.out.println("Introduza o numero de utente");
