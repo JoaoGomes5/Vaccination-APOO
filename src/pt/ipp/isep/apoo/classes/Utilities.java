@@ -12,7 +12,7 @@ import pt.ipp.isep.apoo.repositories.AllSchedules;
 
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class Utilities  {
     

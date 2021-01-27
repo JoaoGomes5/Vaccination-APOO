@@ -7,17 +7,17 @@ package pt.ipp.isep.apoo.classes;
 
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class Nurse {
     
     /**
-     * Nome 
+     * Nome do Enfermeiro
      */
     private String name;
     
     /**
-     * Número de cédula profissional 
+     * Número de cédula profissional do Enfermeiro
      */
     private int cardNumber;
     
@@ -28,7 +28,7 @@ public class Nurse {
 
     
     /**
-     * Metodo construtor
+     * Metodo construtor vazio
      */
     public Nurse() {
         

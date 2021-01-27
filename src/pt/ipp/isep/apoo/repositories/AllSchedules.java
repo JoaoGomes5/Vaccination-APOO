@@ -15,7 +15,7 @@ import java.util.*;
 
 /**
  *
- * @author João Gomes e Gustavo Reis
+ * @author Gustavo Reis e João Gomes
  */
 public class AllSchedules {
 

@@ -8,7 +8,7 @@ import pt.ipp.isep.apoo.classes.VaccinationLocation.*;
 
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class Pavilion extends VaccinationLocation {
 

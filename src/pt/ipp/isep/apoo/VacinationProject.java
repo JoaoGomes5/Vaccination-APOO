@@ -6,19 +6,21 @@
 package pt.ipp.isep.apoo;
 
 import java.io.IOException;
-import java.util.*;
 import pt.ipp.isep.apoo.classes.*;
 
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class VacinationProject {    
     
    
     /**
-     * @param args the command line arguments
+     * Método principal responsável por iniciar o programa
+     * @param args 
+     * @throws IOException 
      */
+    
     public static void main(String[] args) throws IOException {
             
         Menu menu = new Menu();

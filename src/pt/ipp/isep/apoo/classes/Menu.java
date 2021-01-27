@@ -8,11 +8,14 @@ import java.io.IOException;
 import java.util.*;
 /**
  *
- * @author João e Gustavo
+ * @author Gustavo Reis e João Gomes
  */
 public class Menu {
     
-    
+    /**
+     * Método responsável por executar o Menu
+     * @throws IOException 
+     */
     public void run() throws IOException{
         int option = 0;
   
