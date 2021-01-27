@@ -53,8 +53,6 @@ package pt.ipp.isep.apoo.classes;
      * @param patientNumber Número de Utente
      * @param phoneNumber Número de Telefone do Utente
      */
-   
-    
     public Patient(
             String name, 
             String gender,
@@ -116,18 +114,34 @@ package pt.ipp.isep.apoo.classes;
         this.name = name;
     }
 
+    /**
+     * Método que permite definir o sexo do Utente
+     * @param gender Sexo do Utente
+     */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
+    /**
+     * Método que permite definir o ano de nascimento do Utente
+     * @param yearOfBirth Ano de Nascimento do Utente
+     */
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
+    /**
+     * Método que permite definir o Número de Utente
+     * @param patientNumber Número de Utente
+     */
     public void setPatientNumber(int patientNumber) {
         this.patientNumber = patientNumber;
     }
 
+    /**
+     * Método que permite definir o Número de Telefone do Utente
+     * @param phoneNumber Número de Telefone do Utente
+     */
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
