@@ -22,10 +22,10 @@ public class Utilities  {
         AllSchedules allSchedules = new AllSchedules();
         Menu menu = new Menu();
         ArrayList<Vaccine> vaccinesList = Utilities.generateDefaultVaccines();
+        Scanner scanner = new Scanner(System.in);
         
         switch (option) {
             case 1:
-                Scanner reader = new Scanner(System.in);
                 
                 System.out.println("######################");
                 System.out.println("#      Marcação      #");
@@ -41,7 +41,7 @@ public class Utilities  {
                         System.out.println(" H - Hospital");
                         System.out.println(" C - Centro de Saude");
                         System.out.println(" P - Pavilhão Municipal");
-                        typeOfLocation = reader.nextLine();
+                        typeOfLocation = scanner.nextLine();
                         
                         switch (typeOfLocation) {
                            
@@ -56,59 +56,57 @@ public class Utilities  {
 
                                 System.out.println("");
                                 System.out.println("Insira o nome do local");
-                                    hospital.setName(reader.nextLine());
+                                    hospital.setName(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira a morada do local");
-                                    hospital.setAddress(reader.nextLine());
+                                    hospital.setAddress(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira o contacto telefonico do local");
-                                    hospital.setPhoneNumber(reader.nextLine());
+                                    hospital.setPhoneNumber(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira o nome do edificio");
-                                    hospital.setBuildingName(reader.nextLine());
+                                    hospital.setBuildingName(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira a extensão telefonica do local");
-                                    hospital.setExtension(reader.nextLine());
+                                    hospital.setExtension(scanner.nextLine());
                                         
                                            System.out.println("");
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
-                                 System.out.println("");
-                                    Hdate = reader.nextLine();
+                                    Hdate = scanner.nextLine();
                                     
-                                 System.out.println("");
                                  System.out.println("# Hora de Vacinação #");
                                  System.out.println("Insira a hora da marcação - Digite a hora no formato HH:MM");
-                                    Htime = reader.nextLine();
+                                    Htime = scanner.nextLine();
                                     
                                  System.out.println("");
                                  System.out.println("# Enfermeiro #");
                                  System.out.println("");
                                  System.out.println("Insira o nome do enfermeiro");
-                                    Hnurse.setName(reader.nextLine());
+                                    Hnurse.setName(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o número de cédula profissional");
-                                    Hnurse.setCardNumber(reader.nextInt());
+                                    Hnurse.setCardNumber(scanner.nextInt());
+                                 System.out.println("");
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
-                                    Hnurse.setPhoneNumber(reader.nextInt());
-                                    reader.nextLine();
+                                    Hnurse.setPhoneNumber(scanner.nextInt());
+                                    scanner.nextLine();
                                     
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
-                                 System.out.println("");
-                                    Hpatient.setName(reader.nextLine());
+                                    Hpatient.setName(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o sexo do utente");
-                                    Hpatient.setGender(reader.nextLine());
+                                    Hpatient.setGender(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o ano de nascimento do utente");
-                                    Hpatient.setYearOfBirth(reader.nextLine());
+                                    Hpatient.setYearOfBirth(scanner.nextInt());
                                  System.out.println("");
                                  System.out.println("Insira o numero de utente");
-                                    Hpatient.setPatientNumber(reader.nextInt());
+                                    Hpatient.setPatientNumber(scanner.nextInt());
                                  System.out.println("");
                                  System.out.println("Insira o contacto telefonico do utente");
-                                    Hpatient.setPhoneNumber(reader.nextInt());
+                                    Hpatient.setPhoneNumber(scanner.nextInt());
                                     
                                     
                                  System.out.println("");
@@ -118,7 +116,7 @@ public class Utilities  {
                                     for(Vaccine vac : vaccinesList ) {
                                             System.out.println(" " + (Hcounter++) + " - " + vac.getBrand());
                                     }
-                                    int HvaccineOption = reader.nextInt();
+                                    int HvaccineOption = scanner.nextInt();
                                     
                                     switch (HvaccineOption) {
                                         case 1:
@@ -166,57 +164,56 @@ public class Utilities  {
 
                                 System.out.println("");
                                 System.out.println("Insira o nome do local");
-                                    pavilion.setName(reader.nextLine());
+                                    pavilion.setName(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira a morada do local");
-                                    pavilion.setAddress(reader.nextLine());
+                                    pavilion.setAddress(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira o contacto telefonico do local");
-                                    pavilion.setPhoneNumber(reader.nextLine());
+                                    pavilion.setPhoneNumber(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira o numero do secção");
-                                    pavilion.setSectionNumber(reader.nextInt());
+                                    pavilion.setSectionNumber(scanner.nextInt());
                                 
                                         
                                          System.out.println("");
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
                                  System.out.println("");
-                                    Pdate = reader.nextLine();
+                                    Pdate = scanner.nextLine();
                                     
                                  System.out.println("");
                                  System.out.println("# Hora de Vacinação #");
                                  System.out.println("Insira a hora da marcação - Digite a hora no formato HH:MM");
-                                    Ptime = reader.nextLine();
+                                    Ptime = scanner.nextLine();
                                     
                                  System.out.println("");
                                  System.out.println("# Enfermeiro #");
                                  System.out.println("");
                                  System.out.println("Insira o nome do enfermeiro");
-                                    Pnurse.setName(reader.nextLine());
+                                    Pnurse.setName(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o número de cédula profissional");
-                                    Pnurse.setCardNumber(reader.nextInt());
+                                    Pnurse.setCardNumber(scanner.nextInt());
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
-                                    Pnurse.setPhoneNumber(reader.nextInt());
-                                    reader.nextLine();
+                                    Pnurse.setPhoneNumber(scanner.nextInt());
+                                    scanner.nextLine();
                                     
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
-                                 System.out.println("");
-                                    Ppatient.setName(reader.nextLine());
-                                 System.out.println("");
+                                    Ppatient.setName(scanner.nextLine());
+                                  System.out.println("");
                                  System.out.println("Insira o sexo do utente");
-                                    Ppatient.setGender(reader.nextLine());
+                                    Ppatient.setGender(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o ano de nascimento do utente");
-                                    Ppatient.setYearOfBirth(reader.nextLine());
+                                    Ppatient.setYearOfBirth(scanner.nextInt());
                                  System.out.println("");
                                  System.out.println("Insira o numero de utente");
-                                    Ppatient.setPatientNumber(reader.nextInt());
+                                    Ppatient.setPatientNumber(scanner.nextInt());
                                  System.out.println("");
                                  System.out.println("Insira o contacto telefonico do utente");
-                                    Ppatient.setPhoneNumber(reader.nextInt());
+                                    Ppatient.setPhoneNumber(scanner.nextInt());
                                     
                                  System.out.println("");
                                  System.out.println("# Vacina #");
@@ -225,7 +222,7 @@ public class Utilities  {
                                     for(Vaccine vac : vaccinesList ) {
                                             System.out.println(" " + (Pcounter++) + " - " + vac.getBrand());
                                     }
-                                    int PvaccineOption = reader.nextInt();
+                                    int PvaccineOption = scanner.nextInt();
                                     
                                     switch (PvaccineOption) {
                                         case 1:
@@ -270,54 +267,52 @@ public class Utilities  {
 
                                 System.out.println("");
                                 System.out.println("Insira o nome do local");
-                                    center.setName(reader.nextLine());
+                                    center.setName(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira a morada do local");
-                                    center.setAddress(reader.nextLine());
+                                    center.setAddress(scanner.nextLine());
                                 System.out.println("");
                                 System.out.println("Insira o contacto telefonico do local");
-                                    center.setPhoneNumber(reader.nextLine());
+                                    center.setPhoneNumber(scanner.nextLine());
                                 
-                                        
-                                         System.out.println("");
+                                 System.out.println("");        
                                  System.out.println("# Data de marcação #");
                                  System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
-                                 System.out.println("");
-                                    Cdate = reader.nextLine();
+                                
+                                    Cdate = scanner.nextLine();
                                     
                                  System.out.println("");
                                  System.out.println("# Hora de Vacinação #");
                                  System.out.println("Insira a hora da marcação - Digite a hora no formato HH:MM");
-                                    Ctime = reader.nextLine();
+                                    Ctime = scanner.nextLine();
                                     
                                  System.out.println("");
                                  System.out.println("# Enfermeiro #");
                                  System.out.println("");
                                  System.out.println("Insira o nome do enfermeiro");
-                                    Cnurse.setName(reader.nextLine());
+                                    Cnurse.setName(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o número de cédula profissional");
-                                    Cnurse.setCardNumber(reader.nextInt());
+                                    Cnurse.setCardNumber(scanner.nextInt());
                                  System.out.println("Insira o contacto telefonico do enfermeiro");
-                                    Cnurse.setPhoneNumber(reader.nextInt());
-                                    reader.nextLine();
+                                    Cnurse.setPhoneNumber(scanner.nextInt());
+                                    scanner.nextLine();
                                     
                                  System.out.println("# Utente #");
                                  System.out.println("Insira o nome do utente");
-                                 System.out.println("");
-                                    Cpatient.setName(reader.nextLine());
+                                    Cpatient.setName(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o sexo do utente");
-                                    Cpatient.setGender(reader.nextLine());
+                                    Cpatient.setGender(scanner.nextLine());
                                  System.out.println("");
                                  System.out.println("Insira o ano de nascimento do utente");
-                                    Cpatient.setYearOfBirth(reader.nextLine());
+                                    Cpatient.setYearOfBirth(scanner.nextInt());
                                  System.out.println("");
                                  System.out.println("Insira o numero de utente");
-                                    Cpatient.setPatientNumber(reader.nextInt());
+                                    Cpatient.setPatientNumber(scanner.nextInt());
                                  System.out.println("");
                                  System.out.println("Insira o contacto telefonico do utente");
-                                    Cpatient.setPhoneNumber(reader.nextInt());
+                                    Cpatient.setPhoneNumber(scanner.nextInt());
                                     
                                  System.out.println("");
                                  System.out.println("# Vacina #");
@@ -326,7 +321,7 @@ public class Utilities  {
                                     for(Vaccine vac : vaccinesList ) {
                                             System.out.println(" " + (Ccounter++) + " - " + vac.getBrand());
                                     }
-                                    int CvaccineOption = reader.nextInt();
+                                    int CvaccineOption = scanner.nextInt();
                                     
                                     switch (CvaccineOption) {
                                         case 1:
@@ -377,40 +372,42 @@ public class Utilities  {
                 System.out.println("Introduza o número de utente para pesquisar Marcação");
                 Scanner scan = new Scanner(System.in);
                 String number = scan.nextLine();
-                Schedule a = AllSchedules.searchScheduleByPatientNumber(Integer.parseInt(number));
-                a.toString();
+                Schedule searshedPatient = AllSchedules.searchScheduleByPatientNumber(Integer.parseInt(number));
+                searshedPatient.toString();
                 break;
+            case 4:
+                System.out.println("Introduza a idade");
+                int age = scanner.nextInt();
+                AllSchedules.searchScheduleByPatientÀge(age);
+                
+                 menu.run();
+                 break;
             case 5:
                 System.out.println("Introduza a Marca da Vacina para pesquisar por Marcações");
-                Scanner s = new Scanner(System.in);
-                String marca = s.nextLine();
+                String marca = scanner.nextLine();
                 AllSchedules.searchByBrand(marca);
                 break;
             case 6:
                 System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
-                Scanner sc = new Scanner(System.in);
-                String lote = sc.nextLine();
+                String lote = scanner.nextLine();
                 AllSchedules.searchByLot(lote);
                 break;
             case 7:
-                Scanner b = new Scanner(System.in);
                 System.out.println("Introduza a marca da Vacina para pesquisar por Marcações");
-                String marca1 = b.nextLine();
+                String marca1 = scanner.nextLine();
                 System.out.println("Introduza o lote da Vacina para pesquisar por Marcações");
-                String lote1 = b.nextLine();
+                String lote1 = scanner.nextLine();
                 AllSchedules.searchByBrandAndLot(marca1, lote1);
                 break;
                 
             case 8:
-                System.out.println("Introduza a data para pesquisar Marcações");
-                Scanner scanner = new Scanner(System.in);
+                System.out.println("Introduza a data");
                 String date = scanner.nextLine();
                 AllSchedules.searchByDate(date);
                 break;
             case 9:
-                Scanner scanner1 = new Scanner(System.in);
                 System.out.println("Introduza o nome do estabelecimento");
-                String local2 = scanner1.nextLine();
+                String local2 = scanner.nextLine();
                 AllSchedules.findByVaccinationLocation(local2);
                 break;
                 
@@ -420,6 +417,10 @@ public class Utilities  {
             case 11:
                 AllSchedules.saveSchedulesToFile();
                 break;
+            case 12:
+               generateData();
+               menu.run();
+               break;
             default:
                 break;
         }
@@ -542,7 +543,7 @@ public class Utilities  {
         patientsList.add(new Patient(
                                 "João",
                                 "Masculino", 
-                                "15-02-2002",
+                                2002,
                                 1,
                                 911111111
                                 )
@@ -550,7 +551,7 @@ public class Utilities  {
         patientsList.add(new Patient(
                                 "Jonh Cena",
                                 "Masculino", 
-                                "10-10-1973",
+                                1973,
                                 2,
                                 911111111
                                 )
@@ -558,7 +559,7 @@ public class Utilities  {
         patientsList.add(new Patient(
                                 "Margarida Sá Cordeiro",
                                 "Feminino", 
-                                "25-09-2000",
+                                2000,
                                 3,
                                 918654329
                                 )
@@ -566,7 +567,7 @@ public class Utilities  {
         patientsList.add(new Patient(
                                 "Henrique Buenadicha",
                                 "Masculino", 
-                                "19-04-1980",
+                                1980,
                                 4,
                                 919876243
                                 )
@@ -574,7 +575,7 @@ public class Utilities  {
         patientsList.add(new Patient(
                                 "Maria Salgado",
                                 "Feminino", 
-                                "16-07-2007",
+                                2007,
                                 1,
                                 93564790
                                 )
@@ -658,7 +659,15 @@ public class Utilities  {
      
       return nursesList; 
 } 
-
+    
+    public static void generateData(){
+      Utilities.generateDefaultNurses();
+        Utilities.generateDefaultPatients();
+        Utilities.generateDefaultVaccinationLocations();
+        Utilities.generateDefaultVaccines();
+        Utilities.generateDefaultSchedules();
+        
+    }
 /**
  * Método que permite listar indivíduos
  */    

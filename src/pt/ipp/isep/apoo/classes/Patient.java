@@ -25,7 +25,7 @@ package pt.ipp.isep.apoo.classes;
      /**
      * Data de nascimento
      */
-    private String yearOfBirth;
+    private int yearOfBirth;
 
      /**
      *  Numero de utente
@@ -54,7 +54,7 @@ package pt.ipp.isep.apoo.classes;
     public Patient(
             String name, 
             String gender,
-            String yearOfBirth,
+            int yearOfBirth,
             int patientNumber,
             int phoneNumber
         ) {
@@ -79,7 +79,7 @@ package pt.ipp.isep.apoo.classes;
         return gender;
     }
 
-    public String getYearOfBirth() {
+    public int getYearOfBirth() {
         return yearOfBirth;
     }
 
@@ -99,7 +99,7 @@ package pt.ipp.isep.apoo.classes;
         this.gender = gender;
     }
 
-    public void setYearOfBirth(String yearOfBirth) {
+    public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 

@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import pt.ipp.isep.apoo.classes.Patient;
 import pt.ipp.isep.apoo.classes.Schedule;
+import java.util.*;
 
 /**
  *
- * @author João Gomes
+ * @author João Gomes e Gustavo Reis
  */
 public class AllSchedules {
 
@@ -94,8 +95,31 @@ public class AllSchedules {
         }
         return null;
     }
+    public static Schedule searchScheduleByPatientÀge(int age) {
+        
+      
+        List<Schedule> sharedList = new ArrayList<>();
+        int currentYear = 2021;
+        int ageYear = currentYear - age;
+        
+        for (int i = 0; i < count; i++) {
+           
+            if (schedules[i].getPatient().getYearOfBirth() == ageYear) {
+                    sharedList.add(schedules[i]);
+            }
+
+           
+        }
+         for(Schedule s : sharedList){
+                System.out.println(s.toString());
+            }
+        return null;
+    }
     
-    
+    /**
+     * 
+     * @param date 
+     */
     // imprime o toString de todas as marcações com a data pretendida.
     public static void searchByDate(String date) {
         List<Schedule> list = new ArrayList<>();
