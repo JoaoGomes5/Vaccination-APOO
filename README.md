@@ -81,7 +81,7 @@
 ## To do list
     - Menu para selecionar as diversas opções ✅
     - Ler informação de uma marcação e acrescentá-la a um array em memória (considere que não precisa de armazenar mais de 100 marcações)  ✅
-    - Retirar do array a marcação de um utente indicado pelo utilizador 
+    - Retirar do array a marcação de um utente indicado pelo utilizador ✅
     - Pesquisar marcação por Utente ✅
     - Alterar uma marcação (Local, data, hora ou Enfermeiro) 
     - Pesquisar marcações de utentes por idade; ✅
@@ -91,7 +91,7 @@
     - Pesquisar marcações para um local de vacinação indicado pelo utilizador; ✅
     - Registar em ficheiro a informação das marcações (array → ficheiro); ✅
     - Ler de um ficheiro a informação das marcações (ficheiro → array); 
-    - Possibilidade de gerir múltiplas zonas do país(ex: Porto, Aveiro, Matosinhos), utilizando um ficheiro para cada zona.
+    - Possibilidade de gerir múltiplas zonas do país(ex: Porto, Aveiro, Matosinhos), utilizando um ficheiro para cada zona. 
     - Cada classe tem um metedo que permita passar o objeto do mesmo para uma String ✅
     
 

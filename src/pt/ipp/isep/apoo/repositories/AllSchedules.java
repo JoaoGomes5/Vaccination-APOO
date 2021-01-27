@@ -22,25 +22,26 @@ import java.util.stream.IntStream;
  */
 public class AllSchedules {
 
-    private static Schedule[] schedules = new Schedule[100];
+    private static ArrayList<Schedule> schedules = new ArrayList<Schedule>();
     private static int count = 0;
     
 
     public static void addScheduleToAllSchedules(Schedule s) {
         System.out.println(s.toString());
-        schedules[count] = s;
-        count++;
+        schedules.add(s);
         
     }
 
     // itera o array de Schedules e quando encontrar uma instância do objecto Schedule com Paciente igual ao parâmetro, devolve a instância do Schedule.
     public static Schedule getScheduleByPatiente(Patient p) {
-        for (int i = 0; i < count; i++) {
-            if (schedules[i].getPatient().equals(p)) {
-                System.out.println(schedules[i].toString());
-                return schedules[i];
+       for(Schedule schedule: schedules){
+             if (schedule.getPatient().equals(p)) {
+                System.out.println(schedule.toString());
+                return schedule;
             }
-        }
+           
+       }
+
         return null;
     }
 
@@ -56,21 +57,21 @@ public class AllSchedules {
         int counter = 1;
         System.out.println("O número total de marcações é : " + count);
 
-        for (int i = 0; i < count; i++) {
+        for (Schedule schedule: schedules) {
             System.out.println(
                     "Marcação numero - " + (counter++) + "\n"
                     + " # Local de vacinação #" + "\n"
-                    + schedules[i].getVaccinationLocation().getName() + " | " + schedules[i].getVaccinationLocation().getAddress() + " | " + schedules[i].getVaccinationLocation().getPhoneNumber() + "\n"
+                    + schedule.getVaccinationLocation().getName() + " | " + schedule.getVaccinationLocation().getAddress() + " | " + schedule.getVaccinationLocation().getPhoneNumber() + "\n"
                     + " # Data #" + "\n"
-                    + schedules[i].getDate() + "\n"
+                    + schedule.getDate() + "\n"
                     + " # Hora #" + "\n"
-                    + schedules[i].getTime() + "\n"
+                    + schedule.getTime() + "\n"
                     + " # Enfermeiro #" + "\n"
-                    + schedules[i].getNurse().getName() + " | " + schedules[i].getNurse().getCardNumber() + " | " + schedules[i].getNurse().getPhoneNumber() + "\n"
+                    + schedule.getNurse().getName() + " | " + schedule.getNurse().getCardNumber() + " | " + schedule.getNurse().getPhoneNumber() + "\n"
                     + " # Utente #" + "\n"
-                    + schedules[i].getPatient().getName() + " | " + schedules[i].getPatient().getGender() + " | " + schedules[i].getPatient().getYearOfBirth() + " | " + schedules[i].getPatient().getPatientNumber() + " | " + schedules[i].getPatient().getPhoneNumber() + "\n"
+                    + schedule.getPatient().getName() + " | " + schedule.getPatient().getGender() + " | " + schedule.getPatient().getYearOfBirth() + " | " + schedule.getPatient().getPatientNumber() + " | " + schedule.getPatient().getPhoneNumber() + "\n"
                     + " # Vacina #" + "\n"
-                    + schedules[i].getVacccine().getBrand() + " | " + schedules[i].getVacccine().getLot() + "\n"
+                    + schedule.getVacccine().getBrand() + " | " + schedule.getVacccine().getLot() + "\n"
             );
         }
 
@@ -80,8 +81,8 @@ public class AllSchedules {
     public static void saveSchedulesToFile() throws IOException {
        
         FileWriter fw = new FileWriter("Marcacoes.txt");
-        for (int i = 0; i < count; i++) {
-		fw.write(schedules[i].getTypeOfLocation() + " - " + schedules[i].toString()+"\n");
+        for (Schedule schedule: schedules) {
+		fw.write(schedule.getTypeOfLocation() + " - " + schedule.toString()+"\n");
 //                fw.write("\n");
 	}
 	fw.close();
@@ -90,35 +91,41 @@ public class AllSchedules {
 
     // Itera o array de Schedules e procura por um Schedule para o paciente com o número introduzido
     public static void searchScheduleByPatientNumber(int patientNumber) {
-        for (int i = 0; i < count; i++) {
-            if (schedules[i].getPatient().getPatientNumber() == patientNumber) {
-                System.out.println(schedules[i]);
+        for (Schedule schedule: schedules) {
+            if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                System.out.println(schedule);
             }
         }
         
     }
     
-    public static void deleteScheduleByPatientNnumber(int patientNumber){
-            for (int i = 0; i < count; i++) {
-            if (schedules[i].getPatient().getPatientNumber() == patientNumber) {
-                // to do, delete from array
-            }
+    public static void deleteScheduleByPatientName(int patientNumber){
+            try {
+             for (Schedule schedule: schedules) {
+//                 
+                     if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                            schedules.remove(schedule);
+                    }
+             }
+        } catch (Exception e) {
         }
+             
+       
                  
    
         
     }
     
-    public static void searchScheduleByPatientÀge(int age) {
+    public static void searchScheduleByPatientÀge(int age)  {
         
         List<Schedule> sharedList = new ArrayList<>();
         int currentYear = 2021;
         int ageYear = currentYear - age;
         
-        for (int i = 0; i < count; i++) {
+        for (Schedule schedule: schedules) {
            
-            if (schedules[i].getPatient().getYearOfBirth() == ageYear) {
-                    sharedList.add(schedules[i]);
+            if (schedule.getPatient().getYearOfBirth() == ageYear) {
+                    sharedList.add(schedule);
             }
 
            
@@ -135,9 +142,9 @@ public class AllSchedules {
     // imprime o toString de todas as marcações com a data pretendida.
     public static void searchByDate(String date) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            if (schedules[i].getDate().equals(date) ) {
-                list.add(schedules[i]);
+        for (Schedule schedule: schedules) {
+            if (schedule.getDate().equals(date) ) {
+                list.add(schedule);
             }
             
         }
@@ -152,11 +159,11 @@ public class AllSchedules {
     public static void listPeopleByDateAndLocation(String date, String location){
         List<Schedule> list = new ArrayList<>();
         
-            for (int i = 0; i < schedules.length; i++) {
-                if(schedules[i].getDate().equals(date) 
-                        && schedules[i].getVaccinationLocation().getName().equals(location)){
-                    System.out.println("Enfermeiro - " + schedules[i].getNurse().getName() + " - " + schedules[i].getNurse().getPhoneNumber());
-                    System.out.println("Utente - " + schedules[i].getPatient().getName() + " - " + schedules[i].getPatient().getPhoneNumber() );
+           for (Schedule schedule: schedules) {
+                if(schedule.getDate().equals(date) 
+                        && schedule.getVaccinationLocation().getName().equals(location)){
+                    System.out.println("Enfermeiro - " + schedule.getNurse().getName() + " - " + schedule.getNurse().getPhoneNumber());
+                    System.out.println("Utente - " + schedule.getPatient().getName() + " - " + schedule.getPatient().getPhoneNumber() );
                 }
             }
         
@@ -164,9 +171,9 @@ public class AllSchedules {
     }
     public static void searchByBrand(String brand) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            if (schedules[i].getVacccine().getBrand().equals(brand)){
-                list.add(schedules[i]);
+        for (Schedule schedule: schedules) {
+            if (schedule.getVacccine().getBrand().equals(brand)){
+                list.add(schedule);
             }
         }
         for(Schedule s : list){
@@ -177,9 +184,9 @@ public class AllSchedules {
     
     public static void searchByLot(String lot) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            if (schedules[i].getVacccine().getLot().equals(lot)){
-                list.add(schedules[i]);
+        for (Schedule schedule: schedules) {
+            if (schedule.getVacccine().getLot().equals(lot)){
+                list.add(schedule);
             }
         }
         for(Schedule s : list){
@@ -190,9 +197,9 @@ public class AllSchedules {
     
     public static void searchByBrandAndLot(String brand, String lot) {
         List<Schedule> list = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            if (schedules[i].getVacccine().getLot().equals(lot) && schedules[i].getVacccine().getBrand().equals(brand) ){
-                list.add(schedules[i]);
+        for (Schedule schedule: schedules) {
+            if (schedule.getVacccine().getLot().equals(lot) && schedule.getVacccine().getBrand().equals(brand) ){
+                list.add(schedule);
             }
         }
         for(Schedule s : list){
@@ -206,9 +213,9 @@ public class AllSchedules {
          System.out.println(name);
   
          
-        for (int i = 0; i < count; i++) {
-            if(schedules[i].getVaccinationLocation().getName().equals(name)){
-                list.add(schedules[i]);
+        for (Schedule schedule: schedules) {
+            if(schedule.getVaccinationLocation().getName().equals(name)){
+                list.add(schedule);
             }
         }
         for(Schedule s : list){
