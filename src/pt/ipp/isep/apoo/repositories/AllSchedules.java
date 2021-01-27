@@ -9,9 +9,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 import pt.ipp.isep.apoo.classes.Patient;
 import pt.ipp.isep.apoo.classes.Schedule;
-import java.util.*;
+import java.util.stream.IntStream; 
+
+
 
 /**
  *
@@ -55,7 +58,7 @@ public class AllSchedules {
 
         for (int i = 0; i < count; i++) {
             System.out.println(
-                    "Marcação numero" + (counter++) + "\n"
+                    "Marcação numero - " + (counter++) + "\n"
                     + " # Local de vacinação #" + "\n"
                     + schedules[i].getVaccinationLocation().getName() + " | " + schedules[i].getVaccinationLocation().getAddress() + " | " + schedules[i].getVaccinationLocation().getPhoneNumber() + "\n"
                     + " # Data #" + "\n"
@@ -86,18 +89,28 @@ public class AllSchedules {
     
 
     // Itera o array de Schedules e procura por um Schedule para o paciente com o número introduzido
-    public static Schedule searchScheduleByPatientNumber(int number) {
+    public static void searchScheduleByPatientNumber(int patientNumber) {
         for (int i = 0; i < count; i++) {
-            if (schedules[i].getPatient().getPatientNumber() == number) {
+            if (schedules[i].getPatient().getPatientNumber() == patientNumber) {
                 System.out.println(schedules[i]);
-                return schedules[i];
             }
         }
-        return null;
-    }
-    public static Schedule searchScheduleByPatientÀge(int age) {
         
-      
+    }
+    
+    public static void deleteScheduleByPatientNnumber(int patientNumber){
+            for (int i = 0; i < count; i++) {
+            if (schedules[i].getPatient().getPatientNumber() == patientNumber) {
+                // to do, delete from array
+            }
+        }
+                 
+   
+        
+    }
+    
+    public static void searchScheduleByPatientÀge(int age) {
+        
         List<Schedule> sharedList = new ArrayList<>();
         int currentYear = 2021;
         int ageYear = currentYear - age;
@@ -113,7 +126,6 @@ public class AllSchedules {
          for(Schedule s : sharedList){
                 System.out.println(s.toString());
             }
-        return null;
     }
     
     /**
@@ -124,9 +136,10 @@ public class AllSchedules {
     public static void searchByDate(String date) {
         List<Schedule> list = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            if (schedules[i].getDate().equals(date)) {
+            if (schedules[i].getDate().equals(date) ) {
                 list.add(schedules[i]);
             }
+            
         }
         for(Schedule s : list){
             System.out.println(s.toString());
@@ -174,10 +187,17 @@ public class AllSchedules {
     }
     
     public static void findByVaccinationLocation(String name){
+         List<Schedule> list = new ArrayList<>();
+         System.out.println(name);
+  
+         
         for (int i = 0; i < count; i++) {
             if(schedules[i].getVaccinationLocation().getName().equals(name)){
-                System.out.println(schedules[i].toString());
+                list.add(schedules[i]);
             }
+        }
+        for(Schedule s : list){
+          System.out.println(s.toString());
         }
         
     }

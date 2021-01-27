@@ -26,16 +26,16 @@ public class Menu {
         System.out.println(" 1 - Fazer marcação");
         System.out.println(" 2 - Pesquisar marcação por numero de utente");
         System.out.println(" 3 - Alterar uma marcação");
-        System.out.println(" 4 - Pesquisar marcações por idade do utente");
-        System.out.println(" 5 - Pesquisar marcações por marca de vacina");
-        System.out.println(" 6 - Pesquisar marcações por lote de vacina");
-        System.out.println(" 7 - Pesquisar marcações por marca e por lote de vacina");
-        System.out.println(" 8 - Pesquisar marcações por data");
-        System.out.println(" 9 - Pesquisar marcações por local de vacionação");
-        System.out.println(" 10 - Listar todas as marcações");
-        System.out.println(" 11 - Imprimir para ficheiro todas as marcações");
-        System.out.println(" 12 - Gerar dados para teste");
-        System.out.println("12");
+        System.out.println(" 4 - Remover marcações pelo numero de utente");
+        System.out.println(" 5 - Pesquisar marcações por idade do utente");
+        System.out.println(" 6 - Pesquisar marcações por marca de vacina");
+        System.out.println(" 7 - Pesquisar marcações por lote de vacina");
+        System.out.println(" 8 - Pesquisar marcações por marca e por lote de vacina");
+        System.out.println(" 9 - Pesquisar marcações por data");
+        System.out.println(" 10 - Pesquisar marcações por local de vacionação");
+        System.out.println(" 11 - Listar todas as marcações");
+        System.out.println(" 12 - Imprimir para ficheiro todas as marcações");
+        System.out.println(" 13 - Gerar dados para teste");
         System.out.println("Insira a opção");
         option = reader.nextInt();
 
