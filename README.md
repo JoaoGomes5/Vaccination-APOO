@@ -83,7 +83,7 @@
     - Ler informação de uma marcação e acrescentá-la a um array em memória (considere que não precisa de armazenar mais de 100 marcações)  ✅
     - Retirar do array a marcação de um utente indicado pelo utilizador ✅
     - Pesquisar marcação por Utente ✅
-    - Alterar uma marcação (Local, data, hora ou Enfermeiro) 
+    - Alterar uma marcação (Local, data, hora ou Enfermeiro) ✅
     - Pesquisar marcações de utentes por idade; ✅
     - Pesquisar marcações com uma marca e/ou lote de vacina indicado pelo utilizador; ✅
     - Listar indivíduos – nome, contacto, categoria (enfermeiro / utente) que vão estar numa determinada data num determinado local de vacinação ✅

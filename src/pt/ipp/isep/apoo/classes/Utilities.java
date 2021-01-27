@@ -374,8 +374,16 @@ public class Utilities {
                 
                 int selectedOption = scanner.nextInt();
                 
-                AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
+                try {
+                                    AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
+
+                } catch (Exception e) {
+                }
+                    
+               
                 
+                
+                menu.run();
                 
                 break;
             case 4:
