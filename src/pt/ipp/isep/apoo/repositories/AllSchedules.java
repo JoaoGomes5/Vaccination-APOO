@@ -5,6 +5,8 @@
  */
 package pt.ipp.isep.apoo.repositories;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +15,9 @@ import java.util.*;
 import pt.ipp.isep.apoo.classes.Patient;
 import pt.ipp.isep.apoo.classes.Schedule;
 import java.util.stream.IntStream; 
+import pt.ipp.isep.apoo.classes.Nurse;
+import pt.ipp.isep.apoo.classes.VaccinationLocation;
+import pt.ipp.isep.apoo.classes.Vaccine;
 
 
 
@@ -78,11 +83,31 @@ public class AllSchedules {
     }
     
     
+    public static void ReadfromFile() throws FileNotFoundException{
+        File file =  new File("Marcacoes.txt");
+        Scanner scan = new Scanner(file);
+        while(scan.hasNextLine()){
+            String line = scan.nextLine();
+            String[] linesplit = line.split("\\|");
+            for(int i =0;i<linesplit.length;i++){
+                System.out.println(i+ " "+linesplit[i]);
+            }
+            //Nurse n = new Nurse(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));
+            //Vaccine v = new Vaccine(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));
+            //VaccinationLocation vl = new VaccinationLocation(linesplit[2], linesplit[2], linesplit[2]);
+            
+            //Schedule sc = new Schedule(vl, linesplit[2], linesplit[4], );
+            //schedules.add(sc);
+        }
+        scan.close();
+    }
+         
+    
     public static void saveSchedulesToFile() throws IOException {
        
         FileWriter fw = new FileWriter("Marcacoes.txt");
         for (Schedule schedule: schedules) {
-		fw.write(schedule.getTypeOfLocation() + " - " + schedule.toString()+"\n");
+        fw.write(schedule.getTypeOfLocation() + " | " + schedule.toString()+"\n");
 //                fw.write("\n");
 	}
 	fw.close();

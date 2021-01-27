@@ -83,7 +83,7 @@ public class Hospital extends VaccinationLocation {
     */
     @Override
     public String toString(){
-        return super.toString()+ " no edificio com o nome "+getBuildingName()+" contactável através da extensão "+getExtension();
+        return super.toString()+ " | no edificio com o nome |"+getBuildingName()+" | contactável através da extensão |"+getExtension();
     }
 
 }

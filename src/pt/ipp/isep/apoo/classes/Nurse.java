@@ -50,7 +50,7 @@ public class Nurse {
 
     @Override
     public String toString(){
-        return " enfermeiro " + getName() + " com cédula profissional número " + getCardNumber();
+        return "| enfermeiro |" + getName() + "| com cédula profissional número |" + getCardNumber();
     }   
     
     public String getName() {

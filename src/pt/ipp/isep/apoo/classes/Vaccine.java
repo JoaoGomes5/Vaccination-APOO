@@ -33,7 +33,7 @@ public class Vaccine {
     
     @Override
     public String toString(){
-        return "com a vacina da marca "+getBrand()+" e com o lote "+getLot();
+        return "|com a vacina da marca |"+getBrand()+"| e com o lote |"+getLot();
         
     }
     public String getBrand() {

@@ -6,6 +6,7 @@
 package pt.ipp.isep.apoo.classes;
 import java.io.IOException;
 import java.util.*;
+import static pt.ipp.isep.apoo.repositories.AllSchedules.ReadfromFile;
 /**
  *
  * @author Gustavo Reis e João Gomes
@@ -21,6 +22,8 @@ public class Menu {
   
         
         Scanner reader = new Scanner(System.in);
+        ReadfromFile();
+        
         
         System.out.println("");
         System.out.println("Seja bem-vindo!!");

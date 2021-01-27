@@ -67,7 +67,7 @@ package pt.ipp.isep.apoo.classes;
     
     @Override
     public String toString(){
-        return "com o número de utente "+getPatientNumber()+ "o paciente "+getName()+" nascido a "+getYearOfBirth()+" contactável através de "+getPhoneNumber();
+        return "| com o número de utente |"+getPatientNumber()+ "| o paciente |"+getName()+"| nascido a |"+getYearOfBirth()+"| contactável através de |"+getPhoneNumber();
     }
     
 
