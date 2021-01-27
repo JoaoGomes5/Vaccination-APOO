@@ -20,6 +20,7 @@ import pt.ipp.isep.apoo.classes.VaccinationLocation;
 import pt.ipp.isep.apoo.classes.Vaccine;
 
 
+import java.util.stream.IntStream;
 
 /**
  *
@@ -29,23 +30,22 @@ public class AllSchedules {
 
     private static ArrayList<Schedule> schedules = new ArrayList<Schedule>();
     private static int count = 0;
-    
 
     public static void addScheduleToAllSchedules(Schedule s) {
         System.out.println(s.toString());
         schedules.add(s);
-        
+
     }
 
     // itera o array de Schedules e quando encontrar uma instância do objecto Schedule com Paciente igual ao parâmetro, devolve a instância do Schedule.
     public static Schedule getScheduleByPatiente(Patient p) {
-       for(Schedule schedule: schedules){
-             if (schedule.getPatient().equals(p)) {
+        for (Schedule schedule : schedules) {
+            if (schedule.getPatient().equals(p)) {
                 System.out.println(schedule.toString());
                 return schedule;
             }
-           
-       }
+
+        }
 
         return null;
     }
@@ -62,7 +62,7 @@ public class AllSchedules {
         int counter = 1;
         System.out.println("O número total de marcações é : " + count);
 
-        for (Schedule schedule: schedules) {
+        for (Schedule schedule : schedules) {
             System.out.println(
                     "Marcação numero - " + (counter++) + "\n"
                     + " # Local de vacinação #" + "\n"
@@ -103,154 +103,241 @@ public class AllSchedules {
     }
          
     
+
     public static void saveSchedulesToFile() throws IOException {
-       
+
         FileWriter fw = new FileWriter("Marcacoes.txt");
-        for (Schedule schedule: schedules) {
-        fw.write(schedule.getTypeOfLocation() + " | " + schedule.toString()+"\n");
+        
+        for (Schedule schedule : schedules) {
+            fw.write(schedule.getTypeOfLocation() + " - " + schedule.toString() + "\n");
 //                fw.write("\n");
-	}
-	fw.close();
+        }
+        fw.close();
     }
-    
 
     // Itera o array de Schedules e procura por um Schedule para o paciente com o número introduzido
     public static void searchScheduleByPatientNumber(int patientNumber) {
-        for (Schedule schedule: schedules) {
+        for (Schedule schedule : schedules) {
             if (schedule.getPatient().getPatientNumber() == patientNumber) {
                 System.out.println(schedule);
             }
         }
-        
+
     }
-    
-    public static void deleteScheduleByPatientName(int patientNumber){
-            try {
-             for (Schedule schedule: schedules) {
+
+    public static void updateScheduleByPatientNumber(int patientNumber, int option) {
+        Scanner scanner = new Scanner(System.in);
+        if (option == 1) {
+            String localType = "";
+
+            for (Schedule schedule : schedules) {
+                if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                    localType = schedule.getTypeOfLocation();
+                }
+
+                if (localType == "H") {
+
+                    // Incompleto
+                    System.out.println("");
+                    System.out.println("Insira o nome do local");
+                    schedule.getVaccinationLocation().setName(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira a morada do local");
+                    schedule.getVaccinationLocation().setAddress(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira o contacto telefonico do local");
+                    schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira o nome do edificio");
+                    // schedule.setBuildingName(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira a extensão telefonica do local");
+                    // schedule.setExtension(scanner.nextLine());
+                }
+                if (localType == "P") {
+
+                    // Incompleto
+                    System.out.println("");
+                    System.out.println("Insira o novo nome do local");
+                    schedule.getVaccinationLocation().setName(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira a novo morada do local");
+                    schedule.getVaccinationLocation().setAddress(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira o novo contacto telefonico do local");
+                    schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira o novo numero de secção");
+                }
+                if (localType == "C") {
+                    System.out.println("");
+                    System.out.println("Insira o novo nome do local");
+                    schedule.getVaccinationLocation().setName(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira a novo morada do local");
+                    schedule.getVaccinationLocation().setAddress(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira o novo contacto telefonico do local");
+                    schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
+                }
+            }
+
+        }
+
+        if (option == 2) {
+            for (Schedule schedule : schedules) {
+                if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                    System.out.println("");
+                    System.out.println("Insira a nova  data da marcação - Digite o data no formato DD-MM-AAAA");
+                    schedule.setDate(scanner.nextLine());
+                }
+
+            }
+        }
+        if (option == 3) {
+            for (Schedule schedule : schedules) {
+                if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                    System.out.println("Insira a hora da marcação - Digite a hora no formato HH:MM");
+                    schedule.setTime(scanner.nextLine());
+                }
+
+            }
+        }
+        if (option == 3) {
+            for (Schedule schedule : schedules) {
+                if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                    System.out.println("Insira o nome do enfermeiro");
+                    schedule.getNurse().setName(scanner.nextLine());
+                    System.out.println("");
+                    System.out.println("Insira o número de cédula profissional");
+                    schedule.getNurse().setCardNumber(scanner.nextInt());
+                    System.out.println("Insira o contacto telefonico do enfermeiro");
+                    schedule.getNurse().setPhoneNumber(scanner.nextInt());
+                    
+                }
+
+            }
+        }
+    }
+
+    public static void deleteScheduleByPatientName(int patientNumber) {
+        try {
+            for (Schedule schedule : schedules) {
 //                 
-                     if (schedule.getPatient().getPatientNumber() == patientNumber) {
-                            schedules.remove(schedule);
-                    }
-             }
+                if (schedule.getPatient().getPatientNumber() == patientNumber) {
+                    schedules.remove(schedule);
+                }
+            }
         } catch (Exception e) {
         }
-             
-       
-                 
-   
-        
+
     }
-    
-    public static void searchScheduleByPatientÀge(int age)  {
-        
+
+    public static void searchScheduleByPatientÀge(int age) {
+
         List<Schedule> sharedList = new ArrayList<>();
         int currentYear = 2021;
         int ageYear = currentYear - age;
-        
-        for (Schedule schedule: schedules) {
-           
+
+        for (Schedule schedule : schedules) {
+
             if (schedule.getPatient().getYearOfBirth() == ageYear) {
-                    sharedList.add(schedule);
+                sharedList.add(schedule);
             }
 
-           
         }
-         for(Schedule s : sharedList){
-                System.out.println(s.toString());
-            }
+        for (Schedule s : sharedList) {
+            System.out.println(s.toString());
+        }
     }
-    
+
     /**
-     * 
-     * @param date 
+     *
+     * @param date
      */
     // imprime o toString de todas as marcações com a data pretendida.
     public static void searchByDate(String date) {
         List<Schedule> list = new ArrayList<>();
-        for (Schedule schedule: schedules) {
-            if (schedule.getDate().equals(date) ) {
+        for (Schedule schedule : schedules) {
+            if (schedule.getDate().equals(date)) {
                 list.add(schedule);
             }
-            
+
         }
-        for(Schedule s : list){
+        for (Schedule s : list) {
             System.out.println(s.toString());
         }
 
     }
+
     /**
- * Método que permite listar indivíduos
- */    
-    public static void listPeopleByDateAndLocation(String date, String location){
+     * Método que permite listar indivíduos
+     */
+    public static void listPeopleByDateAndLocation(String date, String location) {
         List<Schedule> list = new ArrayList<>();
-        
-           for (Schedule schedule: schedules) {
-                if(schedule.getDate().equals(date) 
-                        && schedule.getVaccinationLocation().getName().equals(location)){
-                    System.out.println("Enfermeiro - " + schedule.getNurse().getName() + " - " + schedule.getNurse().getPhoneNumber());
-                    System.out.println("Utente - " + schedule.getPatient().getName() + " - " + schedule.getPatient().getPhoneNumber() );
-                }
+
+        for (Schedule schedule : schedules) {
+            if (schedule.getDate().equals(date)
+                    && schedule.getVaccinationLocation().getName().equals(location)) {
+                System.out.println("Enfermeiro - " + schedule.getNurse().getName() + " - " + schedule.getNurse().getPhoneNumber());
+                System.out.println("Utente - " + schedule.getPatient().getName() + " - " + schedule.getPatient().getPhoneNumber());
             }
-        
-  
+        }
+
     }
+
     public static void searchByBrand(String brand) {
         List<Schedule> list = new ArrayList<>();
-        for (Schedule schedule: schedules) {
-            if (schedule.getVacccine().getBrand().equals(brand)){
+        for (Schedule schedule : schedules) {
+            if (schedule.getVacccine().getBrand().equals(brand)) {
                 list.add(schedule);
             }
         }
-        for(Schedule s : list){
+        for (Schedule s : list) {
             System.out.println(s.toString());
         }
 
     }
-    
+
     public static void searchByLot(String lot) {
         List<Schedule> list = new ArrayList<>();
-        for (Schedule schedule: schedules) {
-            if (schedule.getVacccine().getLot().equals(lot)){
+        for (Schedule schedule : schedules) {
+            if (schedule.getVacccine().getLot().equals(lot)) {
                 list.add(schedule);
             }
         }
-        for(Schedule s : list){
-           System.out.println(s.toString());
+        for (Schedule s : list) {
+            System.out.println(s.toString());
         }
 
     }
-    
+
     public static void searchByBrandAndLot(String brand, String lot) {
         List<Schedule> list = new ArrayList<>();
-        for (Schedule schedule: schedules) {
-            if (schedule.getVacccine().getLot().equals(lot) && schedule.getVacccine().getBrand().equals(brand) ){
+        for (Schedule schedule : schedules) {
+            if (schedule.getVacccine().getLot().equals(lot) && schedule.getVacccine().getBrand().equals(brand)) {
                 list.add(schedule);
             }
         }
-        for(Schedule s : list){
-          System.out.println(s.toString());
+        for (Schedule s : list) {
+            System.out.println(s.toString());
         }
 
     }
-    
-    public static void findByVaccinationLocation(String name){
-         List<Schedule> list = new ArrayList<>();
-         System.out.println(name);
-  
-         
-        for (Schedule schedule: schedules) {
-            if(schedule.getVaccinationLocation().getName().equals(name)){
+
+    public static void findByVaccinationLocation(String name) {
+        List<Schedule> list = new ArrayList<>();
+        System.out.println(name);
+
+        for (Schedule schedule : schedules) {
+            if (schedule.getVaccinationLocation().getName().equals(name)) {
                 list.add(schedule);
             }
         }
-        for(Schedule s : list){
-          System.out.println(s.toString());
+        for (Schedule s : list) {
+            System.out.println(s.toString());
         }
-        
+
     }
-    
-   
 
 }
-
-	
