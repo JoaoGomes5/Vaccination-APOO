@@ -14,12 +14,8 @@ import java.util.List;
 import java.util.*;
 import pt.ipp.isep.apoo.classes.Patient;
 import pt.ipp.isep.apoo.classes.Schedule;
-import java.util.stream.IntStream;
 import pt.ipp.isep.apoo.classes.Nurse;
-import pt.ipp.isep.apoo.classes.VaccinationLocation;
 import pt.ipp.isep.apoo.classes.Vaccine;
-
-import java.util.stream.IntStream;
 import pt.ipp.isep.apoo.classes.HealthCenter;
 import pt.ipp.isep.apoo.classes.Hospital;
 import pt.ipp.isep.apoo.classes.Pavilion;
@@ -33,32 +29,19 @@ public class AllSchedules {
     private static ArrayList<Schedule> schedules = new ArrayList<Schedule>();
     private static int count = 0;
 
-    public static void addScheduleToAllSchedules(Schedule s) {
-        System.out.println(s.toString());
-        schedules.add(s);
-
+    /**
+     *
+     * Metodo que permite adicionar uma nova marcação ao ArrayList que contem
+     * todas as marcações
+     *
+     * @param newSchedule Marcação
+     */
+    public static void addScheduleToAllSchedules(Schedule newSchedule) {
+        schedules.add(newSchedule);
     }
-
-    // itera o array de Schedules e quando encontrar uma instância do objecto Schedule com Paciente igual ao parâmetro, devolve a instância do Schedule.
-    public static Schedule getScheduleByPatiente(Patient p) {
-        for (Schedule schedule : schedules) {
-            if (schedule.getPatient().equals(p)) {
-                System.out.println(schedule.toString());
-                return schedule;
-            }
-
-        }
-
-        return null;
-    }
-
-    /*
-    ArrayList<Schedule> allSchedules = new ArrayList<>(); 
-     
-      public void addScheduleToAllSchedules(Schedule schedule){
-        this.allSchedules.add(schedule);
-       }
-      
+    
+    /**
+     * Metodo que permite listar todas as marcações em memória
      */
     public static void listAllSchedules() {
         int counter = 1;
@@ -84,6 +67,13 @@ public class AllSchedules {
 
     }
 
+    /**
+     *
+     * Metodo que permite ler de um ficheiro a informação das marcações e
+     * passa-las para um array (ficheiro -> array)
+     *
+     * @throws FileNotFoundException
+     */
     public static void readfromFile() throws FileNotFoundException {
         File file = new File("Marcacoes.txt");
         Scanner scan = new Scanner(file);
@@ -107,7 +97,7 @@ public class AllSchedules {
                 AllSchedules.addScheduleToAllSchedules(schedule);
             }
             if (splitedLine[0].trim().equals("H")) {
-                Hospital hospital = new Hospital(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(),splitedLine[9], splitedLine[10] );
+                Hospital hospital = new Hospital(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(), splitedLine[9], splitedLine[10]);
                 Nurse nurse = new Nurse(splitedLine[12], Integer.parseInt(splitedLine[13]), Integer.parseInt(splitedLine[14]));
                 Patient patient = new Patient(splitedLine[19], splitedLine[20], Integer.parseInt(splitedLine[21]), Integer.parseInt(splitedLine[22]), Integer.parseInt(splitedLine[23]));
                 Vaccine vaccine = new Vaccine(splitedLine[16], splitedLine[17]);
@@ -116,7 +106,7 @@ public class AllSchedules {
                 AllSchedules.addScheduleToAllSchedules(schedule);
             }
             if (splitedLine[0].trim().equals("P")) {
-                Pavilion pavilion = new Pavilion(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(),Integer.parseInt(splitedLine[9]));
+                Pavilion pavilion = new Pavilion(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(), Integer.parseInt(splitedLine[9]));
                 Nurse nurse = new Nurse(splitedLine[11], Integer.parseInt(splitedLine[12]), Integer.parseInt(splitedLine[13]));
                 Patient patient = new Patient(splitedLine[18], splitedLine[19], Integer.parseInt(splitedLine[20]), Integer.parseInt(splitedLine[21]), Integer.parseInt(splitedLine[22]));
                 Vaccine vaccine = new Vaccine(splitedLine[15], splitedLine[16]);
@@ -128,18 +118,26 @@ public class AllSchedules {
         scan.close();
     }
 
+    
+    /**
+     * Metodo que permite registar em ficheiro a informação das marcações presentes em memória(array → ficheiro)
+     * @throws IOException 
+     */
     public static void saveSchedulesToFile() throws IOException {
 
         FileWriter fw = new FileWriter("Marcacoes.txt");
 
         for (Schedule schedule : schedules) {
             fw.write(schedule.getTypeOfLocation() + " | " + schedule.toString() + "\n");
-//                fw.write("\n");
         }
         fw.close();
     }
 
-    // Itera o array de Schedules e procura por um Schedule para o paciente com o número introduzido
+    /**
+     * 
+     * Metodo que permite pesquisar marcação por Utente
+     * @param patientNumber Numero de Utente
+     */
     public static void searchScheduleByPatientNumber(int patientNumber) {
         for (Schedule schedule : schedules) {
             if (schedule.getPatient().getPatientNumber() == patientNumber) {
@@ -149,6 +147,11 @@ public class AllSchedules {
 
     }
 
+    /**
+     * Alterar uma marcação (Local, data, hora ou Enfermeiro) pelo numero de utente 
+     * @param patientNumber Numero de Utente
+     * @param option Opção selecionada pelo utilizador
+     */
     public static void updateScheduleByPatientNumber(int patientNumber, int option) {
         Scanner scanner = new Scanner(System.in);
         if (option == 1) {
@@ -164,6 +167,8 @@ public class AllSchedules {
                     System.out.println("");
                     System.out.println("Insira o novo contacto telefonico do local");
                     schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
+                    
+                    System.out.println(" # GEditado com sucesso #");
                 }
             }
 
@@ -175,6 +180,8 @@ public class AllSchedules {
                     System.out.println("");
                     System.out.println("Insira a nova  data da marcação - Digite o data no formato DD-MM-AAAA");
                     schedule.setDate(scanner.nextLine());
+                    
+                    System.out.println(" # GEditado com sucesso #");
                 }
 
             }
@@ -185,6 +192,8 @@ public class AllSchedules {
                 if (schedule.getPatient().getPatientNumber() == patientNumber) {
                     System.out.println("Insira a hora da marcação - Digite a hora no formato HH:MM");
                     schedule.setTime(scanner.nextLine());
+                    
+                    System.out.println(" # GEditado com sucesso #");
                 }
 
             }
@@ -200,6 +209,8 @@ public class AllSchedules {
                     schedule.getNurse().setCardNumber(scanner.nextInt());
                     System.out.println("Insira o contacto telefonico do enfermeiro");
                     schedule.getNurse().setPhoneNumber(scanner.nextInt());
+                    
+                    System.out.println(" # GEditado com sucesso #");
 
                 }
 
@@ -208,6 +219,11 @@ public class AllSchedules {
         }
     }
 
+    
+    /**
+     * Metodo que remove uma marcação do ArrayList onde se encontram todas as marcações
+     * @param patientNumber Numero de Utente
+     */
     public static void deleteScheduleByPatientName(int patientNumber) {
         try {
             for (Schedule schedule : schedules) {
@@ -220,7 +236,11 @@ public class AllSchedules {
         }
 
     }
-
+    
+    /**
+     * Metodo que lista todas as marcações dos utentes por idade
+     * @param age Idade 
+     */
     public static void searchScheduleByPatientÀge(int age) {
 
         List<Schedule> sharedList = new ArrayList<>();
@@ -241,9 +261,9 @@ public class AllSchedules {
 
     /**
      *
-     * @param date
+     * Metodo que lista todas as marcações por data de marcação
+     * @param date Data de marcação
      */
-    // imprime o toString de todas as marcações com a data pretendida.
     public static void searchByDate(String date) {
         List<Schedule> list = new ArrayList<>();
         for (Schedule schedule : schedules) {
@@ -259,10 +279,12 @@ public class AllSchedules {
     }
 
     /**
-     * Método que permite listar indivíduos
+     * 
+     * Metodo que lista individuos que vão estar numa determinada data num determinado local de vacinação
+     * @param date Data de marcação
+     * @param location  Local de Marcação
      */
     public static void listPeopleByDateAndLocation(String date, String location) {
-        List<Schedule> list = new ArrayList<>();
 
         for (Schedule schedule : schedules) {
             if (schedule.getDate().equals(date)
@@ -274,6 +296,10 @@ public class AllSchedules {
 
     }
 
+    /**
+     * Metodo que pesquisa marcações por marca de vacinação
+     * @param brand Marca da vacina
+     */
     public static void searchByBrand(String brand) {
         List<Schedule> list = new ArrayList<>();
         for (Schedule schedule : schedules) {
@@ -286,7 +312,11 @@ public class AllSchedules {
         }
 
     }
-
+    
+    /**
+     * Metodo que pesquisa marcações por lote de vacinação
+     * @param lot Lote da vacina
+     */
     public static void searchByLot(String lot) {
         List<Schedule> list = new ArrayList<>();
         for (Schedule schedule : schedules) {
@@ -300,6 +330,12 @@ public class AllSchedules {
 
     }
 
+    /**
+     * 
+     * Metodo que pesquisa marcações por marca e lote de vacinação
+     * @param brand Marca da vacina
+     * @param lot Lote da Vacina
+     */
     public static void searchByBrandAndLot(String brand, String lot) {
         List<Schedule> list = new ArrayList<>();
         for (Schedule schedule : schedules) {
@@ -313,6 +349,11 @@ public class AllSchedules {
 
     }
 
+    /**
+     * 
+     * Metedo que pesquisa marcações por local de vacinação
+     * @param name Nome do local de vacinação
+     */
     public static void findByVaccinationLocation(String name) {
         List<Schedule> list = new ArrayList<>();
         System.out.println(name);

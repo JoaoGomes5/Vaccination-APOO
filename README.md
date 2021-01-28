@@ -17,7 +17,7 @@
     - Leitura e escrita de ficheiros nos ficheiros txt
     - J para funcionalidades atribuidas a João
     - G para funcionalidades atribuidas a Gustavo
-    - X para funcionalidades finalizadas
+    - ✅ para funcionalidades finalizadas
     - Carregar as marcações criadas para arrays (maximo de 100 marcações)
     - Guardar o array de marcações no ficheiro Schedules.txt
     - Criar alguns objetos defalaut para Utentes, Enfermeiros, Local de Vacinação e Vacinas
@@ -90,7 +90,7 @@
     - Pesquisar marcações para uma data indicado pelo utilizador; ✅
     - Pesquisar marcações para um local de vacinação indicado pelo utilizador; ✅
     - Registar em ficheiro a informação das marcações (array → ficheiro); ✅
-    - Ler de um ficheiro a informação das marcações (ficheiro → array); 
+    - Ler de um ficheiro a informação das marcações (ficheiro → array); ✅
     - Possibilidade de gerir múltiplas zonas do país(ex: Porto, Aveiro, Matosinhos), utilizando um ficheiro para cada zona. 
     - Cada classe tem um metedo que permita passar o objeto do mesmo para uma String ✅
     

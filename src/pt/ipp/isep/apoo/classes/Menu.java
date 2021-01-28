@@ -45,7 +45,7 @@ public class Menu {
         System.out.println(" 14 - Gerar dados para teste");
         System.out.println(" 0 - Sair");
         System.out.println("");
-        System.out.println("Insira a opção");
+        System.out.println("Insira a opção:");
         option = reader.nextInt();
 
         Utilities.menuHandler(option);
