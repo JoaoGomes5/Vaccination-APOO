@@ -10,47 +10,76 @@ package pt.ipp.isep.apoo.classes;
  * @author Gustavo Reis e João Gomes
  */
 public class Vaccine {
-    private String brand;
-    private String lot;
-    
+
     /**
-     * Metodo construtor
+     * Marca da Vacina
+     */
+    private String brand;
+
+    /**
+     * Lote da Vacina
+     */
+    private String lot;
+
+    /**
+     * Metodo construtor vazio
      */
     public Vaccine() {
-        
+
     }
+
     /**
-     * 
+     *
      * Método que permite criar uma vacina
-     * @param brand
-     * @param lot
+     *
+     * @param brand Marca da Vacina
+     * @param lot Lote da Vacina
      */
-   
     public Vaccine(String brand, String lot) {
         this.brand = brand;
         this.lot = lot;
     }
-    
-    @Override
-    public String toString(){
-        return getBrand()+"|"+getLot();
-        
-    }
+
     public String getBrand() {
         return brand;
     }
 
+    /**
+     * Método que permite definir a Marca da Vacina
+     *
+     * @param brand Marca da Vacina
+     */
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
+    /**
+     * Método que permite obter o Lote da Vacina
+     *
+     * @return
+     */
     public String getLot() {
         return lot;
     }
 
+    /**
+     * Método que permite definir o Lote da Vacina
+     *
+     * @param lot Lote da Vacina
+     */
     public void setLot(String lot) {
         this.lot = lot;
     }
-    
-    
+
+    /**
+     * Método que retorna os atributos de uma classe em forma de texto
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return getBrand() + "|" + getLot();
+
+    }
+
 }

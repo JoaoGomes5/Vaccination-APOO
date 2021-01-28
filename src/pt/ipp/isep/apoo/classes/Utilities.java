@@ -167,11 +167,10 @@ public class Utilities {
                         System.out.println("");
                         System.out.println("Insira o numero do secção");
                         pavilion.setSectionNumber(scanner.nextInt());
-
+                        scanner.nextLine();
                         System.out.println("");
                         System.out.println("# Data de marcação #");
                         System.out.println("Insira a data da marcação - Digite o data no formato DD-MM-AAAA");
-                        System.out.println("");
                         Pdate = scanner.nextLine();
 
                         System.out.println("");
@@ -365,13 +364,13 @@ public class Utilities {
             case 3:
                 System.out.println("Introduza o número de utente");
                 int selectedNumber = scanner.nextInt();
-                
+
                 System.out.println("Quais indormações pertende alterar?");
                 System.out.println(" 1 - Local");
                 System.out.println(" 2 - Data");
                 System.out.println(" 3 - Hora");
                 System.out.println(" 4 - Enfermeiro ");
-                
+
                 int selectedOption = scanner.nextInt();
                 
                 try {
@@ -390,10 +389,8 @@ public class Utilities {
                 System.out.println("Introduza o numero de utente");
                 int patientNumber = scanner.nextInt();
 
-              
-                    AllSchedules.deleteScheduleByPatientName(patientNumber);
-                    System.out.println("# Marcação removida com sucesso #");
-              
+                AllSchedules.deleteScheduleByPatientName(patientNumber);
+                System.out.println("# Marcação removida com sucesso #");
 
                 menu.run();
                 break;
