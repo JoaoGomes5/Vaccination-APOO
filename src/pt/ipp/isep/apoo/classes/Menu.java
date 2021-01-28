@@ -4,27 +4,28 @@
  * and open the template in the editor.
  */
 package pt.ipp.isep.apoo.classes;
+
 import java.io.IOException;
 import java.util.*;
 import static pt.ipp.isep.apoo.repositories.AllSchedules.readfromFile;
+
 /**
  *
  * @author Gustavo Reis e João Gomes
  */
 public class Menu {
-    
+
     /**
      * Método responsável por executar o Menu
-     * @throws IOException 
+     *
+     * @throws IOException
      */
-    public void run() throws IOException{
+    public void run() throws IOException {
         int option = 0;
-  
-        
+
         Scanner reader = new Scanner(System.in);
-        readfromFile();
         
-        
+
         System.out.println("");
         System.out.println("Seja bem-vindo!!");
         System.out.println("O que deseja fazer?");
@@ -41,8 +42,9 @@ public class Menu {
         System.out.println(" 10 - Pesquisar marcações por data");
         System.out.println(" 11 - Pesquisar marcações por local de vacionação");
         System.out.println(" 12 - Listar todas as marcações");
-        System.out.println(" 13 - Imprimir para ficheiro todas as marcações");
-        System.out.println(" 14 - Gerar dados para teste");
+        System.out.println(" 13 - Ler marcações do ficheiro");
+        System.out.println(" 14 - Imprimir para ficheiro todas as marcações");
+        System.out.println(" 15 - Gerar dados para teste");
         System.out.println(" 0 - Sair");
         System.out.println("");
         System.out.println("Insira a opção");

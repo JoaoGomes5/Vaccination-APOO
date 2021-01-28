@@ -12,28 +12,20 @@ import pt.ipp.isep.apoo.classes.*;
  *
  * @author Gustavo Reis e João Gomes
  */
-public class VacinationProject {    
-    
-   
+public class VacinationProject {
+
     /**
      * Método principal responsável por iniciar o programa
-     * @param args 
-     * @throws IOException 
+     *
+     * @param args
+     * @throws IOException
      */
-    
     public static void main(String[] args) throws IOException {
-            
+
         Menu menu = new Menu();
-        
+
         menu.run();
-        
-        
 
     }
-    
-    
-    
-    
-    
 
 }

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import pt.ipp.isep.apoo.repositories.AllSchedules;
+import static pt.ipp.isep.apoo.repositories.AllSchedules.readfromFile;
 
 /**
  *
@@ -16,6 +17,12 @@ import pt.ipp.isep.apoo.repositories.AllSchedules;
  */
 public class Utilities {
 
+    /**
+     * Método para receber a opção do Menu e efectua a respectiva função
+     *
+     * @param option Opção Selecionada no Menu
+     * @throws IOException
+     */
     public static void menuHandler(int option) throws IOException {
         AllSchedules allSchedules = new AllSchedules();
         Menu menu = new Menu();
@@ -165,7 +172,7 @@ public class Utilities {
                         System.out.println("Insira o contacto telefonico do local");
                         pavilion.setPhoneNumber(scanner.nextLine());
                         System.out.println("");
-                        System.out.println("Insira o numero do secção");
+                        System.out.println("Insira o numero da secção");
                         pavilion.setSectionNumber(scanner.nextInt());
                         scanner.nextLine();
                         System.out.println("");
@@ -372,18 +379,15 @@ public class Utilities {
                 System.out.println(" 4 - Enfermeiro ");
 
                 int selectedOption = scanner.nextInt();
-                
+
                 try {
-                                    AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
+                    AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
 
                 } catch (Exception e) {
                 }
-                    
-               
-                
-                
+
                 menu.run();
-                
+
                 break;
             case 4:
                 System.out.println("Introduza o numero de utente");
@@ -486,6 +490,15 @@ public class Utilities {
                 break;
             case 13:
                 try {
+                    readfromFile();
+
+                } catch (Exception e) {
+                }
+                
+                menu.run();
+                break;
+            case 14:
+                try {
                     AllSchedules.saveSchedulesToFile();
                     System.out.println(" # Guardado com sucesso #");
                 } catch (Exception e) {
@@ -493,7 +506,7 @@ public class Utilities {
 
                 menu.run();
                 break;
-            case 14:
+            case 15:
                 try {
                     generateData();
                 } catch (Exception e) {
@@ -512,6 +525,11 @@ public class Utilities {
 
     }
 
+    /**
+     * Método para gerar Marcações para teste
+     *
+     * @return
+     */
     public static ArrayList<Schedule> generateDefaultSchedules() {
 
         ArrayList<Schedule> schedulesList = new ArrayList<Schedule>();
@@ -576,6 +594,11 @@ public class Utilities {
 
     }
 
+    /**
+     * Método para gerar Utentes para teste
+     *
+     * @return
+     */
     public static ArrayList<Patient> generateDefaultPatients() {
         ArrayList<Patient> patientsList = new ArrayList<Patient>();
 
@@ -663,6 +686,11 @@ public class Utilities {
         return patientsList;
     }
 
+    /**
+     * Método para gerar Locais de Vacinação para teste
+     *
+     * @return
+     */
     public static ArrayList<VaccinationLocation> generateDefaultVaccinationLocations() {
         ArrayList<VaccinationLocation> locationsList = new ArrayList<VaccinationLocation>();
 
@@ -700,6 +728,11 @@ public class Utilities {
         return locationsList;
     }
 
+    /**
+     * Método para gerar Vacinas para teste
+     *
+     * @return
+     */
     public static ArrayList<Vaccine> generateDefaultVaccines() {
         ArrayList<Vaccine> vaccinesList = new ArrayList<>();
 
@@ -710,6 +743,11 @@ public class Utilities {
         return vaccinesList;
     }
 
+    /**
+     * Método para gerar Enfermeiros para teste
+     *
+     * @return
+     */
     public static ArrayList<Nurse> generateDefaultNurses() {
         ArrayList<Nurse> nursesList = new ArrayList<>();
 
@@ -731,6 +769,9 @@ public class Utilities {
         return nursesList;
     }
 
+    /**
+     * Método para gerar toda a informação para teste
+     */
     public static void generateData() {
         Utilities.generateDefaultNurses();
         Utilities.generateDefaultPatients();

@@ -62,7 +62,7 @@ public class AllSchedules {
      */
     public static void listAllSchedules() {
         int counter = 1;
-        System.out.println("O número total de marcações é : " + count);
+        System.out.println("O número total de marcações é : " + schedules.size());
 
         for (Schedule schedule : schedules) {
             System.out.println(
