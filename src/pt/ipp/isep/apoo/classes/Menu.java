@@ -6,7 +6,7 @@
 package pt.ipp.isep.apoo.classes;
 import java.io.IOException;
 import java.util.*;
-import static pt.ipp.isep.apoo.repositories.AllSchedules.ReadfromFile;
+import static pt.ipp.isep.apoo.repositories.AllSchedules.readfromFile;
 /**
  *
  * @author Gustavo Reis e João Gomes
@@ -22,7 +22,7 @@ public class Menu {
   
         
         Scanner reader = new Scanner(System.in);
-        ReadfromFile();
+        readfromFile();
         
         
         System.out.println("");
@@ -43,6 +43,8 @@ public class Menu {
         System.out.println(" 12 - Listar todas as marcações");
         System.out.println(" 13 - Imprimir para ficheiro todas as marcações");
         System.out.println(" 14 - Gerar dados para teste");
+        System.out.println(" 0 - Sair");
+        System.out.println("");
         System.out.println("Insira a opção");
         option = reader.nextInt();
 

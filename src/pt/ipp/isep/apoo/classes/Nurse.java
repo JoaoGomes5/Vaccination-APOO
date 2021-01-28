@@ -101,7 +101,7 @@ public class Nurse {
     */
      @Override
     public String toString(){
-        return "| enfermeiro |" + getName() + "| com cédula profissional número |" + getCardNumber();
+        return  getName() + "|" + getCardNumber() + "|" + getPhoneNumber();
     }   
     
 }

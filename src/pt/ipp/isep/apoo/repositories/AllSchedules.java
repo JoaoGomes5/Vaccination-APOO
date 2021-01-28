@@ -14,13 +14,15 @@ import java.util.List;
 import java.util.*;
 import pt.ipp.isep.apoo.classes.Patient;
 import pt.ipp.isep.apoo.classes.Schedule;
-import java.util.stream.IntStream; 
+import java.util.stream.IntStream;
 import pt.ipp.isep.apoo.classes.Nurse;
 import pt.ipp.isep.apoo.classes.VaccinationLocation;
 import pt.ipp.isep.apoo.classes.Vaccine;
 
-
 import java.util.stream.IntStream;
+import pt.ipp.isep.apoo.classes.HealthCenter;
+import pt.ipp.isep.apoo.classes.Hospital;
+import pt.ipp.isep.apoo.classes.Pavilion;
 
 /**
  *
@@ -81,35 +83,57 @@ public class AllSchedules {
         }
 
     }
-    
-    
-    public static void ReadfromFile() throws FileNotFoundException{
-        File file =  new File("Marcacoes.txt");
+
+    public static void readfromFile() throws FileNotFoundException {
+        File file = new File("Marcacoes.txt");
         Scanner scan = new Scanner(file);
-        while(scan.hasNextLine()){
+        while (scan.hasNextLine()) {
             String line = scan.nextLine();
-            String[] linesplit = line.split("\\|");
-            for(int i =0;i<linesplit.length;i++){
-                System.out.println(i+ " "+linesplit[i]);
+            String[] splitedLine = line.split("\\|");
+
+//                       if(splitedLine[0].trim().equals("P")){
+//                   for (int i = 0; i < splitedLine.length; i++) {
+//                        
+//                      System.out.println(i + " " + splitedLine[i].trim());
+//                 }
+//            }
+            if (splitedLine[0].trim().equals("C")) {
+                HealthCenter healthCenter = new HealthCenter(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim());
+                Nurse nurse = new Nurse(splitedLine[10], Integer.parseInt(splitedLine[11]), Integer.parseInt(splitedLine[12]));
+                Patient patient = new Patient(splitedLine[17], splitedLine[18].trim(), Integer.parseInt(splitedLine[19]), Integer.parseInt(splitedLine[20]), Integer.parseInt(splitedLine[21]));
+                Vaccine vaccine = new Vaccine(splitedLine[14].trim(), splitedLine[15].trim());
+
+                Schedule schedule = new Schedule(healthCenter, splitedLine[2], splitedLine[4], nurse, patient, vaccine, splitedLine[0]);
+                AllSchedules.addScheduleToAllSchedules(schedule);
             }
-            //Nurse n = new Nurse(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));
-            //Vaccine v = new Vaccine(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));
-            //VaccinationLocation vl = new VaccinationLocation(linesplit[2], linesplit[2], linesplit[2]);
-            
-            //Schedule sc = new Schedule(vl, linesplit[2], linesplit[4], );
-            //schedules.add(sc);
+            if (splitedLine[0].trim().equals("H")) {
+                Hospital hospital = new Hospital(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(),splitedLine[9], splitedLine[10] );
+                Nurse nurse = new Nurse(splitedLine[12], Integer.parseInt(splitedLine[13]), Integer.parseInt(splitedLine[14]));
+                Patient patient = new Patient(splitedLine[19], splitedLine[20], Integer.parseInt(splitedLine[21]), Integer.parseInt(splitedLine[22]), Integer.parseInt(splitedLine[23]));
+                Vaccine vaccine = new Vaccine(splitedLine[16], splitedLine[17]);
+
+                Schedule schedule = new Schedule(hospital, splitedLine[2], splitedLine[4], nurse, patient, vaccine, splitedLine[0]);
+                AllSchedules.addScheduleToAllSchedules(schedule);
+            }
+            if (splitedLine[0].trim().equals("P")) {
+                Pavilion pavilion = new Pavilion(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(),Integer.parseInt(splitedLine[9]));
+                Nurse nurse = new Nurse(splitedLine[11], Integer.parseInt(splitedLine[12]), Integer.parseInt(splitedLine[13]));
+                Patient patient = new Patient(splitedLine[18], splitedLine[19], Integer.parseInt(splitedLine[20]), Integer.parseInt(splitedLine[21]), Integer.parseInt(splitedLine[22]));
+                Vaccine vaccine = new Vaccine(splitedLine[15], splitedLine[16]);
+
+                Schedule schedule = new Schedule(pavilion, splitedLine[2], splitedLine[4], nurse, patient, vaccine, splitedLine[0]);
+                AllSchedules.addScheduleToAllSchedules(schedule);
+            }
         }
         scan.close();
     }
-         
-    
 
     public static void saveSchedulesToFile() throws IOException {
 
         FileWriter fw = new FileWriter("Marcacoes.txt");
-        
+
         for (Schedule schedule : schedules) {
-            fw.write(schedule.getTypeOfLocation() + " - " + schedule.toString() + "\n");
+            fw.write(schedule.getTypeOfLocation() + " | " + schedule.toString() + "\n");
 //                fw.write("\n");
         }
         fw.close();
@@ -128,47 +152,14 @@ public class AllSchedules {
     public static void updateScheduleByPatientNumber(int patientNumber, int option) {
         Scanner scanner = new Scanner(System.in);
         if (option == 1) {
-            String localType = "";
-
             for (Schedule schedule : schedules) {
                 if (schedule.getPatient().getPatientNumber() == patientNumber) {
-                    localType = schedule.getTypeOfLocation();
-                }
 
-                if (localType == "H") {
-
-                    // Incompleto
-                    System.out.println("");
-                    System.out.println("Insira o nome do local");
-                    schedule.getVaccinationLocation().setName(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira a morada do local");
-                    schedule.getVaccinationLocation().setAddress(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira o contacto telefonico do local");
-                    schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
-    
-                }
-                if (localType == "P") {
-
-                    // Incompleto
                     System.out.println("");
                     System.out.println("Insira o novo nome do local");
                     schedule.getVaccinationLocation().setName(scanner.nextLine());
                     System.out.println("");
-                    System.out.println("Insira a novo morada do local");
-                    schedule.getVaccinationLocation().setAddress(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira o novo contacto telefonico do local");
-                    schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
-               
-                }
-                if (localType == "C") {
-                    System.out.println("");
-                    System.out.println("Insira o novo nome do local");
-                    schedule.getVaccinationLocation().setName(scanner.nextLine());
-                    System.out.println("");
-                    System.out.println("Insira a novo morada do local");
+                    System.out.println("Insira a nova morada do local");
                     schedule.getVaccinationLocation().setAddress(scanner.nextLine());
                     System.out.println("");
                     System.out.println("Insira o novo contacto telefonico do local");
@@ -188,6 +179,7 @@ public class AllSchedules {
 
             }
         }
+
         if (option == 3) {
             for (Schedule schedule : schedules) {
                 if (schedule.getPatient().getPatientNumber() == patientNumber) {
@@ -197,7 +189,8 @@ public class AllSchedules {
 
             }
         }
-        if (option == 3) {
+
+        if (option == 4) {
             for (Schedule schedule : schedules) {
                 if (schedule.getPatient().getPatientNumber() == patientNumber) {
                     System.out.println("Insira o nome do enfermeiro");
@@ -207,10 +200,11 @@ public class AllSchedules {
                     schedule.getNurse().setCardNumber(scanner.nextInt());
                     System.out.println("Insira o contacto telefonico do enfermeiro");
                     schedule.getNurse().setPhoneNumber(scanner.nextInt());
-                    
+
                 }
 
             }
+
         }
     }
 

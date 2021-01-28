@@ -372,9 +372,18 @@ public class Utilities {
                 System.out.println(" 4 - Enfermeiro ");
 
                 int selectedOption = scanner.nextInt();
+                
+                try {
+                                    AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
 
-                AllSchedules.updateScheduleByPatientNumber(selectedNumber, selectedOption);
-
+                } catch (Exception e) {
+                }
+                    
+               
+                
+                
+                menu.run();
+                
                 break;
             case 4:
                 System.out.println("Introduza o numero de utente");
