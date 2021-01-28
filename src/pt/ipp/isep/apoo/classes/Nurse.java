@@ -95,7 +95,7 @@ public class Nurse {
         this.phoneNumber = phoneNumber;
     }
     
-     /**
+    /**
     * Método que retorna os atributos de uma classe em forma de texto
     * @return 
     */
