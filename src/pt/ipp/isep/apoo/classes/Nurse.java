@@ -10,32 +10,32 @@ package pt.ipp.isep.apoo.classes;
  * @author Gustavo Reis e João Gomes
  */
 public class Nurse {
-    
+
     /**
      * Nome do Enfermeiro
      */
     private String name;
-    
+
     /**
      * Número de cédula profissional do Enfermeiro
      */
     private int cardNumber;
-    
+
     /**
      * Número de telefone
      */
     private int phoneNumber;
 
-    
     /**
      * Metodo construtor vazio
      */
     public Nurse() {
-        
+
     }
-    
+
     /**
      * Método que permite criar um novo Enfermeiro
+     *
      * @param name Nome do Enfermeiro
      * @param cardNumber Número da Cédula Profissional do Enfermeiro
      * @param phoneNumber Número de Telefone do Enfermeiro
@@ -46,10 +46,10 @@ public class Nurse {
         this.phoneNumber = phoneNumber;
     }
 
-    
     /**
      * Método que permite obter o nome do Enfermeiro
-     * @return 
+     *
+     * @return
      */
     public String getName() {
         return name;
@@ -57,15 +57,17 @@ public class Nurse {
 
     /**
      * Método que permite definir o nome do Enfermeiro
+     *
      * @param name Nome do Enfermeiro
      */
     public void setName(String name) {
         this.name = name;
     }
 
-     /**
+    /**
      * Método que permite obter o número da Cédula Profissional do Enfermeiro
-     * @return 
+     *
+     * @return
      */
     public int getCardNumber() {
         return cardNumber;
@@ -73,36 +75,39 @@ public class Nurse {
 
     /**
      * Método que permite definir o número da Cédula Profissional do Enfermeiro
+     *
      * @param cardNumber Número da Cédula Profissional do Enfermeiro
      */
     public void setCardNumber(int cardNumber) {
         this.cardNumber = cardNumber;
     }
 
-     /**
+    /**
      * Método que permite obter o número de telefone do Enfermeiro
-     * @return 
+     *
+     * @return
      */
     public int getPhoneNumber() {
         return phoneNumber;
     }
 
-     /**
+    /**
      * Método que permite definir o número de telefone do Enfermeiro
+     *
      * @param phoneNumber Número de Telefone do Enfermeiro
      */
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    
-    /**
-    * Método que retorna os atributos de uma classe em forma de texto
-    * @return 
-    */
-     @Override
-    public String toString(){
-        return  getName() + "|" + getCardNumber() + "|" + getPhoneNumber();
-    }   
-    
-}
 
+    /**
+     * Método que retorna os atributos de uma classe em forma de texto
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return getName() + "|" + getCardNumber() + "|" + getPhoneNumber();
+    }
+
+}
