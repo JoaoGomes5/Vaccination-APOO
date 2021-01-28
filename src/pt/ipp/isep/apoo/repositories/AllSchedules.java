@@ -20,6 +20,9 @@ import pt.ipp.isep.apoo.classes.VaccinationLocation;
 import pt.ipp.isep.apoo.classes.Vaccine;
 
 import java.util.stream.IntStream;
+import pt.ipp.isep.apoo.classes.HealthCenter;
+import pt.ipp.isep.apoo.classes.Hospital;
+import pt.ipp.isep.apoo.classes.Pavilion;
 
 /**
  *
@@ -78,7 +81,7 @@ public class AllSchedules {
                     + schedule.getVacccine().getBrand() + " | " + schedule.getVacccine().getLot() + "\n"
             );
         }
-        
+
     }
 
     public static void readfromFile() throws FileNotFoundException {
@@ -87,22 +90,40 @@ public class AllSchedules {
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String[] splitedLine = line.split("\\|");
-            
-            if(splitedLine[0].trim().equals("C")){
-                   for (int i = 0; i < splitedLine.length; i++) {
-                        
-                      System.out.println(i + " " + splitedLine[i].trim());
-                 }
-            }
-            
-            
 
-//            
-            //Nurse n = new Nurse(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));
-            //Vaccine v = new Vaccine(linesplit[9], Integer.parseInt(linesplit[10]), Integer.parseInt(linesplit[10]));
-            //VaccinationLocation vl = new VaccinationLocation(linesplit[2], linesplit[2], linesplit[2]);
-            //Schedule sc = new Schedule(vl, linesplit[2], linesplit[4], );
-            //schedules.add(sc);
+//                       if(splitedLine[0].trim().equals("P")){
+//                   for (int i = 0; i < splitedLine.length; i++) {
+//                        
+//                      System.out.println(i + " " + splitedLine[i].trim());
+//                 }
+//            }
+            if (splitedLine[0].trim().equals("C")) {
+                HealthCenter healthCenter = new HealthCenter(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim());
+                Nurse nurse = new Nurse(splitedLine[10], Integer.parseInt(splitedLine[11]), Integer.parseInt(splitedLine[12]));
+                Patient patient = new Patient(splitedLine[17], splitedLine[18].trim(), Integer.parseInt(splitedLine[19]), Integer.parseInt(splitedLine[20]), Integer.parseInt(splitedLine[21]));
+                Vaccine vaccine = new Vaccine(splitedLine[14].trim(), splitedLine[15].trim());
+
+                Schedule schedule = new Schedule(healthCenter, splitedLine[2], splitedLine[4], nurse, patient, vaccine, splitedLine[0]);
+                AllSchedules.addScheduleToAllSchedules(schedule);
+            }
+            if (splitedLine[0].trim().equals("H")) {
+                Hospital hospital = new Hospital(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(),splitedLine[9], splitedLine[10] );
+                Nurse nurse = new Nurse(splitedLine[12], Integer.parseInt(splitedLine[13]), Integer.parseInt(splitedLine[14]));
+                Patient patient = new Patient(splitedLine[19], splitedLine[20], Integer.parseInt(splitedLine[21]), Integer.parseInt(splitedLine[22]), Integer.parseInt(splitedLine[23]));
+                Vaccine vaccine = new Vaccine(splitedLine[16], splitedLine[17]);
+
+                Schedule schedule = new Schedule(hospital, splitedLine[2], splitedLine[4], nurse, patient, vaccine, splitedLine[0]);
+                AllSchedules.addScheduleToAllSchedules(schedule);
+            }
+            if (splitedLine[0].trim().equals("P")) {
+                Pavilion pavilion = new Pavilion(splitedLine[6].trim(), splitedLine[7].trim(), splitedLine[8].trim(),Integer.parseInt(splitedLine[9]));
+                Nurse nurse = new Nurse(splitedLine[11], Integer.parseInt(splitedLine[12]), Integer.parseInt(splitedLine[13]));
+                Patient patient = new Patient(splitedLine[18], splitedLine[19], Integer.parseInt(splitedLine[20]), Integer.parseInt(splitedLine[21]), Integer.parseInt(splitedLine[22]));
+                Vaccine vaccine = new Vaccine(splitedLine[15], splitedLine[16]);
+
+                Schedule schedule = new Schedule(pavilion, splitedLine[2], splitedLine[4], nurse, patient, vaccine, splitedLine[0]);
+                AllSchedules.addScheduleToAllSchedules(schedule);
+            }
         }
         scan.close();
     }

@@ -172,67 +172,14 @@ public class Schedule {
         this.typeOfLocation = typeOfLocation;
     }
 
-    /**
-     * Método que permite actualizar os dados da marcação
-     *
-     */
-    public void update() {
-    }
 
-    /**
-     * Método que permite pesquisar marcação do utente por ano de nascimento
-     *
-     */
-    public void searchByAge() {
-        System.out.println("");
-    }
-
-    /**
-     * Método que permite pesquisar marcações para uma data indicada pelo
-     * utilizador
-     *
-     */
-    public void searchByDate() {
-        System.out.println("");
-    }
-
-    /**
-     * Método que permite pesquisar marcações para um local indicado pelo
-     * utilizador
-     *
-     */
-    public void searchByLocal() {
-        System.out.println("");
-    }
-
-    /**
-     * Método que permite pesquisar marcações por marca da vacina
-     */
-    public void searchByBrand() {
-        System.out.println("");
-    }
-
-    /**
-     * Método que permite pesquisar marcações por lote da vacina
-     */
-    public void searchByLot() {
-        System.out.println("");
-    }
-
-    /**
-     * Método que permite pesquisar marcações por marca e lote da vacina
-     */
-    public void searchByBrandAndLot() {
-        System.out.println("");
-    }
-    
     /**
     * Método que retorna os atributos de uma classe em forma de texto
     * @return 
     */
     @Override
     public String toString() {
-        return "A marcação para o dia |" + getDate() + "| às |" + getTime() + "| horas, será administrada no local |" + getVaccinationLocation().toString() + "| pelo enfermeiro |" + getNurse().toString() + "| com a vacina |" + getVacccine().toString() + "|ao utente |" + getPatient().toString();
+        return " # Data da marcação # |" + getDate().trim() + "| # Hora da marcação # |" + getTime().trim() + "| # Local de vacinação # |" + getVaccinationLocation().toString().trim() + "| # Enfermeiro # |" + getNurse().toString().trim() + "| # Vacina # |" + getVacccine().toString().trim() + "| # Utente # |" + getPatient().toString().trim();
     }
     
 }
