@@ -70,7 +70,7 @@ public class AllSchedules {
     /**
      *
      * Metodo que permite ler de um ficheiro a informação das marcações e
-     * passa-las para um array (ficheiro -> array)
+     * passa-las para um array (ficheiro → array)
      *
      * @throws FileNotFoundException Tratamento de erros
      */

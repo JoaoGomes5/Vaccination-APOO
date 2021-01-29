@@ -40,6 +40,7 @@ public class Schedule {
      * @param nurse Enfermeiro
      * @param patient Utente
      * @param vaccine Vacina
+     * @param typeOfLocation Tipo de Tipo de Local de Vacinação
      */
     public Schedule(
             VaccinationLocation vaccinationLocation,
