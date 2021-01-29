@@ -27,10 +27,10 @@ public class Pavilion extends VaccinationLocation {
      *
      * Método que permite criar um Pavilhão Municipal
      *
-     * @param name
-     * @param address
-     * @param phoneNumber
-     * @param sectionNumber
+     * @param name Nome do Pavilhão Municipal
+     * @param address Morada do Pavilhão Municipal
+     * @param phoneNumber Número de Telefone do Pavilhão Municipal
+     * @param sectionNumber Número da Secção do Pavilhão Municipal
      */
     public Pavilion(String name, String address, String phoneNumber, int sectionNumber) {
         super(name, address, phoneNumber);
@@ -41,7 +41,7 @@ public class Pavilion extends VaccinationLocation {
     /**
      * Método que permite obter o Número da Secção do Pavilhão Municipal
      *
-     * @return
+     * @return Retorna o Número da Secção do Pavilhão Municipal
      */
     public int getSectionNumber() {
         return sectionNumber;
@@ -59,7 +59,7 @@ public class Pavilion extends VaccinationLocation {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Retorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {

@@ -64,7 +64,7 @@ public class Schedule {
     /**
      * Método que permite obter o Local de Vacinação
      *
-     * @return
+     * @return Retorna o Local de Vacinação
      */
     public VaccinationLocation getVaccinationLocation() {
         return vaccinationLocation;
@@ -82,7 +82,7 @@ public class Schedule {
     /**
      * Método que permite obter a Data da Marcação
      *
-     * @return
+     * @return Retorna a Data da Marcação
      */
     public String getDate() {
         return date;
@@ -100,7 +100,7 @@ public class Schedule {
     /**
      * Método que permite obter a Hora da Marcação
      *
-     * @return
+     * @return Retorna a Hora da Marcação
      */
     public String getTime() {
         return time;
@@ -118,7 +118,7 @@ public class Schedule {
     /**
      * Método que permite obter o Enfermeiro
      *
-     * @return
+     * @return Retorna o Enfermeiro
      */
     public Nurse getNurse() {
         return nurse;
@@ -136,7 +136,7 @@ public class Schedule {
     /**
      * Método que permite obter o Utente
      *
-     * @return
+     * @return Retorna o Utente
      */
     public Patient getPatient() {
         return patient;
@@ -154,7 +154,7 @@ public class Schedule {
     /**
      * Método que permite obter a Vacina
      *
-     * @return
+     * @return Retorna a Vacina
      */
     public Vaccine getVacccine() {
         return vacccine;
@@ -172,7 +172,7 @@ public class Schedule {
     /**
      * Método que permite obter o Tipo de Local de Vacinação
      *
-     * @return
+     * @return Retorna o Tipo de Local de Vacinação
      */
     public String getTypeOfLocation() {
         return typeOfLocation;
@@ -190,7 +190,7 @@ public class Schedule {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Retorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {
