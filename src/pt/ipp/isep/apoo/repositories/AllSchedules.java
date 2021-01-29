@@ -363,7 +363,7 @@ public class AllSchedules {
 
     /**
      *
-     * Metedo que pesquisa marcações por local de vacinação
+     * Metodo que pesquisa marcações por local de vacinação
      *
      * @param name Nome do local de vacinação
      */
