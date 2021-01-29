@@ -33,7 +33,7 @@ public class HealthCenter extends VaccinationLocation {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return Retorna o objeto em forma de String
+     * @return 
      */
     @Override
     public String toString() {

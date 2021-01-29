@@ -18,7 +18,7 @@ public class Menu {
     /**
      * Método responsável por executar o Menu
      *
-     * @throws IOException
+     * @throws IOException Tratamento de Erro
      */
     public void run() throws IOException {
         int option = 0;

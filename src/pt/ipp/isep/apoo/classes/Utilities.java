@@ -21,7 +21,7 @@ public class Utilities {
      * Método para receber a opção do Menu e efectua a respectiva função
      *
      * @param option Opção Selecionada no Menu
-     * @throws IOException Tratamento de erros 
+     * @throws IOException Tratamento de Erro
      */
     public static void menuHandler(int option) throws IOException {
         AllSchedules allSchedules = new AllSchedules();
@@ -530,7 +530,7 @@ public class Utilities {
     /**
      * Método para gerar Marcações para teste
      *
-     * @return Retorna a lista de marcações para teste
+     * @return Retorna a lista de Marcações para teste
      */
     public static ArrayList<Schedule> generateDefaultSchedules() {
 
@@ -599,7 +599,7 @@ public class Utilities {
     /**
      * Método para gerar Utentes para teste
      *
-     * @return Retorna a lista de utentes para teste
+     * @return Retorna a lista de Utentes para teste
      */
     public static ArrayList<Patient> generateDefaultPatients() {
         ArrayList<Patient> patientsList = new ArrayList<Patient>();
@@ -691,7 +691,7 @@ public class Utilities {
     /**
      * Método para gerar Locais de Vacinação para teste
      *
-     * @return
+     * @return Retorna a lista de Locais de Vacinação para teste
      */
     public static ArrayList<VaccinationLocation> generateDefaultVaccinationLocations() {
         ArrayList<VaccinationLocation> locationsList = new ArrayList<VaccinationLocation>();
@@ -733,7 +733,7 @@ public class Utilities {
     /**
      * Método para gerar Vacinas para teste
      *
-     * @return
+     * @return Retorna a lista de Vacinas para teste
      */
     public static ArrayList<Vaccine> generateDefaultVaccines() {
         ArrayList<Vaccine> vaccinesList = new ArrayList<>();
@@ -748,7 +748,7 @@ public class Utilities {
     /**
      * Método para gerar Enfermeiros para teste
      *
-     * @return
+     * @return Retorna a lista de Enfermeiros para teste
      */
     public static ArrayList<Nurse> generateDefaultNurses() {
         ArrayList<Nurse> nursesList = new ArrayList<>();

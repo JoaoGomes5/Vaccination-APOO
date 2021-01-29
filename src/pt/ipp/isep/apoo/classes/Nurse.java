@@ -49,7 +49,7 @@ public class Nurse {
     /**
      * Método que permite obter o nome do Enfermeiro
      *
-     * @return
+     * @return Retorna o nome do Enfermeiro
      */
     public String getName() {
         return name;
@@ -67,7 +67,7 @@ public class Nurse {
     /**
      * Método que permite obter o número da Cédula Profissional do Enfermeiro
      *
-     * @return
+     * @return Retorna o Número da Cédula Profissional do Enfermeiro
      */
     public int getCardNumber() {
         return cardNumber;
@@ -85,7 +85,7 @@ public class Nurse {
     /**
      * Método que permite obter o número de telefone do Enfermeiro
      *
-     * @return
+     * @return Retorna o número de telefone do Enfermeiro
      */
     public int getPhoneNumber() {
         return phoneNumber;
@@ -103,7 +103,7 @@ public class Nurse {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Retorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {

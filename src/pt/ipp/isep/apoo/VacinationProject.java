@@ -17,8 +17,8 @@ public class VacinationProject {
     /**
      * Método principal responsável por iniciar o programa
      *
-     * @param args
-     * @throws IOException
+     * @param args Argumentos
+     * @throws IOException Tratamento de Erro
      */
     public static void main(String[] args) throws IOException {
 
