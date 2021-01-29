@@ -24,7 +24,6 @@ public class Menu {
         int option = 0;
 
         Scanner reader = new Scanner(System.in);
-        
 
         System.out.println("");
         System.out.println("Seja bem-vindo!!");

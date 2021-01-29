@@ -33,10 +33,11 @@ public class Schedule {
     /**
      *
      * Metodo construtor da Classe Schedule
+     *
      * @param vaccinationLocation Local de Vacinação
      * @param date Data da Marcação
      * @param time Hora da Marcação
-     * @param nurse Enfermeiro 
+     * @param nurse Enfermeiro
      * @param patient Utente
      * @param vaccine Vacina
      */
@@ -62,39 +63,44 @@ public class Schedule {
 
     /**
      * Método que permite obter o Local de Vacinação
-     * @return 
+     *
+     * @return
      */
     public VaccinationLocation getVaccinationLocation() {
         return vaccinationLocation;
     }
 
-     /**
+    /**
      * Método que permite definir o Local de Vacinação
-     * @param vaccinationLocation  Local de Vacinação
+     *
+     * @param vaccinationLocation Local de Vacinação
      */
     public void setVaccinationLocation(VaccinationLocation vaccinationLocation) {
         this.vaccinationLocation = vaccinationLocation;
     }
 
-     /**
+    /**
      * Método que permite obter a Data da Marcação
-     * @return 
+     *
+     * @return
      */
     public String getDate() {
         return date;
     }
 
-     /**
+    /**
      * Método que permite definir a Data da Marcação
+     *
      * @param date Data da Marcação
      */
     public void setDate(String date) {
         this.date = date;
     }
 
-     /**
+    /**
      * Método que permite obter a Hora da Marcação
-     * @return 
+     *
+     * @return
      */
     public String getTime() {
         return time;
@@ -102,6 +108,7 @@ public class Schedule {
 
     /**
      * Método que permite definir a Hora da Marcação
+     *
      * @param time Hora da Marcação
      */
     public void setTime(String time) {
@@ -110,7 +117,8 @@ public class Schedule {
 
     /**
      * Método que permite obter o Enfermeiro
-     * @return 
+     *
+     * @return
      */
     public Nurse getNurse() {
         return nurse;
@@ -118,6 +126,7 @@ public class Schedule {
 
     /**
      * Método que permite definir o Enfermeiro
+     *
      * @param nurse Enfermeiro
      */
     public void setNurse(Nurse nurse) {
@@ -126,14 +135,16 @@ public class Schedule {
 
     /**
      * Método que permite obter o Utente
-     * @return 
+     *
+     * @return
      */
     public Patient getPatient() {
         return patient;
     }
 
-     /**
+    /**
      * Método que permite definir o Utente
+     *
      * @param patient Utente
      */
     public void setPatient(Patient patient) {
@@ -142,47 +153,48 @@ public class Schedule {
 
     /**
      * Método que permite obter a Vacina
-     * @return 
+     *
+     * @return
      */
     public Vaccine getVacccine() {
         return vacccine;
     }
 
-      /**
+    /**
      * Método que permite definir a Vacina
+     *
      * @param vacccine Vacina
      */
     public void setVacccine(Vaccine vacccine) {
         this.vacccine = vacccine;
     }
-    
+
     /**
      * Método que permite obter o Tipo de Local de Vacinação
-     * @return 
+     *
+     * @return
      */
     public String getTypeOfLocation() {
         return typeOfLocation;
     }
-    
-     /**
+
+    /**
      * Método que permite definir o Tipo de Local de Vacinação
+     *
      * @param typeOfLocation Tipo de Local de Vacinação
      */
     public void setTypeOfLocation(String typeOfLocation) {
         this.typeOfLocation = typeOfLocation;
     }
 
-
     /**
-    * Método que retorna os atributos de uma classe em forma de texto
-    * @return 
-    */
+     * Método que retorna os atributos de uma classe em forma de texto
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return " # Data da marcação # |" + getDate().trim() + "| # Hora da marcação # |" + getTime().trim() + "| # Local de vacinação # |" + getVaccinationLocation().toString().trim() + "| # Enfermeiro # |" + getNurse().toString().trim() + "| # Vacina # |" + getVacccine().toString().trim() + "| # Utente # |" + getPatient().toString().trim();
     }
-    
+
 }
-
-
-

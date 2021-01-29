@@ -39,7 +39,7 @@ public class AllSchedules {
     public static void addScheduleToAllSchedules(Schedule newSchedule) {
         schedules.add(newSchedule);
     }
-    
+
     /**
      * Metodo que permite listar todas as marcações em memória
      */
@@ -118,10 +118,11 @@ public class AllSchedules {
         scan.close();
     }
 
-    
     /**
-     * Metodo que permite registar em ficheiro a informação das marcações presentes em memória(array → ficheiro)
-     * @throws IOException 
+     * Metodo que permite registar em ficheiro a informação das marcações
+     * presentes em memória(array → ficheiro)
+     *
+     * @throws IOException
      */
     public static void saveSchedulesToFile() throws IOException {
 
@@ -134,8 +135,9 @@ public class AllSchedules {
     }
 
     /**
-     * 
+     *
      * Metodo que permite pesquisar marcação por Utente
+     *
      * @param patientNumber Numero de Utente
      */
     public static void searchScheduleByPatientNumber(int patientNumber) {
@@ -148,7 +150,9 @@ public class AllSchedules {
     }
 
     /**
-     * Alterar uma marcação (Local, data, hora ou Enfermeiro) pelo numero de utente 
+     * Alterar uma marcação (Local, data, hora ou Enfermeiro) pelo numero de
+     * utente
+     *
      * @param patientNumber Numero de Utente
      * @param option Opção selecionada pelo utilizador
      */
@@ -167,7 +171,7 @@ public class AllSchedules {
                     System.out.println("");
                     System.out.println("Insira o novo contacto telefonico do local");
                     schedule.getVaccinationLocation().setPhoneNumber(scanner.nextLine());
-                    
+
                     System.out.println(" # GEditado com sucesso #");
                 }
             }
@@ -180,7 +184,7 @@ public class AllSchedules {
                     System.out.println("");
                     System.out.println("Insira a nova  data da marcação - Digite o data no formato DD-MM-AAAA");
                     schedule.setDate(scanner.nextLine());
-                    
+
                     System.out.println(" # GEditado com sucesso #");
                 }
 
@@ -192,7 +196,7 @@ public class AllSchedules {
                 if (schedule.getPatient().getPatientNumber() == patientNumber) {
                     System.out.println("Insira a hora da marcação - Digite a hora no formato HH:MM");
                     schedule.setTime(scanner.nextLine());
-                    
+
                     System.out.println(" # GEditado com sucesso #");
                 }
 
@@ -209,7 +213,7 @@ public class AllSchedules {
                     schedule.getNurse().setCardNumber(scanner.nextInt());
                     System.out.println("Insira o contacto telefonico do enfermeiro");
                     schedule.getNurse().setPhoneNumber(scanner.nextInt());
-                    
+
                     System.out.println(" # GEditado com sucesso #");
 
                 }
@@ -219,9 +223,10 @@ public class AllSchedules {
         }
     }
 
-    
     /**
-     * Metodo que remove uma marcação do ArrayList onde se encontram todas as marcações
+     * Metodo que remove uma marcação do ArrayList onde se encontram todas as
+     * marcações
+     *
      * @param patientNumber Numero de Utente
      */
     public static void deleteScheduleByPatientName(int patientNumber) {
@@ -236,10 +241,11 @@ public class AllSchedules {
         }
 
     }
-    
+
     /**
      * Metodo que lista todas as marcações dos utentes por idade
-     * @param age Idade 
+     *
+     * @param age Idade
      */
     public static void searchScheduleByPatientÀge(int age) {
 
@@ -262,6 +268,7 @@ public class AllSchedules {
     /**
      *
      * Metodo que lista todas as marcações por data de marcação
+     *
      * @param date Data de marcação
      */
     public static void searchByDate(String date) {
@@ -279,10 +286,12 @@ public class AllSchedules {
     }
 
     /**
-     * 
-     * Metodo que lista individuos que vão estar numa determinada data num determinado local de vacinação
+     *
+     * Metodo que lista individuos que vão estar numa determinada data num
+     * determinado local de vacinação
+     *
      * @param date Data de marcação
-     * @param location  Local de Marcação
+     * @param location Local de Marcação
      */
     public static void listPeopleByDateAndLocation(String date, String location) {
 
@@ -298,6 +307,7 @@ public class AllSchedules {
 
     /**
      * Metodo que pesquisa marcações por marca de vacinação
+     *
      * @param brand Marca da vacina
      */
     public static void searchByBrand(String brand) {
@@ -312,9 +322,10 @@ public class AllSchedules {
         }
 
     }
-    
+
     /**
      * Metodo que pesquisa marcações por lote de vacinação
+     *
      * @param lot Lote da vacina
      */
     public static void searchByLot(String lot) {
@@ -331,8 +342,9 @@ public class AllSchedules {
     }
 
     /**
-     * 
+     *
      * Metodo que pesquisa marcações por marca e lote de vacinação
+     *
      * @param brand Marca da vacina
      * @param lot Lote da Vacina
      */
@@ -350,8 +362,9 @@ public class AllSchedules {
     }
 
     /**
-     * 
+     *
      * Metedo que pesquisa marcações por local de vacinação
+     *
      * @param name Nome do local de vacinação
      */
     public static void findByVaccinationLocation(String name) {

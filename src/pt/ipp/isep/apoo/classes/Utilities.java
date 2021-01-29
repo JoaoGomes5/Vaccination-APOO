@@ -61,7 +61,7 @@ public class Utilities {
                         System.out.println("");
                         System.out.println("Insira o nome do local");
                         hospital.setName(scanner.nextLine());
-                        
+
                         System.out.println("");
                         System.out.println("Insira a morada do local");
                         hospital.setAddress(scanner.nextLine());
@@ -495,7 +495,7 @@ public class Utilities {
 
                 } catch (Exception e) {
                 }
-                
+
                 menu.run();
                 break;
             case 14:
@@ -517,7 +517,7 @@ public class Utilities {
                 break;
             case 0:
                 break;
-                
+
             default:
                 System.out.println("Insira uma opção valida");
                 menu.run();
