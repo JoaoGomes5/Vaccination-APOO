@@ -1,1 +1,0 @@
-P |  # Data da marcação # |30-01-2021| # Hora da marcação # |10:00| # Local de vacinação # |Pavilh�o da Senhora da Hora|Rua dos Cavalos|930000000|1| # Enfermeiro # |Diana Ribeiro|87550|464648489| # Vacina # |Moderna|CD010203| # Utente # |Carla|Feminino|1945|1|945678900

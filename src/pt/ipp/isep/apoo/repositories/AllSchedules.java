@@ -37,7 +37,11 @@ public class AllSchedules {
      * @param newSchedule Marcação
      */
     public static void addScheduleToAllSchedules(Schedule newSchedule) {
-        schedules.add(newSchedule);
+        if(schedules.size() < 100){
+                    schedules.add(newSchedule);
+        }else{
+            System.out.println(" # O limite de 100 marcações foi excedido #");
+        }
     }
 
     /**

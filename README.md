@@ -5,15 +5,17 @@
     informação relativa às marcações para a vacinação contra a COVID-19.
 
 ## Good Pratices Ideas
-    - Todo o codigo produzido / nome commits em inglês
-    - Variaveis EXTREMAMENTE explicativas
-    - Cammel Case 
-    - Divisão de tarefas equitativa 
-    - Não implementar o codigo sem ter uma base estuturada 
+    - Todo o codigo produzido / nome commits em inglês ✅
+    - Variaveis EXTREMAMENTE explicativas ✅
+    - Cammel Case ✅
+    - Divisão de tarefas equitativa ✅
+    - Não implementar o codigo sem ter uma base estuturada ✅
+    - Usar git como sistema de versionamento ✅
+    - Contacto entre a equipa ✅
 
 ## Requisitos e regras de negocio 
     - Usar ficheiros txt para guardar a informação 
-    - Dividir informações com " | " 
+    - Dividir informações com "|" 
     - Leitura e escrita de ficheiros nos ficheiros txt
     - J para funcionalidades atribuidas a João
     - G para funcionalidades atribuidas a Gustavo
@@ -26,14 +28,8 @@
 
 
     - Ficheiros com extensão txt:
-        - Schedules.txt
-        - Patients.txt
-        - Nurses.txt
-        - Vaccines.txt
-        - VaccinationLocations.txt
-        - HealthCenters.txt
-        - Hospitals.txt
-        - Pavilions.txt
+        - Marcações.txt
+       
 
 ### Marcações
     - Dados associados a marcação:
