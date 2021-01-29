@@ -72,7 +72,7 @@ public class AllSchedules {
      * Metodo que permite ler de um ficheiro a informação das marcações e
      * passa-las para um array (ficheiro -> array)
      *
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException Tratamento de erros
      */
     public static void readfromFile() throws FileNotFoundException {
         File file = new File("Marcacoes.txt");
@@ -122,7 +122,7 @@ public class AllSchedules {
      * Metodo que permite registar em ficheiro a informação das marcações
      * presentes em memória(array → ficheiro)
      *
-     * @throws IOException
+     * @throws IOException Tratamento de erros
      */
     public static void saveSchedulesToFile() throws IOException {
 

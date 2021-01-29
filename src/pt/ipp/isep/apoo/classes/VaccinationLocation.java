@@ -62,7 +62,7 @@ public class VaccinationLocation {
     /**
      * Método que permite obter a Morada do Local de Vacinação
      *
-     * @return
+     * @return Retorna a morada do Local de Vacinação
      */
     public String getAddress() {
         return address;
@@ -80,7 +80,7 @@ public class VaccinationLocation {
     /**
      * Método que permite obter o número de telefone do Local de Vacinação
      *
-     * @return
+     * @return Retorna o número de telefone do Local de Vacinação
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -98,7 +98,7 @@ public class VaccinationLocation {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Retorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {

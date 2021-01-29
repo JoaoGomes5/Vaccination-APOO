@@ -74,7 +74,7 @@ public class Vaccine {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Retorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {

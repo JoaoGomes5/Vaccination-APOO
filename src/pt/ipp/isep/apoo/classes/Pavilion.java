@@ -27,7 +27,7 @@ public class Pavilion extends VaccinationLocation {
      *
      * Método que permite criar um Pavilhão Municipal
      *
-     * @param name
+     * @param name 
      * @param address
      * @param phoneNumber
      * @param sectionNumber

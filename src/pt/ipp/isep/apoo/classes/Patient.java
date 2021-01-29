@@ -69,7 +69,7 @@ public class Patient {
     /**
      * Método que permite obter o nome do Utente
      *
-     * @return
+     * @return Retorna o nome do Utente
      */
     public String getName() {
         return name;
@@ -78,7 +78,7 @@ public class Patient {
     /**
      * Método que permite obter o sexo do Utente
      *
-     * @return
+     * @return Retorna o genero do Utente
      */
     public String getGender() {
         return gender;
@@ -87,16 +87,16 @@ public class Patient {
     /**
      * Método que permite obter o ano de nascimento do Utente
      *
-     * @return
+     * @return Retorna o ano de nascimento do Utente
      */
     public int getYearOfBirth() {
         return yearOfBirth;
     }
 
     /**
-     * Método que permite obter o Número de Utente
+     * Método que permite obter o número de Utente
      *
-     * @return
+     * @return Retorna o número de Utente
      */
     public int getPatientNumber() {
         return patientNumber;
@@ -105,7 +105,7 @@ public class Patient {
     /**
      * Método que permite obter o número de telefone do Utente
      *
-     * @return
+     * @return Retorna o número de telefone do Utente
      */
     public int getPhoneNumber() {
         return phoneNumber;
@@ -159,7 +159,7 @@ public class Patient {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Retorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {

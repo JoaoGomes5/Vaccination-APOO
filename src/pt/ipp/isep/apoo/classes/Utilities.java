@@ -21,7 +21,7 @@ public class Utilities {
      * Método para receber a opção do Menu e efectua a respectiva função
      *
      * @param option Opção Selecionada no Menu
-     * @throws IOException
+     * @throws IOException Tratamento de erros 
      */
     public static void menuHandler(int option) throws IOException {
         AllSchedules allSchedules = new AllSchedules();
@@ -530,7 +530,7 @@ public class Utilities {
     /**
      * Método para gerar Marcações para teste
      *
-     * @return
+     * @return Retorna a lista de marcações para teste
      */
     public static ArrayList<Schedule> generateDefaultSchedules() {
 
@@ -599,7 +599,7 @@ public class Utilities {
     /**
      * Método para gerar Utentes para teste
      *
-     * @return
+     * @return Retorna a lista de utentes para teste
      */
     public static ArrayList<Patient> generateDefaultPatients() {
         ArrayList<Patient> patientsList = new ArrayList<Patient>();

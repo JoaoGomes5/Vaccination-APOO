@@ -47,7 +47,7 @@ public class Hospital extends VaccinationLocation {
     /**
      * Método que permite obter o nome do edifício do Hospital
      *
-     * @return
+     * @return Retorna o nome do edifício do Hospital
      */
     public String getBuildingName() {
         return buildingName;
@@ -65,7 +65,7 @@ public class Hospital extends VaccinationLocation {
     /**
      * Método que permite obter a extensão telefónica do Hospital
      *
-     * @return
+     * @return Retorna a extensão telefónica do Hospital
      */
     public String getExtension() {
         return extension;
@@ -83,7 +83,7 @@ public class Hospital extends VaccinationLocation {
     /**
      * Método que retorna os atributos de uma classe em forma de texto
      *
-     * @return
+     * @return Rtorna os atributos de uma classe em forma de texto
      */
     @Override
     public String toString() {
